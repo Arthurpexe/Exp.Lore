@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ControladorCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
+	public GameObject Personagem;
+	
+	// Start is called before the first frame update
     void Start()
     {
         
@@ -13,6 +15,7 @@ public class ControladorCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
+		transform.position = Vector3.Lerp(transform.position, new Vector3(Personagem.transform.position.x, Personagem.transform.position.y + 6f, Personagem.transform.position.z - 7), 6 * Time.deltaTime);
+
+	}
 }

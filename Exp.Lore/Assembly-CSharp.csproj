@@ -62,16 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Move.cs" />
-    <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\Scripts\ControladorCamera.cs" />
     <Compile Include="Assets\Scripts\ControladorPersonagem.cs" />
-    <Compile Include="Assets\Scripts\TiraTeto.cs" />
-    <Compile Include="Assets\XRay Demo Assets\Scripts\Spinner.cs" />
-    <Compile Include="Assets\XRay Demo Assets\Scripts\XRayReplacement.cs" />
-    <None Include="Assets\XRay Demo Assets\Shaders\XRay-ColoredOutline.shader" />
-    <None Include="Assets\XRay Demo Assets\Shaders\Normal-Diffuse-XRay-Replaceable.shader" />
-    <None Include="Assets\XRay Demo Assets\Shaders\Normal-Diffuse-Stencil-Write.shader" />
+    <Compile Include="Assets\Scripts\Criptografia.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/arthu/GitHub Repos/Exp.Lore/Exp.Lore/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -98,6 +92,9 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/arthu/GitHub Repos/Exp.Lore/Exp.Lore/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:/Users/arthu/GitHub Repos/Exp.Lore/Exp.Lore/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

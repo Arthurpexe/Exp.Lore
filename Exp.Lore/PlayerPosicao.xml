@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <posicao>
+    <x>5.062433</x>
+    <y>4.830178</y>
+    <z>5.87922049</z>
+  </posicao>
+</Player>
