@@ -4,7 +4,22 @@ using System.IO;
 
 public class ControladorPersonagem : MonoBehaviour
 {
-	public float SpeedIncrease = 10f;
+    #region Singleton
+    public static ControladorPersonagem instancia;
+
+    private void Awake()
+    {
+        if (instancia != null)
+        {
+            Debug.LogWarning("Mais de uma instancia de ControladorPersonagem encontrada!");
+            return;
+        }
+        instancia = this;
+
+    }
+    #endregion
+            
+public float SpeedIncrease = 10f;
 	public float Speed = 5f;
 
 	public float GroundDistance = 0.2f;
@@ -19,19 +34,14 @@ public class ControladorPersonagem : MonoBehaviour
 	private bool Abaixar = false;
 	private Transform _groundChecker;
 
-
-    public Player personagem;//parte do save/load
-    public Criptografia cripto;//parte de criptografia
-
+    public Player personagem;
     void Start()
 	{
 		_body = GetComponent<Rigidbody>();
 		_groundChecker = transform.GetChild(0);
 
 
-
-        personagem = new Player();//parte do save/load
-        cripto = new Criptografia();//parte de criptografia
+        personagem = new Player();
     }
 
 	void Update()
@@ -82,9 +92,7 @@ public class ControladorPersonagem : MonoBehaviour
 			Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3(5,0,5));
 			_body.AddForce(dashVelocity, ForceMode.VelocityChange);
 		}
-
-
-	}
+    }
 
 	void FixedUpdate()
 	{
@@ -98,32 +106,21 @@ public class ControladorPersonagem : MonoBehaviour
     /// </summary>
     public void salvarPosicao()
     {
-        this.personagem.posicao = transform.position;
-        XmlSerializer serializador = new XmlSerializer(typeof(Player));
-        StreamWriter arqDados = new StreamWriter("PlayerPosicao.xml");
-        serializador.Serialize(arqDados.BaseStream, personagem);
-        arqDados.Close();
-
-        cripto.criptografarArquivo("PlayerPosicao.xml", '§');
+        this.personagem.posicao = this.transform.position;
+        SaveLoad.instancia.salvarPlayer(personagem);
+        Debug.Log("Salvei o Jogo");
     }
     public void carregarPosicao()
     {
-        cripto.descriptografarArquivo("PlayerPosicao.xml", '§');
-
-        XmlSerializer serializador = new XmlSerializer(typeof(Player));
-        StreamReader arqLeit = new StreamReader("PlayerPosicao.xml");
-        Player aux = (Player)serializador.Deserialize(arqLeit.BaseStream);
-        arqLeit.Close();
+        
+        Player aux = SaveLoad.instancia.carregarPlayer();
         this.personagem.posicao = aux.posicao;
         transform.position = this.personagem.posicao;
+        Debug.Log("Carreguei o Jogo");
     }
     public void Add(System.Object ot)
     {
         throw new FileNotFoundException();
-    }
-    public void quit()
-    {
-        Application.Quit();
     }
 
 

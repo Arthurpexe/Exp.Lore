@@ -1,18 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ControladorHUD : MonoBehaviour
 {
-    public void abrirInventario(GameObject meuCanvas)
+    public void abrirInventario(GameObject canvasInventario)
     {
-        if (meuCanvas.activeSelf)
+        if (canvasInventario.activeSelf)
         {
-            meuCanvas.SetActive(false);
+            canvasInventario.SetActive(false);
         }
         else
         {
-            meuCanvas.SetActive(true);
+            canvasInventario.SetActive(true);
+        }
+    }
+    public void abrirMenu(GameObject canvasMenu)
+    {
+
+        if (canvasMenu.activeSelf)
+        {
+            canvasMenu.SetActive(false);
+        }
+        else
+        {
+            canvasMenu.SetActive(true);
         }
     }
 }
