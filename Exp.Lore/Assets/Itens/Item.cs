@@ -13,4 +13,9 @@ public class Item : ScriptableObject
 		//usar o item
 	}
 
+	public void RemoverDoInventario()
+	{
+		Inventario.instance.Remove(this);
+	}
+
 }
