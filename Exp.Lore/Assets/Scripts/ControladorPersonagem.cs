@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ControladorPersonagem : MonoBehaviour
 {
@@ -12,20 +13,24 @@ public class ControladorPersonagem : MonoBehaviour
 	public LayerMask Ground;
 	public int PlayerNumber = 1;
 
-	private Rigidbody _body;
+	private Rigidbody player;
 	private Vector3 _inputs = Vector3.zero;
 	private bool _isGrounded = true;
 	private bool _isFastSpeed = false;
 	private bool Abaixar = false;
 	private Transform _groundChecker;
+	Camera cam;
+	public Interagivel focus;
 
 
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		_body = GetComponent<Rigidbody>();
+		cam = Camera.main;
+		player = GetComponent<Rigidbody>();
 		_groundChecker = transform.GetChild(0);
+
 
 
 
@@ -35,6 +40,9 @@ public class ControladorPersonagem : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (EventSystem.current.IsPointerOverGameObject())
+			return;
+
 		_isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
 
 
@@ -43,7 +51,12 @@ public class ControladorPersonagem : MonoBehaviour
 		_inputs.x = Input.GetAxis("Horizontal");
 		_inputs.z = Input.GetAxis("Vertical");
 		if (_inputs != Vector3.zero)
+		{
 			transform.forward = _inputs;
+
+			
+		}
+			
 
 		if (Input.GetButtonDown("Correr_p1")) 
 		{
@@ -79,14 +92,26 @@ public class ControladorPersonagem : MonoBehaviour
 		{
 			//Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * _body.drag + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * _body.drag + 1)) / -Time.deltaTime)));
 			Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3(5,0,5));
-			_body.AddForce(dashVelocity, ForceMode.VelocityChange);
+			player.AddForce(dashVelocity, ForceMode.VelocityChange);
 		}
 
+		
 
 	}
 
 	void FixedUpdate()
 	{
-		_body.MovePosition(_body.position + _inputs * Speed * Time.fixedDeltaTime);
+		player.MovePosition(player.position + _inputs * Speed * Time.fixedDeltaTime);
 	}
+
+	
+
+			
+
+		
+		
+		
+	
+
+	
 }
