@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ab308f0aa1781489f5a7a425556f89, type: 3}
   m_Name: Capacete do fogo
   m_EditorClassIdentifier: 
-  name: New Item
+  name: Capacete do Fogo
   icon: {fileID: 0}
   isDefaultItem: 0
   equipar: 0
-  armadura: 0
+  armadura: 2
   dano: 0

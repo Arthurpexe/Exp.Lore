@@ -62,13 +62,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ControladorEquipamento.cs" />
     <Compile Include="Assets\Inventario\Inventario.cs" />
     <Compile Include="Assets\Inventario\InventarioSlot.cs" />
     <Compile Include="Assets\Itens\Equipamento.cs" />
     <Compile Include="Assets\Itens\Item.cs" />
     <Compile Include="Assets\Itens\ItemPickUp.cs" />
     <Compile Include="Assets\Scripts\ControladorCamera.cs" />
+    <Compile Include="Assets\Scripts\ControladorEquipamento.cs" />
     <Compile Include="Assets\Scripts\ControladorPersonagem.cs" />
     <Compile Include="Assets\Scripts\Interagivel.cs" />
     <Reference Include="Unity.Timeline.Editor">

@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class ControladorPersonagem : MonoBehaviour
 {
-	public float SpeedIncrease = 10f;
+	public float SpeedIncrease = 5f;
 	public float Speed = 5f;
 
 	public float GroundDistance = 0.2f;
@@ -40,8 +40,7 @@ public class ControladorPersonagem : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (EventSystem.current.IsPointerOverGameObject())
-			return;
+		
 
 		_isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
 
