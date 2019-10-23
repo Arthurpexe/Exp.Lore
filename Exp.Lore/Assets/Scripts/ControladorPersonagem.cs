@@ -19,7 +19,7 @@ public class ControladorPersonagem : MonoBehaviour
     }
     #endregion
             
-public float SpeedIncrease = 10f;
+    public float SpeedIncrease = 10f;
 	public float Speed = 5f;
 
 	public float GroundDistance = 0.2f;
@@ -27,17 +27,20 @@ public float SpeedIncrease = 10f;
 	public LayerMask Ground;
 	public int PlayerNumber = 1;
 
-	private Rigidbody _body;
+	private Rigidbody player;
 	private Vector3 _inputs = Vector3.zero;
 	private bool _isGrounded = true;
 	private bool _isFastSpeed = false;
 	private bool Abaixar = false;
 	private Transform _groundChecker;
+    Camera cam;
+    public Interagivel focus;
 
     public Player personagem;
     void Start()
 	{
-		_body = GetComponent<Rigidbody>();
+        cam = Camera.main;
+		player = GetComponent<Rigidbody>();
 		_groundChecker = transform.GetChild(0);
 
 
@@ -53,10 +56,14 @@ public float SpeedIncrease = 10f;
 		_inputs = Vector3.zero;
 		_inputs.x = Input.GetAxis("Horizontal");
 		_inputs.z = Input.GetAxis("Vertical");
-		if (_inputs != Vector3.zero)
-			transform.forward = _inputs;
+        if (_inputs != Vector3.zero)
+        {
+            transform.forward = _inputs;
 
-		if (Input.GetButtonDown("Correr_p1")) 
+
+        }
+
+        if (Input.GetButtonDown("Correr_p1")) 
 		{
 			if (_isFastSpeed == false)
 			{
@@ -90,13 +97,13 @@ public float SpeedIncrease = 10f;
 		{
 			//Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * _body.drag + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * _body.drag + 1)) / -Time.deltaTime)));
 			Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3(5,0,5));
-			_body.AddForce(dashVelocity, ForceMode.VelocityChange);
+			player.AddForce(dashVelocity, ForceMode.VelocityChange);
 		}
     }
 
 	void FixedUpdate()
 	{
-		_body.MovePosition(_body.position + _inputs * Speed * Time.fixedDeltaTime);
+		player.MovePosition(player.position + _inputs * Speed * Time.fixedDeltaTime);
 	}
 
 

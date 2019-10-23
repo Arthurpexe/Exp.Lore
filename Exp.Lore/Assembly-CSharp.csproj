@@ -64,11 +64,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ControladorCamera.cs" />
+    <Compile Include="Assets\Scripts\ControladorEquipamento.cs" />
     <Compile Include="Assets\Scripts\ControladorHUD.cs" />
     <Compile Include="Assets\Scripts\ControladorPersonagem.cs" />
-    <Compile Include="Assets\Scripts\Criptografia.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\SaveLoad.cs" />
+    <Compile Include="Assets\Scripts\Interagivel.cs" />
+    <Compile Include="Assets\Scripts\Inventario\Inventario.cs" />
+    <Compile Include="Assets\Scripts\Inventario\InventarioSlot.cs" />
+    <Compile Include="Assets\Scripts\Itens\Equipamento.cs" />
+    <Compile Include="Assets\Scripts\Itens\Item.cs" />
+    <Compile Include="Assets\Scripts\Itens\ItemPickUp.cs" />
+    <Compile Include="Assets\Scripts\Save\Criptografia.cs" />
+    <Compile Include="Assets\Scripts\Save\Player.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveLoad.cs" />
+    <Compile Include="Assets\Scripts\TrocarSprite.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/arthu/GitHub Repos/Exp.Lore/Exp.Lore/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
