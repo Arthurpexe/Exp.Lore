@@ -27,6 +27,8 @@ public class ControladorPersonagem : MonoBehaviour
 	public LayerMask Ground;
 	public int PlayerNumber = 1;
 
+    public GameObject menu;
+
 	private Rigidbody player;
 	private Vector3 _inputs = Vector3.zero;
 	private bool _isGrounded = true;
@@ -49,6 +51,13 @@ public class ControladorPersonagem : MonoBehaviour
 
 	void Update()
 	{
+        if (menu.activeSelf)
+        {
+            _inputs = Vector3.zero;
+            return;
+        }
+
+
 		_isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
 
 
@@ -58,7 +67,7 @@ public class ControladorPersonagem : MonoBehaviour
 		_inputs.z = Input.GetAxis("Vertical");
         if (_inputs != Vector3.zero)
         {
-            transform.forward = _inputs;
+            transform.forward = -_inputs;
 
 
         }
@@ -103,7 +112,7 @@ public class ControladorPersonagem : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		player.MovePosition(player.position + _inputs * Speed * Time.fixedDeltaTime);
+		player.MovePosition(player.position - _inputs * Speed * Time.fixedDeltaTime);
 	}
 
 

@@ -5,17 +5,50 @@ using UnityEngine.UI;
 
 public class TrocarSprite : MonoBehaviour
 {
+    public GameObject objetoAtivador;
 
-    public GameObject painelMenu;
+    [Header("Alterar Sprite")]
     public Image imagemIcone;
-    public Sprite playSprite, pauseSprite;
+    public Sprite spriteNormal, spriteAlterado;
 
-    // Update is called once per frame
-    void Update()
+    [Header("Alterar Texto")]
+    public Text textoObjetivo;
+    public string fraseAAlterar;
+
+
+    private string textoOriginal;
+
+    private void Start()
     {
-        if (painelMenu.activeSelf)
-            imagemIcone.sprite = pauseSprite;
+        if(textoObjetivo != null)
+        {
+            textoOriginal = textoObjetivo.text;
+        }
+    }
+    private void Update()
+    {
+        if(imagemIcone != null)
+        {
+            trocarSprite();
+        }
+        if(textoObjetivo != null)
+        {
+            trocarTexto();
+        }
+    }
+
+    public void trocarSprite()
+    {
+        if (objetoAtivador.activeSelf)
+            imagemIcone.sprite = spriteAlterado;
         else
-            imagemIcone.sprite = playSprite;
+            imagemIcone.sprite = spriteNormal;
+    }
+    public void trocarTexto()
+    {
+        if (objetoAtivador.activeSelf)
+            textoObjetivo.text = fraseAAlterar;
+        else
+            textoObjetivo.text = textoOriginal;
     }
 }

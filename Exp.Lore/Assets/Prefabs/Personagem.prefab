@@ -205,7 +205,7 @@ Transform:
   m_GameObject: {fileID: 5034884845133932264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: -6}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2589734190405109679}
   - {fileID: 198033409072639585}
@@ -306,5 +306,7 @@ MonoBehaviour:
   DashDistance: 5
   Ground:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   PlayerNumber: 1
+  menu: {fileID: 0}
+  focus: {fileID: 0}

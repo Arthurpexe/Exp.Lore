@@ -3,27 +3,16 @@ using UnityEngine.UI;
 
 public class ControladorHUD : MonoBehaviour
 {
-    public void abrirInventario(GameObject canvasInventario)
-    {
-        if (canvasInventario.activeSelf)
-        {
-            canvasInventario.SetActive(false);
-        }
-        else
-        {
-            canvasInventario.SetActive(true);
-        }
-    }
-    public void abrirMenu(GameObject canvasMenu)
+    public void abrirPainel(GameObject painel)
     {
 
-        if (canvasMenu.activeSelf)
+        if (painel.activeSelf)
         {
-            canvasMenu.SetActive(false);
+            painel.SetActive(false);
         }
         else
         {
-            canvasMenu.SetActive(true);
+            painel.SetActive(true);
         }
     }
 }

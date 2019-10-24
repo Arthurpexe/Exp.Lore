@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\ControladorPersonagem.cs" />
     <Compile Include="Assets\Scripts\Interagivel.cs" />
     <Compile Include="Assets\Scripts\Inventario\Inventario.cs" />
+    <Compile Include="Assets\Scripts\Inventario\InventarioHUD.cs" />
     <Compile Include="Assets\Scripts\Inventario\InventarioSlot.cs" />
     <Compile Include="Assets\Scripts\Itens\Equipamento.cs" />
     <Compile Include="Assets\Scripts\Itens\Item.cs" />

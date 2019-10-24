@@ -8,7 +8,7 @@ public class ItemPickUp : Interagivel
 	public override void Interact()
 	{
 		base.Interact();
-
+        Debug.Log("Interagindo com " + item.name);
 		PickUp();
 	}
 
