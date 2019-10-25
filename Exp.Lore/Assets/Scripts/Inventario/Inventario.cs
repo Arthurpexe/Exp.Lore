@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Inventario : MonoBehaviour
 {
-	public static Inventario instance;
+    #region Singleton
+    public static Inventario instance;
 
-	void Awake ()
-	{
-		instance = this;
-	}
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Mais de uma instancia de Inventario encontrada!");
+            return;
+        }
+        instance = this;
+
+    }
+    #endregion
 
 	public delegate void OnItemChanged();
 	public OnItemChanged onItemChangedCallback;

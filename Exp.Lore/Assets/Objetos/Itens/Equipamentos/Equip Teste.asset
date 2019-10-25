@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Equip Teste
   m_EditorClassIdentifier: 
   name: Equipamento Teste
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 8f3472474ea6b2c4fab5473f02436517, type: 3}
   isDefaultItem: 0
   equipar: 0
   armadura: 2

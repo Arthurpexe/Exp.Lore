@@ -12,7 +12,7 @@ public class ItemPickUp : Interagivel
 		PickUp();
 	}
 
-	void PickUp()
+	public void PickUp()
 	{
 		Debug.Log("Pegando " + item.name);
 		bool wasPickedUp = Inventario.instance.Add(item);

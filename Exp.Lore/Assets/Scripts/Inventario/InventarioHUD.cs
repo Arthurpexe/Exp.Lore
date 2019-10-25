@@ -4,25 +4,29 @@ public class InventarioHUD : MonoBehaviour
 {
     public Transform itemsParent;
 
+    public GameObject painelInventario;
+
     Inventario inventario;
 
     InventarioSlot[] slots;
     void Start()
     {
         inventario = Inventario.instance;
-        inventario.onItemChangedCallback += mudarHUD;
+        inventario.onItemChangedCallback += atualizarHUD;
 
         slots = GetComponentsInChildren<InventarioSlot>();
     }
-    void Update()
+
+    private void Update()
     {
-        
+        if (Input.GetButtonDown("Inventario"))
+        {
+            abrirPainel(painelInventario);
+        }
     }
 
-    public void mudarHUD()
+    public void atualizarHUD()
     {
-        Debug.Log("MUDANDO A HUD");
-
         for (int i = 0; i < slots.Length; i++)
         {
             if (i < inventario.items.Count)
@@ -34,5 +38,12 @@ public class InventarioHUD : MonoBehaviour
                 slots[i].ClearSlot();
             }
         }
+        Debug.Log("Mudei a HUD");
+    }
+
+
+    public void abrirPainel(GameObject painel)
+    {
+        painel.SetActive(!painel.activeSelf);
     }
 }

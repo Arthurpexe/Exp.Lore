@@ -3,9 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class InventarioSlot : MonoBehaviour
-{
-	public Image icon;
-	public Button removeButton;
+{    
+    public Image icon;
 
 	Item item;
 
@@ -15,7 +14,6 @@ public class InventarioSlot : MonoBehaviour
 
 		icon.sprite = item.icon;
 		icon.enabled = true;
-		//removeButton.interactable = true;
 	}
 
 	public void ClearSlot ()
@@ -24,14 +22,12 @@ public class InventarioSlot : MonoBehaviour
 
 		icon.sprite = null;
 		icon.enabled = false;
-		//removeButton.interactable = false;
 	}
 
-	public void OnRemoveButton()
-	{
-		Inventario.instance.Remove(item);
-
-	}
+	//public void OnRemoveButton()
+	//{
+	//	Inventario.instance.Remove(item);
+	//}
 
 	public void UseItem()
 	{
