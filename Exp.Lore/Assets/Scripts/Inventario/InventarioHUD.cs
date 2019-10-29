@@ -29,9 +29,9 @@ public class InventarioHUD : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if (i < inventario.items.Count)
+            if (i < inventario.items.contador)
             {
-                slots[i].AddItem(inventario.items[i]);
+                slots[i].AddItem(inventario.items.localizarPorEndereco(i).meuItem);
             }
             else
             {
