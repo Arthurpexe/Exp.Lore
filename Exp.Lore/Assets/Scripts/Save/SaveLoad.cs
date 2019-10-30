@@ -22,23 +22,26 @@ public class SaveLoad : MonoBehaviour
 
     public Criptografia cripto;
 
+    ControladorPersonagem controladorPersonagem;
 
     private void Start()
     {
+        controladorPersonagem = ControladorPersonagem.instancia;
         cripto = new Criptografia();
     }
-    public void salvarPlayer(Player personagem)
+    public void salvarPlayer()
     {
-        
+        controladorPersonagem.personagem.posicao = controladorPersonagem.player.transform.position;
+
         XmlSerializer serializador = new XmlSerializer(typeof(Player));
         StreamWriter arqDados = new StreamWriter("Player.xml");
-        serializador.Serialize(arqDados.BaseStream, personagem);
+        serializador.Serialize(arqDados.BaseStream, controladorPersonagem.personagem);
         arqDados.Close();
 
         cripto.criptografarArquivo("PlayerPosicao.xml", '§');
         Debug.Log("salvei e criptografei o player");
     }
-    public Player carregarPlayer()
+    public void carregarPlayer()
     {
         cripto.descriptografarArquivo("PlayerPosicao.xml", '§');
 
@@ -47,11 +50,19 @@ public class SaveLoad : MonoBehaviour
         Player aux = (Player)serializador.Deserialize(arqLeit.BaseStream);
         arqLeit.Close();
         Debug.Log("carreguei o player");
-        return aux;
+
+
+        controladorPersonagem.personagem.posicao = aux.posicao;
+        controladorPersonagem.player.transform.position = controladorPersonagem.personagem.posicao;
     }
 
     public void sairJogo()
     {
         Application.Quit();
+    }
+
+    public void Add(System.Object ot)
+    {
+        throw new FileNotFoundException();
     }
 }

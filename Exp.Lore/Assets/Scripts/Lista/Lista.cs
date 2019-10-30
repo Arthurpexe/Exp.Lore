@@ -7,8 +7,7 @@ public class Lista{
 	
 	public Lista(){//cria uma nova lista
 
-        primeiro = new ElementoLista(null);
-		ultimo = primeiro;
+		ultimo = primeiro = new ElementoLista(null);
         contador = 0;
 	}
 	

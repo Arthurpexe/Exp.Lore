@@ -29,7 +29,8 @@ public class ControladorPersonagem : MonoBehaviour
 
     public GameObject menu;
 
-	private Rigidbody player;
+	public Rigidbody player;
+
 	private Vector3 _inputs = Vector3.zero;
 	private bool _isGrounded = true;
 	private bool _isFastSpeed = false;
@@ -69,7 +70,7 @@ public class ControladorPersonagem : MonoBehaviour
         {
             transform.forward = -_inputs;
 
-
+            
         }
 
         if (Input.GetButtonDown("Correr_p1")) 
@@ -114,33 +115,4 @@ public class ControladorPersonagem : MonoBehaviour
 	{
 		player.MovePosition(player.position - _inputs * Speed * Time.fixedDeltaTime);
 	}
-
-
-
-    /// <summary>
-    /// Parte de Salvar e Carregar!!!
-    /// </summary>
-    public void salvarPosicao()
-    {
-        this.personagem.posicao = this.transform.position;
-        SaveLoad.instancia.salvarPlayer(personagem);
-        Debug.Log("Salvei o Jogo");
-    }
-    public void carregarPosicao()
-    {
-        
-        Player aux = SaveLoad.instancia.carregarPlayer();
-        this.personagem.posicao = aux.posicao;
-        transform.position = this.personagem.posicao;
-        Debug.Log("Carreguei o Jogo");
-    }
-    public void Add(System.Object ot)
-    {
-        throw new FileNotFoundException();
-    }
-
-
-
-
-
 }

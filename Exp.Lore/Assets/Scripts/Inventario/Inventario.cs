@@ -24,19 +24,23 @@ public class Inventario : MonoBehaviour
 
 	public int space = 20;
 
-	public Lista items = new Lista();
+	public Lista items;
 
-	public bool Add (Item item)
+    public void Start()
+    {
+        items = new Lista();
+    }
+    public bool Add (Item item)
 	{
 		if (!item.isDefaultItem)
-		{
-			if(items.contador >= space)
-			{
-				Debug.Log("Sem espaço suficiente no inventário.");
-				return false;
+        {
+            if (items.contador >= space)
+            {
+                Debug.Log("Sem espaço suficiente no inventário.");
+                return false;
 
-			}
-		    items.inserir(item);
+            }
+            items.inserir(item);
 
 			if(onItemChangedCallback != null)
 			   onItemChangedCallback.Invoke();

@@ -14,7 +14,7 @@ public class InventarioHUD : MonoBehaviour
         inventario = Inventario.instance;
         inventario.onItemChangedCallback += atualizarHUD;
 
-        slots = GetComponentsInChildren<InventarioSlot>();
+        slots = itemsParent.GetComponentsInChildren<InventarioSlot>();
     }
 
     private void Update()
