@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Camera\cameraMapa.cs" />
     <Compile Include="Assets\Scripts\ControladorCamera.cs" />
     <Compile Include="Assets\Scripts\ControladorEquipamento.cs" />
     <Compile Include="Assets\Scripts\ControladorPersonagem.cs" />
@@ -74,6 +75,8 @@
     <Compile Include="Assets\Scripts\Itens\Equipamento.cs" />
     <Compile Include="Assets\Scripts\Itens\Item.cs" />
     <Compile Include="Assets\Scripts\Itens\ItemPickUp.cs" />
+    <Compile Include="Assets\Scripts\Lista\ElementoLista.cs" />
+    <Compile Include="Assets\Scripts\Lista\Lista.cs" />
     <Compile Include="Assets\Scripts\Save\Criptografia.cs" />
     <Compile Include="Assets\Scripts\Save\Player.cs" />
     <Compile Include="Assets\Scripts\Save\SaveLoad.cs" />
