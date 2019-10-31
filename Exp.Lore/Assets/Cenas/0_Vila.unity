@@ -307,6 +307,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 50983798}
   - {fileID: 1327655303}
   - {fileID: 2041067702}
   - {fileID: 834576593}
@@ -319,7 +320,6 @@ RectTransform:
   - {fileID: 1162538331}
   - {fileID: 1813408278}
   - {fileID: 316224193}
-  - {fileID: 50983798}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1189,7 +1189,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 10977398}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -5512,7 +5512,7 @@ RectTransform:
   - {fileID: 103066827}
   - {fileID: 1142536127}
   m_Father: {fileID: 10977398}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7705,7 +7705,7 @@ RectTransform:
   - {fileID: 423007684}
   - {fileID: 244171526}
   m_Father: {fileID: 10977398}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10738,7 +10738,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   interactionTransform: {fileID: 442861198}
-  botaoInteragir: {fileID: 1122475280}
   player: {fileID: 477292884}
   item: {fileID: 11400000, guid: d35d2c65d973f69479a12411417be09e, type: 2}
 --- !u!65 &442861195
@@ -11264,6 +11263,12 @@ PrefabInstance:
 --- !u!1 &477292878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5034884845133932264, guid: 1a37268ea2e57f7478e59364b9a62df3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1312700749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &477292880 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 2589734189752677669, guid: 1a37268ea2e57f7478e59364b9a62df3,
     type: 3}
   m_PrefabInstance: {fileID: 1312700749}
   m_PrefabAsset: {fileID: 0}
@@ -13081,7 +13086,7 @@ RectTransform:
   - {fileID: 370482242}
   - {fileID: 2049670762}
   m_Father: {fileID: 10977398}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -13215,7 +13220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   interactionTransform: {fileID: 581704003}
-  botaoInteragir: {fileID: 1122475280}
   player: {fileID: 477292884}
   item: {fileID: 11400000, guid: d35d2c65d973f69479a12411417be09e, type: 2}
 --- !u!65 &581704000
@@ -17371,7 +17375,7 @@ RectTransform:
   - {fileID: 56572968}
   - {fileID: 1787683121}
   m_Father: {fileID: 10977398}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -17758,6 +17762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 857848466}
+  - component: {fileID: 857848467}
   m_Layer: 0
   m_Name: Equips Test
   m_TagString: Untagged
@@ -17783,6 +17788,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &857848467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857848465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43691ebd9af0f3b44916ed603ed9e6bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 477292878}
+  liga: 0
+  botaoInteragivel: {fileID: 1122475280}
+  radius: 1.02
 --- !u!4 &861857469 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1124817100709756587, guid: b3c3ab372a992b94597f8ca80986c98b,
@@ -19899,7 +19920,7 @@ RectTransform:
   - {fileID: 1875510084}
   - {fileID: 1724447252}
   m_Father: {fileID: 10977398}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -21309,7 +21330,7 @@ RectTransform:
   m_Children:
   - {fileID: 1411443684}
   m_Father: {fileID: 10977398}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -22039,7 +22060,7 @@ RectTransform:
   m_Children:
   - {fileID: 1715430527}
   m_Father: {fileID: 10977398}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -22305,7 +22326,7 @@ RectTransform:
   - {fileID: 1539112653}
   - {fileID: 1796293912}
   m_Father: {fileID: 10977398}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -25471,7 +25492,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   interactionTransform: {fileID: 1311247446}
-  botaoInteragir: {fileID: 1122475280}
   player: {fileID: 477292884}
   item: {fileID: 11400000, guid: d35d2c65d973f69479a12411417be09e, type: 2}
 --- !u!65 &1311247443
@@ -25619,6 +25639,11 @@ PrefabInstance:
       propertyPath: menu
       value: 
       objectReference: {fileID: 1162538330}
+    - target: {fileID: 2589734189752677668, guid: 1a37268ea2e57f7478e59364b9a62df3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 477292880}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a37268ea2e57f7478e59364b9a62df3, type: 3}
 --- !u!1 &1313393285
@@ -25888,7 +25913,7 @@ RectTransform:
   m_Children:
   - {fileID: 548241721}
   m_Father: {fileID: 10977398}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -26164,7 +26189,7 @@ RectTransform:
   - {fileID: 1756747029}
   - {fileID: 441488033}
   m_Father: {fileID: 10977398}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -27662,7 +27687,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   interactionTransform: {fileID: 1390136804}
-  botaoInteragir: {fileID: 1122475280}
   player: {fileID: 477292884}
   item: {fileID: 11400000, guid: d35d2c65d973f69479a12411417be09e, type: 2}
 --- !u!65 &1390136801
@@ -35180,7 +35204,7 @@ RectTransform:
   m_Children:
   - {fileID: 1623719836}
   m_Father: {fileID: 10977398}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -38347,7 +38371,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 10977398}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}

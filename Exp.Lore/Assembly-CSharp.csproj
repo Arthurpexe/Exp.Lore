@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\ControladorCamera.cs" />
     <Compile Include="Assets\Scripts\ControladorEquipamento.cs" />
     <Compile Include="Assets\Scripts\ControladorPersonagem.cs" />
+    <Compile Include="Assets\Scripts\InstanciarBotao.cs" />
     <Compile Include="Assets\Scripts\InteragirNPC.cs" />
     <Compile Include="Assets\Scripts\Interagivel.cs" />
     <Compile Include="Assets\Scripts\Inventario\Inventario.cs" />

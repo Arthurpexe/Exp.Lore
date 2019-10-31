@@ -27,7 +27,7 @@ public class InventarioHUD : MonoBehaviour
 
     public void atualizarHUD()
     {
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 1; i < slots.Length; i++)
         {
             if (i < inventario.items.contador)
             {

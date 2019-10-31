@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using UnityEngine;
 
 public class Lista{
 	
@@ -55,11 +55,14 @@ public class Lista{
 			return null;
 		
 		ElementoLista aux = primeiro.proximo;
-
-		while(aux != null || aux.endereco != endereco){
+        Debug.Log(aux.endereco);
+		while(aux != null && aux.endereco != endereco){
 			aux = aux.proximo;
 		}
-		return aux;
+        if (aux != null)
+            return aux;
+        else
+            return new ElementoLista(new Item());
 	}
 
     public ElementoLista localizarPorItem(Item itemRetirado)

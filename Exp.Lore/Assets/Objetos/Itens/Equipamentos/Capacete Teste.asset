@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06a1e1f9339422e4eab5b6b10d827c5d, type: 3}
-  m_Name: Equip Teste
+  m_Name: Capacete Teste
   m_EditorClassIdentifier: 
-  name: Equipamento Teste
-  icon: {fileID: 21300000, guid: 8f3472474ea6b2c4fab5473f02436517, type: 3}
+  name: Capacete Teste
+  icon: {fileID: 21300000, guid: 97daf47fc9c69d8469d2296ddee81972, type: 3}
   isDefaultItem: 0
   equipar: 0
   armadura: 2
-  dano: 0
+  dano: 1
