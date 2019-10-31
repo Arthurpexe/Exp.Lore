@@ -8,27 +8,48 @@ public class Interagivel : MonoBehaviour
 	
 	public Transform player;
 
-	
+    public bool liga = false;
+    public GameObject botaoInteragivel;
 
-	public virtual void Interact()
+    public float distance;
+    public virtual void Interact()
 	{
 		Debug.Log("CONSEGUIU");
 	}
 
 	void Update ()
 	{
-		float distance = Vector3.Distance(player.position, interactionTransform.position);
+		distance = Vector3.Distance(player.position, interactionTransform.position);
 
         if (distance <= radius)
         {
+            instanciarBotao();
             if (Input.GetButtonDown("Interagir"))
             {
                 Interact();
             }
         }
+        else
+        {
+            instanciarBotao();
+        }
     }
 				
+    public void instanciarBotao()
+    {
 
+
+            if (distance < radius)
+            {
+                liga = true;
+            }
+            else if(liga)
+            {
+                liga = false;
+            }
+        
+        botaoInteragivel.SetActive(liga);
+    }
 		
 
 	

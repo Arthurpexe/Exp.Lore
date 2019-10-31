@@ -1,12 +1,12 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class InventarioSlot : MonoBehaviour
 {    
     public Image icon;
+    public Image iconeExcluir;
 
-	Item item;
+    Item item;
 
 	public void AddItem (Item newItem)
 	{
@@ -14,6 +14,7 @@ public class InventarioSlot : MonoBehaviour
 
 		icon.sprite = item.icon;
 		icon.enabled = true;
+        iconeExcluir.enabled = true;
 	}
 
 	public void ClearSlot ()
@@ -22,14 +23,15 @@ public class InventarioSlot : MonoBehaviour
 
 		icon.sprite = null;
 		icon.enabled = false;
-	}
+        iconeExcluir.enabled = false;
+    }
 
-	//public void OnRemoveButton()
-	//{
-	//	Inventario.instance.Remove(item);
-	//}
+    public void OnRemoveButton()
+    {
+        Inventario.instance.Remove(item);
+    }
 
-	public void UseItem()
+    public void UseItem()
 	{
 		if (item != null)
 		{

@@ -1,11 +1,10 @@
 ﻿
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventário/Item")]
-public class Item : ScriptableObject
+[System.Serializable]
+public class Item
 {
-   
-    new public string name = "New Item";
+    public string name = "New Item";
     public Sprite icon = null;
     public bool isDefaultItem = false;
 

@@ -7,15 +7,22 @@ public class Lista{
 	
 	public Lista(){//cria uma nova lista
 
-		ultimo = primeiro = new ElementoLista(null);
+        
+        primeiro = new ElementoLista(null);//mudar aqui
+        ultimo = primeiro;
+        
         contador = 0;
 	}
 	
 	public void inserir(Item novoItem){//insere um novo dado no final da lista 
 
+        
         ElementoLista novoElemento = new ElementoLista(novoItem);
+        Debug.Log(novoItem.name);
+        Debug.Log(novoElemento.proximo);
         ultimo.proximo = novoElemento;
-		novoElemento.anterior = ultimo;
+        Debug.Log(novoElemento.proximo);
+        novoElemento.anterior = ultimo;
 		ultimo = novoElemento;
         
         contador++;
@@ -26,10 +33,17 @@ public class Lista{
         ElementoLista auxRet;
 
 		auxRet = localizarPorItem(itemRetirado);
-		
+		if(auxRet == null)
+        {
+            Debug.Log("tentando retirar o sentinela");
+            return null;
+        }
+
 		ElementoLista auxAnterior = auxRet.anterior;
+        ElementoLista auxProximo;
+
 		if(auxRet != ultimo){
-			ElementoLista auxProximo = auxRet.proximo;
+			auxProximo = auxRet.proximo;
 			
 			auxAnterior.proximo = auxProximo;
 			auxProximo.anterior = auxAnterior;
@@ -49,13 +63,13 @@ public class Lista{
         
 	}
 	
-	public ElementoLista localizarPorEndereco(int endereco)
-    {//localiza o elemento, e o retorna, sem fazer nada com ele
+	public ElementoLista localizarPorEndereco(int endereco)//localiza o elemento, e o retorna, sem fazer nada com ele
+    {
 		if(vazia())
 			return null;
 		
 		ElementoLista aux = primeiro.proximo;
-        Debug.Log(aux.endereco);
+
 		while(aux != null && aux.endereco != endereco){
 			aux = aux.proximo;
 		}
@@ -65,17 +79,21 @@ public class Lista{
             return new ElementoLista(new Item());
 	}
 
-    public ElementoLista localizarPorItem(Item itemRetirado)
-    {//localiza o elemento, e o retorna, sem fazer nada com ele
+    public ElementoLista localizarPorItem(Item itemRetirado)//localiza o elemento, e o retorna, sem fazer nada com ele
+    {
         if (vazia())
             return null;
 
         ElementoLista aux = primeiro.proximo;
-        while (aux != null || aux.meuItem != itemRetirado)
+
+        while (aux != null && aux.meuItem != itemRetirado)
         {
             aux = aux.proximo;
         }
-        return aux;
+        if (aux != null)
+            return aux;
+        else
+            return new ElementoLista(new Item());
     }
 
     public bool vazia(){//checa se a lista esta vazia
