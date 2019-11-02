@@ -16,8 +16,9 @@ public class ItemPickUp : Interagivel
 	{
 		Debug.Log("Pegando " + item.name);
 		bool wasPickedUp = Inventario.instance.Add(item);
+		
 
-		if(wasPickedUp)
+		if (wasPickedUp)
 		  Destroy(gameObject);
 	}
 }

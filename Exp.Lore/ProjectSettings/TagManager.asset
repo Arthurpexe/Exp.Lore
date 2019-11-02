@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ControladorGeral
+  - Waypoints1
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Waypoints1
   - 
   - 
   - 

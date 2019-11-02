@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <posicao>
-    <x>-0.00014227978</x>
-    <y>1.25497806</y>
-    <z>-17.2718258</z>
+    <x>59.82906</x>
+    <y>11.1881685</y>
+    <z>312.400635</z>
   </posicao>
 </Player>

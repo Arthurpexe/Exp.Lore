@@ -5,10 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Novo Equipamento", menuName = "Inventário/Equipamento")]
 public class Equipamento : Item
 {
-	public EquipamentoSlot equipar;
+	public EquipamentoSlot equiparSlot;
 
-	public int armadura;
-	public int dano;
+	public int armaduraModificador;
+	public int danoModificador;
 
 	public override void Use()
 	{
