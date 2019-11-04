@@ -377,6 +377,8 @@ GameObject:
   - component: {fileID: 536507059715464146}
   - component: {fileID: 2589734189752677669}
   - component: {fileID: 2589734189752677668}
+  - component: {fileID: 3324796330113476562}
+  - component: {fileID: 1510399130225168492}
   m_Layer: 0
   m_Name: Personagem
   m_TagString: Player
@@ -498,4 +500,38 @@ MonoBehaviour:
     m_Bits: 0
   PlayerNumber: 1
   menu: {fileID: 0}
+  player: {fileID: 2589734189752677669}
   focus: {fileID: 0}
+--- !u!114 &3324796330113476562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5034884845133932264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45368aa64f1fabe4ca7f5bbb40583ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 100
+  danoInimigo: 10
+  dano:
+    valorBase: 10
+  armadura:
+    valorBase: 0
+--- !u!114 &1510399130225168492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5034884845133932264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232e8128601e9aa4787e339da12adbfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadeAtaque: 1
+  CooldownAtaque: 2
+  ataqueDelay: 0.6

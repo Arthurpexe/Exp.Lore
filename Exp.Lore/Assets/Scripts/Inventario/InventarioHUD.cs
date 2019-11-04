@@ -27,11 +27,11 @@ public class InventarioHUD : MonoBehaviour
 
     public void atualizarHUD()
     {
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 1; i < slots.Length; i++)
         {
-            if (i < inventario.listaItens.contador)
+            if (i < inventario.items.contador)
             {
-                slots[i].AddItem(inventario.listaItens.localizarPorEndereco(i).meuItem);
+                slots[i].AddItem(inventario.items.localizarPorEndereco(i).meuItem);
             }
             else
             {
@@ -46,5 +46,4 @@ public class InventarioHUD : MonoBehaviour
     {
         painel.SetActive(!painel.activeSelf);
     }
-
 }

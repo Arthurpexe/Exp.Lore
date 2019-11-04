@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Inventario : MonoBehaviour
 {
@@ -22,23 +24,23 @@ public class Inventario : MonoBehaviour
 
 	public int space = 20;
 
-	public Lista listaItens;
+	public Lista items;
 
     public void Start()
     {
-        listaItens = new Lista();
+        items = new Lista();
     }
     public bool Add (Item item)
 	{
 		if (!item.isDefaultItem)
         {
-            if (listaItens.contador >= space)
+            if (items.contador >= space)
             {
                 Debug.Log("Sem espaço suficiente no inventário.");
                 return false;
 
             }
-            listaItens.inserir(item);
+            items.inserir(item);
 
 			if(onItemChangedCallback != null)
 			   onItemChangedCallback.Invoke();
@@ -48,10 +50,10 @@ public class Inventario : MonoBehaviour
 
 	public void Remove(Item item)
 	{
-		Item itemremovido = listaItens.retirar(item);
+		items.retirar(item);
 
-		
-        onItemChangedCallback.Invoke();
+		if (onItemChangedCallback != null)
+			onItemChangedCallback.Invoke();
 	}
 
 }
