@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text;
 
 public class Inventario : MonoBehaviour
 {
@@ -55,5 +56,16 @@ public class Inventario : MonoBehaviour
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
 	}
+    public string imprimirNomeDosItens()
+    {
+        Item[] vItens;
+        StringBuilder aux = new StringBuilder("Lista de Itens no inventario: ");
+        vItens = items.imprimirLista();
+        for(int i = 0; i < vItens.Length; i++)
+        {
+            aux.Append(i+"° "+vItens[i].name+". ");
+        }
+        return aux.ToString();
+    }
 
 }

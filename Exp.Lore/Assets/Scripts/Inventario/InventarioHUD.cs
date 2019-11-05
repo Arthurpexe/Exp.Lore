@@ -31,7 +31,8 @@ public class InventarioHUD : MonoBehaviour
         {
             if (i < inventario.items.contador)
             {
-                slots[i].AddItem(inventario.items.localizarPorEndereco(i).meuItem);
+                if (inventario.items.localizarPorEndereco(i).meuItem != null)
+                    slots[i].AddItem(inventario.items.localizarPorEndereco(i).meuItem);
             }
             else
             {

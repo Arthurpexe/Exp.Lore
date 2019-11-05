@@ -8,7 +8,7 @@ public class Lista{
 	public Lista(){//cria uma nova lista
 
         
-        primeiro = new ElementoLista(null);//mudar aqui
+        primeiro = new ElementoLista(null);
         ultimo = primeiro;
         
         contador = 0;
@@ -18,13 +18,12 @@ public class Lista{
 
         
         ElementoLista novoElemento = new ElementoLista(novoItem);
-        Debug.Log(novoItem.name);
-        Debug.Log(novoElemento.proximo);
+        Debug.Log(novoItem.name + " Anterior e proximo: " + novoElemento.anterior/*.meuItem.name*/ + ", " + novoElemento.proximo.meuItem.name);
         ultimo.proximo = novoElemento;
-        Debug.Log(novoElemento.proximo);
         novoElemento.anterior = ultimo;
-		ultimo = novoElemento;
-        
+        ultimo = novoElemento;
+        Debug.Log(novoItem.name + " Anterior e proximo: " + novoElemento.anterior/*.meuItem.name*/ + ", " + novoElemento.proximo.meuItem.name);
+
         contador++;
         novoElemento.endereco = ultimo.endereco = contador;
     }
@@ -93,7 +92,7 @@ public class Lista{
         if (aux != null)
             return aux;
         else
-            return new ElementoLista(new Item());
+            return new ElementoLista(null);
     }
 
     public bool vazia(){//checa se a lista esta vazia

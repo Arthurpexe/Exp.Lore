@@ -16,7 +16,8 @@ public class InventarioSlot : MonoBehaviour
 		icone.sprite = item.icon;
 		icone.enabled = true;
         botaoExcluir.enabled = true;
-	}
+        Debug.Log(Inventario.instance.imprimirNomeDosItens());
+    }
 
 	public void ClearSlot ()
 	{
@@ -29,7 +30,10 @@ public class InventarioSlot : MonoBehaviour
 
     public void OnRemoveButton()
     {
+        Debug.Log(Inventario.instance.imprimirNomeDosItens());
         Inventario.instance.Remove(item);
+        Debug.Log(Inventario.instance.imprimirNomeDosItens());
+
     }
 
     public void UseItem()
