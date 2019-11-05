@@ -12,6 +12,8 @@ public class PersonagemStats : MonoBehaviour
 	public Stats dano;
 	public Stats armadura;
 
+    public event System.Action<int, int> seVidaMudar;
+
 	private void Awake()
 	{
 		vidaAtual = vidaMaxima;
@@ -38,6 +40,11 @@ public class PersonagemStats : MonoBehaviour
 		vidaAtual -= dano;
 		
 		Debug.Log(transform.name + " Tomou " + dano + " dano.");
+
+        if (seVidaMudar != null)
+        {
+            seVidaMudar(vidaMaxima, vidaAtual);
+        }
 
 		if(vidaAtual <= 0)
 		{

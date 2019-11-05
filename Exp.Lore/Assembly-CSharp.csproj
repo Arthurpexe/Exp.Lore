@@ -63,10 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Camera\cameraMapa.cs" />
-    <Compile Include="Assets\Scripts\ControladorCamera.cs" />
-    <Compile Include="Assets\Scripts\ControladorEquipamento.cs" />
-    <Compile Include="Assets\Scripts\ControladorPersonagem.cs" />
+    <Compile Include="Assets\Scripts\ControladorBoss1.cs" />
+    <Compile Include="Assets\Scripts\Controladores\ControladorCamera.cs" />
+    <Compile Include="Assets\Scripts\Controladores\ControladorEquipamento.cs" />
+    <Compile Include="Assets\Scripts\Controladores\ControladorInimigo.cs" />
+    <Compile Include="Assets\Scripts\Controladores\ControladorPersonagem.cs" />
+    <Compile Include="Assets\Scripts\Inimigo.cs" />
     <Compile Include="Assets\Scripts\InstanciarBotao.cs" />
     <Compile Include="Assets\Scripts\InteragirNPC.cs" />
     <Compile Include="Assets\Scripts\Interagivel.cs" />
@@ -76,11 +78,20 @@
     <Compile Include="Assets\Scripts\Itens\Equipamento.cs" />
     <Compile Include="Assets\Scripts\Itens\Item.cs" />
     <Compile Include="Assets\Scripts\Itens\ItemPickUp.cs" />
+    <Compile Include="Assets\Scripts\Lista\ControladorItem.cs" />
     <Compile Include="Assets\Scripts\Lista\ElementoLista.cs" />
     <Compile Include="Assets\Scripts\Lista\Lista.cs" />
+    <Compile Include="Assets\Scripts\MiniMapa\cameraMapa.cs" />
+    <Compile Include="Assets\Scripts\Ref_posiçao_jogador.cs" />
     <Compile Include="Assets\Scripts\Save\Criptografia.cs" />
     <Compile Include="Assets\Scripts\Save\Player.cs" />
     <Compile Include="Assets\Scripts\Save\SaveLoad.cs" />
+    <Compile Include="Assets\Scripts\Stats\InimigoStats.cs" />
+    <Compile Include="Assets\Scripts\Stats\JogadorStats.cs" />
+    <Compile Include="Assets\Scripts\Stats\PersonagemCombate.cs" />
+    <Compile Include="Assets\Scripts\Stats\PersonagemStats.cs" />
+    <Compile Include="Assets\Scripts\Stats\Stats.cs" />
+    <Compile Include="Assets\Scripts\Stats\VidaHUD.cs" />
     <Compile Include="Assets\Scripts\TrocarSprite.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/arthu/GitHub Repos/Exp.Lore/Exp.Lore/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

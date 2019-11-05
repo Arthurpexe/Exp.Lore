@@ -488,19 +488,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5034884845133932264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef708716559dff746a4644e6bf730eb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 896505e0604674d479bd8a6d7c762234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SpeedIncrease: 10
   Speed: 5
   GroundDistance: 0.2
-  DashDistance: 5
+  DashDistance: 2
   Ground:
     serializedVersion: 2
     m_Bits: 0
   PlayerNumber: 1
   menu: {fileID: 0}
-  player: {fileID: 2589734189752677669}
+  player: {fileID: 0}
   focus: {fileID: 0}
 --- !u!114 &3324796330113476562
 MonoBehaviour:
