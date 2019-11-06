@@ -25,18 +25,16 @@ public class SaveLoad : MonoBehaviour
     public GameObject personagem;
 
     ControladorPersonagem controladorPersonagem;
-    JogadorStats jogadorStats;
 
     private void Start()
     {
         cripto = new Criptografia();
         controladorPersonagem = ControladorPersonagem.instancia;
-        jogadorStats = personagem.GetComponent<JogadorStats>();
     }
     public void salvarPlayer()
     {
         controladorPersonagem.personagem.posicao = controladorPersonagem.player.transform.position;
-        controladorPersonagem.personagem.vida = jogadorStats.vidaAtual;
+        controladorPersonagem.personagem.vida = controladorPersonagem.vidaAtual;
 
         XmlSerializer serializador = new XmlSerializer(typeof(Player));
         StreamWriter arqDados = new StreamWriter("Player.xml");
@@ -61,7 +59,9 @@ public class SaveLoad : MonoBehaviour
         controladorPersonagem.player.transform.position = controladorPersonagem.personagem.posicao;
 
         controladorPersonagem.personagem.vida = aux.vida;
-        jogadorStats.vidaAtual = controladorPersonagem.personagem.vida;
+        controladorPersonagem.personagemStats.vidaAtual = controladorPersonagem.personagem.vida;
+        controladorPersonagem.personagemStats.carregarVida();
+
     }
 
     public void sairJogo()

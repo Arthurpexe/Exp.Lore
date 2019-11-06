@@ -4,7 +4,8 @@ public class InventarioHUD : MonoBehaviour
 {
     public Transform itemsParent;
 
-    public GameObject painelInventario;
+    public GameObject painelInventario, marcadorNovoItem;
+    public GameObject painelMissoes, marcadorNovaMissao;
 
     Inventario inventario;
 
@@ -22,6 +23,16 @@ public class InventarioHUD : MonoBehaviour
         if (Input.GetButtonDown("Inventario"))
         {
             abrirPainel(painelInventario);
+
+            if (marcadorNovoItem.activeSelf)
+                marcadorNovoItem.SetActive(false);
+        }
+        if (Input.GetButtonDown("Missoes"))
+        {
+            abrirPainel(painelMissoes);
+
+            if (marcadorNovaMissao.activeSelf)
+                marcadorNovaMissao.SetActive(false);
         }
     }
 
@@ -39,12 +50,29 @@ public class InventarioHUD : MonoBehaviour
                 slots[i].ClearSlot();
             }
         }
+
+        //for(int i = 0; i < 4; i++)????
+        //{
+            
+        //}
+
+        if (!painelInventario.activeSelf)
+            marcadorNovoItem.SetActive(true);
+
         Debug.Log("Mudei a HUD");
     }
-
 
     public void abrirPainel(GameObject painel)
     {
         painel.SetActive(!painel.activeSelf);
+
+        if (marcadorNovoItem.activeSelf && painel == painelInventario)
+        {
+            marcadorNovoItem.SetActive(false);
+        }
+        if (marcadorNovaMissao.activeSelf && painel == painelMissoes)
+        {
+            marcadorNovaMissao.SetActive(false);
+        }
     }
 }

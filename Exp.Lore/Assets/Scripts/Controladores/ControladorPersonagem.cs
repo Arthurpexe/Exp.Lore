@@ -36,9 +36,14 @@ public class ControladorPersonagem : MonoBehaviour
 	private bool _isFastSpeed = false;
 	private bool Abaixar = false;
 	private Transform _groundChecker;
-    Camera cam;
+    private Camera cam;
+
+    public PersonagemStats personagemStats;
+
     public Interagivel focus;
     public GameObject barraVidaBoss;
+
+    public int vidaAtual;
 
     public Player personagem;
     void Start()
@@ -49,10 +54,14 @@ public class ControladorPersonagem : MonoBehaviour
 
 
         personagem = new Player();
+
+        personagemStats = this.GetComponent<PersonagemStats>();
     }
 
 	void Update()
 	{
+        vidaAtual = personagemStats.vidaAtual;
+
         if (menu.activeSelf || painelInventario.activeSelf)
         {
             _inputs = Vector3.zero;

@@ -54,6 +54,11 @@ public class PersonagemStats : MonoBehaviour
 		
 	}
 
+    public void carregarVida()
+    {
+        seVidaMudar(vidaMaxima, vidaAtual);
+    }
+
 
 	public virtual void Die()
 	{
