@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class JogadorStats : PersonagemStats
 {
-    // Start is called before the first frame update
-    void Start()
+	static Animator anim;
+
+	// Start is called before the first frame update
+	void Start()
     {
 		ControladorEquipamento.instance.trocaDeEquipamento += TrocaDeEquipamento;
-    }
+		anim = GetComponent<Animator>();
+	}
 
     
 	void TrocaDeEquipamento (Equipamento novoItem, Equipamento velhoItem)
@@ -29,8 +32,9 @@ public class JogadorStats : PersonagemStats
 
 	public override void Die()
 	{
+		anim.SetTrigger("morto"); 
 		base.Die();
-		Ref_posiçao_jogador.instance.MatarPlayer();
+		Ref_posiçao_jogador.instance.MatarPlayer(); // se o player estiver sumindo antes de executar a animação, colocar uma coroutine aqui com o tempo da animação de morrer como delay.
 	}
 
 

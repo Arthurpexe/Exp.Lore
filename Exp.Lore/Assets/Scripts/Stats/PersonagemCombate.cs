@@ -32,6 +32,8 @@ public class PersonagemCombate : MonoBehaviour
 
 		if(cooldownAtaque <= 0)
 		{
+			
+
 			StartCoroutine(DarDano(alvoStats, ataqueDelay));
 			cooldownAtaque = CooldownAtaque;
 		}
