@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PernasTeste
   m_EditorClassIdentifier: 
   name: Pernas Test
-  icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 97daf47fc9c69d8469d2296ddee81972, type: 3}
   isDefaultItem: 0
   equiparSlot: 2
   armaduraModificador: 2

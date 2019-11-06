@@ -27,7 +27,7 @@ public class ControladorPersonagem : MonoBehaviour
 	public LayerMask Ground;
 	public int PlayerNumber = 1;
 
-    public GameObject menu;
+    public GameObject menu, painelInventario;
 
 	public Rigidbody player;
 
@@ -38,6 +38,7 @@ public class ControladorPersonagem : MonoBehaviour
 	private Transform _groundChecker;
     Camera cam;
     public Interagivel focus;
+    public GameObject barraVidaBoss;
 
     public Player personagem;
     void Start()
@@ -52,7 +53,7 @@ public class ControladorPersonagem : MonoBehaviour
 
 	void Update()
 	{
-        if (menu.activeSelf)
+        if (menu.activeSelf || painelInventario.activeSelf)
         {
             _inputs = Vector3.zero;
             return;
@@ -115,4 +116,19 @@ public class ControladorPersonagem : MonoBehaviour
 	{
 		player.MovePosition(player.position - _inputs * Speed * Time.fixedDeltaTime);
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "AreaBoss")
+        {
+            barraVidaBoss.SetActive(true);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "AreaBoss")
+        {
+            barraVidaBoss.SetActive(false);
+        }
+    }
 }

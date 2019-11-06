@@ -25,23 +25,23 @@ public class Inventario : MonoBehaviour
 
 	public int space = 20;
 
-	public Lista items;
+	public Lista listaItens;
 
     public void Start()
     {
-        items = new Lista();
+        listaItens = new Lista();
     }
     public bool Add (Item item)
 	{
 		if (!item.isDefaultItem)
         {
-            if (items.contador >= space)
+            if (listaItens.contador >= space)
             {
                 Debug.Log("Sem espaço suficiente no inventário.");
                 return false;
 
             }
-            items.inserir(item);
+            listaItens.inserir(item);
 
 			if(onItemChangedCallback != null)
 			   onItemChangedCallback.Invoke();
@@ -51,7 +51,7 @@ public class Inventario : MonoBehaviour
 
 	public void Remove(Item item)
 	{
-		items.retirar(item);
+		listaItens.retirar(item);
 
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
@@ -60,12 +60,11 @@ public class Inventario : MonoBehaviour
     {
         Item[] vItens;
         StringBuilder aux = new StringBuilder("Lista de Itens no inventario: ");
-        vItens = items.imprimirLista();
+        vItens = listaItens.imprimirLista();
         for(int i = 0; i < vItens.Length; i++)
         {
             aux.Append(i+"° "+vItens[i].name+". ");
         }
         return aux.ToString();
     }
-
 }

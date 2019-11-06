@@ -7,7 +7,7 @@ public class PersonagemStats : MonoBehaviour
 
 	NavMeshAgent personagem;
 	public int vidaMaxima = 100;
-	public int vidaAtual { get; private set; }
+    public int vidaAtual; //{ get; private set; }
 	public int danoInimigo;
 	public Stats dano;
 	public Stats armadura;

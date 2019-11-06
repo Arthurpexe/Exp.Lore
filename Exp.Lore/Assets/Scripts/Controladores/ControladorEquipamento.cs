@@ -47,7 +47,7 @@ public class ControladorEquipamento : MonoBehaviour
 			trocaDeEquipamento.Invoke(newItem, itemAntigo);
 		}
 
-		//equipamentoAtual[slotIndex] = newItem;
+		equipamentoAtual[slotIndex] = newItem;
 	}
 
 	public void Desequipar(int slotIndex) // mudar slotIndex para varivael "Selecionado"

@@ -20,30 +20,35 @@ public class SaveLoad : MonoBehaviour
     }
     #endregion
 
-    public Criptografia cripto;
+    Criptografia cripto;
+
+    public GameObject personagem;
 
     ControladorPersonagem controladorPersonagem;
+    JogadorStats jogadorStats;
 
     private void Start()
     {
-        controladorPersonagem = ControladorPersonagem.instancia;
         cripto = new Criptografia();
+        controladorPersonagem = ControladorPersonagem.instancia;
+        jogadorStats = personagem.GetComponent<JogadorStats>();
     }
     public void salvarPlayer()
     {
         controladorPersonagem.personagem.posicao = controladorPersonagem.player.transform.position;
+        controladorPersonagem.personagem.vida = jogadorStats.vidaAtual;
 
         XmlSerializer serializador = new XmlSerializer(typeof(Player));
         StreamWriter arqDados = new StreamWriter("Player.xml");
         serializador.Serialize(arqDados.BaseStream, controladorPersonagem.personagem);
         arqDados.Close();
 
-        cripto.criptografarArquivo("PlayerPosicao.xml", '§');
+        cripto.criptografarArquivo("Player.xml", '§');
         Debug.Log("salvei e criptografei o player");
     }
     public void carregarPlayer()
     {
-        cripto.descriptografarArquivo("PlayerPosicao.xml", '§');
+        cripto.descriptografarArquivo("Player.xml", '§');
 
         XmlSerializer serializador = new XmlSerializer(typeof(Player));
         StreamReader arqLeit = new StreamReader("Player.xml");
@@ -54,6 +59,9 @@ public class SaveLoad : MonoBehaviour
 
         controladorPersonagem.personagem.posicao = aux.posicao;
         controladorPersonagem.player.transform.position = controladorPersonagem.personagem.posicao;
+
+        controladorPersonagem.personagem.vida = aux.vida;
+        jogadorStats.vidaAtual = controladorPersonagem.personagem.vida;
     }
 
     public void sairJogo()

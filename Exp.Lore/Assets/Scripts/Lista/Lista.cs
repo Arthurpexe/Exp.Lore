@@ -7,22 +7,21 @@ public class Lista{
 	
 	public Lista(){//cria uma nova lista
 
-        
         primeiro = new ElementoLista(null);
         ultimo = primeiro;
         
-        contador = 0;
+        contador = -1;
 	}
 	
 	public void inserir(Item novoItem){//insere um novo dado no final da lista 
 
         
         ElementoLista novoElemento = new ElementoLista(novoItem);
-        Debug.Log(novoItem.name + " Anterior e proximo: " + novoElemento.anterior/*.meuItem.name*/ + ", " + novoElemento.proximo.meuItem.name);
+        Debug.Log(novoItem.name + " Anterior e proximo: " + novoElemento.anterior/*.meuItem.name*/ + ", " + novoElemento.proximo/*.meuItem.name */);
         ultimo.proximo = novoElemento;
         novoElemento.anterior = ultimo;
         ultimo = novoElemento;
-        Debug.Log(novoItem.name + " Anterior e proximo: " + novoElemento.anterior/*.meuItem.name*/ + ", " + novoElemento.proximo.meuItem.name);
+        Debug.Log(novoItem.name + " Anterior e proximo: " + novoElemento.anterior/*.meuItem.name*/ + ", " + novoElemento.proximo/*.meuItem.name */);
 
         contador++;
         novoElemento.endereco = ultimo.endereco = contador;
@@ -53,13 +52,10 @@ public class Lista{
 		}
         auxRet.anterior = null;
 
-		if(auxRet != null)
-        {
-            contador--;
-            ultimo.endereco = contador;
-        }
+        contador--;
+        ultimo.endereco = contador;
+
 		return auxRet.meuItem;
-        
 	}
 	
 	public ElementoLista localizarPorEndereco(int endereco)//localiza o elemento, e o retorna, sem fazer nada com ele
@@ -75,7 +71,7 @@ public class Lista{
         if (aux != null)
             return aux;
         else
-            return new ElementoLista(new Item());
+            return new ElementoLista(null);
 	}
 
     public ElementoLista localizarPorItem(Item itemRetirado)//localiza o elemento, e o retorna, sem fazer nada com ele
@@ -104,9 +100,9 @@ public class Lista{
 
     public Item[] imprimirLista()
     {
-        Item[] itens = new Item[contador+1];
+        Item[] itens = new Item[contador];
         ElementoLista aux = primeiro.proximo;
-        for(int i = 0; i < contador + 1; i++)
+        for(int i = 0; i < contador; i++)
         {
             itens[i] = aux.meuItem;
         }

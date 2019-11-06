@@ -27,12 +27,12 @@ public class InventarioHUD : MonoBehaviour
 
     public void atualizarHUD()
     {
-        for (int i = 1; i < slots.Length; i++)
+        for (int i = 0; i < slots.Length; i++)
         {
-            if (i < inventario.items.contador)
+            if (i <= inventario.listaItens.contador)
             {
-                if (inventario.items.localizarPorEndereco(i).meuItem != null)
-                    slots[i].AddItem(inventario.items.localizarPorEndereco(i).meuItem);
+                if (inventario.listaItens.localizarPorEndereco(i).meuItem != null)
+                    slots[i].AddItem(inventario.listaItens.localizarPorEndereco(i).meuItem);
             }
             else
             {

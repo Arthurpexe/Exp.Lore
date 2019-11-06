@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 2589734189752677668}
   - component: {fileID: 3324796330113476562}
   - component: {fileID: 1510399130225168492}
+  - component: {fileID: 477292887}
   m_Layer: 0
   m_Name: Personagem
   m_TagString: Player
@@ -491,8 +492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896505e0604674d479bd8a6d7c762234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedIncrease: 10
-  Speed: 5
+  SpeedIncrease: 2
+  Speed: 4
   GroundDistance: 0.2
   DashDistance: 2
   Ground:
@@ -500,8 +501,10 @@ MonoBehaviour:
     m_Bits: 0
   PlayerNumber: 1
   menu: {fileID: 0}
-  player: {fileID: 0}
+  painelInventario: {fileID: 0}
+  player: {fileID: 2589734189752677669}
   focus: {fileID: 0}
+  barraVidaBoss: {fileID: 0}
 --- !u!114 &3324796330113476562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,3 +538,16 @@ MonoBehaviour:
   velocidadeAtaque: 1
   CooldownAtaque: 2
   ataqueDelay: 0.6
+--- !u!114 &477292887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5034884845133932264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f30b6b81d461e41ad8dbb6671d03e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barraVida: {fileID: 0}

@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 4946470328834807383}
   - component: {fileID: 4946470328834807384}
   - component: {fileID: 4946470328834807382}
-  - component: {fileID: 8913775966136211440}
+  - component: {fileID: 3084926519217464669}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -896,7 +896,7 @@ MonoBehaviour:
   velocidadeAtaque: 0.5
   CooldownAtaque: 2
   ataqueDelay: 0.6
---- !u!114 &8913775966136211440
+--- !u!114 &3084926519217464669
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -905,9 +905,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4946470328834807390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f30b6b81d461e41ad8dbb6671d03e6, type: 3}
+  m_Script: {fileID: 11500000, guid: c5e9ad1eae96d8845be458d051498525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barraVida: {fileID: 0}
   vidaPrefab: {fileID: 3363838797326074806, guid: 424b7300a9c4dfb42832fc9a179d6ecd,
     type: 3}
   posicaoBarraVida: {fileID: 5503529371447144870}
