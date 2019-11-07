@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class ControladorInimigo : MonoBehaviour
 {
 	public float raioDeVisao = 10f;
-	
 
+	 
 	Transform target;
 	NavMeshAgent agent;
 	PersonagemCombate combate;
@@ -21,6 +21,8 @@ public class ControladorInimigo : MonoBehaviour
 		agent = GetComponent<NavMeshAgent>();
 		combate = GetComponent<PersonagemCombate>();
 		
+		
+
 
 	}
 
@@ -56,6 +58,7 @@ public class ControladorInimigo : MonoBehaviour
 
 			if(distancia <= agent.stoppingDistance)
 			{
+				
 				PersonagemStats alvoStats = target.GetComponent<PersonagemStats>();
 				if(alvoStats != null)
 				{
@@ -65,6 +68,8 @@ public class ControladorInimigo : MonoBehaviour
 				OlharParaAlvo();
 			}
 		}
+
+		
     }
 
 	void OlharParaAlvo()

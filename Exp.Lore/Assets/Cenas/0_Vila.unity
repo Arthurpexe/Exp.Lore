@@ -8701,7 +8701,7 @@ GameObject:
   - component: {fileID: 366880519}
   m_Layer: 0
   m_Name: Enemy_01
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8739,10 +8739,11 @@ MonoBehaviour:
     valorBase: 10
   armadura:
     valorBase: 0
-  radius: 2
+  radius: 3
   interactionTransform: {fileID: 366880526}
   player: {fileID: 218498303}
   CoolDown: 0
+  EstaCorrendo: 0
 --- !u!114 &366880521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8757,7 +8758,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 7
   interactionTransform: {fileID: 366880526}
-  botaoInteragir: {fileID: 370103358}
   player: {fileID: 218498309}
 --- !u!114 &366880522
 MonoBehaviour:
@@ -10669,7 +10669,7 @@ GameObject:
   - component: {fileID: 419391545}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10784,6 +10784,7 @@ MonoBehaviour:
   interactionTransform: {fileID: 419391542}
   player: {fileID: 218498303}
   CoolDown: 0
+  EstaCorrendo: 0
 --- !u!114 &419391544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10798,7 +10799,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 7
   interactionTransform: {fileID: 419391542}
-  botaoInteragir: {fileID: 370103358}
   player: {fileID: 218498309}
 --- !u!114 &419391545
 MonoBehaviour:
@@ -16264,7 +16264,7 @@ GameObject:
   - component: {fileID: 667870488}
   m_Layer: 0
   m_Name: Enemy_02
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16298,7 +16298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadeAtaque: 1
   CooldownAtaque: 3
-  ataqueDelay: 3
+  ataqueDelay: 0.6
 --- !u!114 &667870489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16317,10 +16317,11 @@ MonoBehaviour:
     valorBase: 5
   armadura:
     valorBase: 0
-  radius: 2
+  radius: 3
   interactionTransform: {fileID: 667870487}
   player: {fileID: 218498303}
   CoolDown: 0
+  EstaCorrendo: 0
 --- !u!114 &667870490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16335,7 +16336,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 6
   interactionTransform: {fileID: 667870487}
-  botaoInteragir: {fileID: 370103358}
   player: {fileID: 218498309}
 --- !u!114 &667870491
 MonoBehaviour:
@@ -23886,7 +23886,7 @@ GameObject:
   - component: {fileID: 1081763745}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23942,6 +23942,7 @@ MonoBehaviour:
   interactionTransform: {fileID: 1081763751}
   player: {fileID: 218498303}
   CoolDown: 0
+  EstaCorrendo: 0
 --- !u!114 &1081763747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23956,7 +23957,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 10
   interactionTransform: {fileID: 1081763751}
-  botaoInteragir: {fileID: 370103358}
   player: {fileID: 218498309}
 --- !u!54 &1081763748
 Rigidbody:
@@ -27305,7 +27305,7 @@ GameObject:
   - component: {fileID: 1210882441}
   m_Layer: 0
   m_Name: Enemy_03
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27343,10 +27343,11 @@ MonoBehaviour:
     valorBase: 5
   armadura:
     valorBase: 0
-  radius: 2
+  radius: 3
   interactionTransform: {fileID: 1210882448}
   player: {fileID: 218498303}
   CoolDown: 0
+  EstaCorrendo: 0
 --- !u!114 &1210882443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27361,7 +27362,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 6
   interactionTransform: {fileID: 1210882448}
-  botaoInteragir: {fileID: 370103358}
   player: {fileID: 218498309}
 --- !u!114 &1210882444
 MonoBehaviour:

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ControladorGeral
   - Waypoints1
+  - Inimigo
   layers:
   - Default
   - TransparentFX

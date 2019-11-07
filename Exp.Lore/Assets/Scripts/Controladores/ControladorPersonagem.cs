@@ -4,19 +4,19 @@ using System.IO;
 
 public class ControladorPersonagem : MonoBehaviour
 {
-    #region Singleton
-    public static ControladorPersonagem instancia;
+	#region Singleton
+	public static ControladorPersonagem instancia;
 
-    private void Awake()
-    {
-        if (instancia != null)
-        {
-            Debug.LogWarning("Mais de uma instancia de ControladorPersonagem encontrada!");
-            return;
-        }
-        instancia = this;
+	private void Awake()
+	{
+		if (instancia != null)
+		{
+			Debug.LogWarning("Mais de uma instancia de ControladorPersonagem encontrada!");
+			return;
+		}
+		instancia = this;
 
-    }
+	}
 	#endregion
 
 	static Animator anim;
@@ -28,35 +28,43 @@ public class ControladorPersonagem : MonoBehaviour
 	public LayerMask Ground;
 	public int PlayerNumber = 1;
 
-    public GameObject menu;
-
+	public GameObject menu;
 	private Rigidbody player;
 	private Vector3 _inputs = Vector3.zero;
 	private bool _isGrounded = true;
-	private bool _isFastSpeed = false;
+	public bool _isFastSpeed = false;
 	private bool Abaixar = false;
 	private Transform _groundChecker;
-    Camera cam;
-    public Interagivel focus;
+	Camera cam;
+	public Interagivel focus;
+	
+	public Player personagem;
+	public GameObject[] Inimigo;
+	public float distancia;
+	public float distanciaMaxina = 5.0f;
 
-    public Player personagem;
-    void Start()
+
+	
+
+	void Start()
 	{
-        cam = Camera.main;
+
+
+		cam = Camera.main;
 		player = GetComponent<Rigidbody>();
 		_groundChecker = transform.GetChild(0);
 		anim = GetComponent<Animator>();
 
-        personagem = new Player();
-    }
+		personagem = new Player();
+	}
 
 	void Update()
 	{
-        if (menu.activeSelf)
-        {
-            _inputs = Vector3.zero;
-            return;
-        }
+		if (menu.activeSelf)
+		{
+			_inputs = Vector3.zero;
+			return;
+		}
 
 
 		_isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
@@ -67,21 +75,21 @@ public class ControladorPersonagem : MonoBehaviour
 		_inputs.x = Input.GetAxis("Horizontal");
 		_inputs.z = Input.GetAxis("Vertical");
 
-		
+
 
 		if (_inputs != Vector3.zero)
-        {
+		{
 			anim.SetFloat("mov", 1);
 
 			transform.forward = -_inputs;
-        }
+		}
 
-        if (Input.GetButton("Correr_p1")) 
+		if (Input.GetButton("Correr_p1"))
 		{
 			if (_isFastSpeed == false)
 			{
 				_isFastSpeed = true;
-				
+
 			}
 		}
 
@@ -100,7 +108,7 @@ public class ControladorPersonagem : MonoBehaviour
 
 		if (Input.GetButtonDown("Abaixar"))
 		{
-			if(Abaixar == false)
+			if (Abaixar == false)
 			{
 				Abaixar = true;
 				anim.SetBool("agachado", true);
@@ -115,20 +123,37 @@ public class ControladorPersonagem : MonoBehaviour
 			}
 		}
 
-		
-		  
+
+
 		if (Abaixar == true && Input.GetButtonDown("Dash_p1"))
 		{
 			anim.SetTrigger("rolar");
-			Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3(5,0,5));
+			Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3(5, 0, 5));
 			player.AddForce(dashVelocity, ForceMode.VelocityChange);
 		}
 
+		if (Input.GetButtonDown("Atacar") && _isFastSpeed == false)
+		{
+
+			anim.SetTrigger("atacar");
+		}
 
 		
-			
-    }
-		  
+	}
+
+		
+		
+
+		
+		
+
+
+
+
+
+
+		
+
 
 	void FixedUpdate()
 	{
@@ -137,32 +162,32 @@ public class ControladorPersonagem : MonoBehaviour
 
 
 
-    /// <summary>
-    /// Parte de Salvar e Carregar!!!
-    /// </summary>
-    public void salvarPosicao()
-    {
-        this.personagem.posicao = this.transform.position;
-        SaveLoad.instancia.salvarPlayer(personagem);
-        Debug.Log("Salvei o Jogo");
-    }
-    public void carregarPosicao()
-    {
-        
-        Player aux = SaveLoad.instancia.carregarPlayer();
-        this.personagem.posicao = aux.posicao;
-        transform.position = this.personagem.posicao;
-        Debug.Log("Carreguei o Jogo");
-    }
-    public void Add(System.Object ot)
-    {
-        throw new FileNotFoundException();
-    }
+	/// <summary>
+	/// Parte de Salvar e Carregar!!!
+	/// </summary>
+	public void salvarPosicao()
+	{
+		this.personagem.posicao = this.transform.position;
+		SaveLoad.instancia.salvarPlayer(personagem);
+		Debug.Log("Salvei o Jogo");
+	}
+	public void carregarPosicao()
+	{
 
-
-
-
-
-
-
+		Player aux = SaveLoad.instancia.carregarPlayer();
+		this.personagem.posicao = aux.posicao;
+		transform.position = this.personagem.posicao;
+		Debug.Log("Carreguei o Jogo");
+	}
+	public void Add(System.Object ot)
+	{
+		throw new FileNotFoundException();
+	}
 }
+
+
+
+
+
+
+
