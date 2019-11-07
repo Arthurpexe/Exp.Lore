@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Boss1Combate.cs" />
     <Compile Include="Assets\Scripts\ControladorBoss1.cs" />
     <Compile Include="Assets\Scripts\Controladores\ControladorCamera.cs" />
     <Compile Include="Assets\Scripts\Controladores\ControladorEquipamento.cs" />

@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Boss1Combate
     - ControladorBoss1
     - ControladorCamera
     - ControladorEquipamento
@@ -23,8 +24,17 @@ ScriptsOnlyBuild:
     - TrocarSprite
     - VidaHUD
     - cameraMapa
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -134,6 +144,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11440}
     - Class: 114
       Script: {instanceID: 11504}
+    - Class: 114
+      Script: {instanceID: 39608}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -189,7 +201,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: c8eccfe0e1112a468fdd0019987abba1
+      Hash: a2034241f92f93112ae90e2401e9f528
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InimigoStats
@@ -213,7 +225,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 1727bc9bceb17a4797c8d087261a640c
+      Hash: b84c9c5d5c29d59560f1f74c39b4fc19
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControladorPersonagem
@@ -739,6 +751,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControladorInimigo
+  - hash:
+      serializedVersion: 2
+      Hash: 65520f3a8b012dd98d69713a109a39ca
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Boss1Combate
   platform: 19
   scenePathNames:
   - Assets/Cenas/0_Vila.unity

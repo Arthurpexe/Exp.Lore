@@ -10,7 +10,7 @@ public class ControladorBoss1 : MonoBehaviour
 
 	Transform target;
 	NavMeshAgent agent;
-	PersonagemCombate combate;
+	Boss1Combate combate;
 
     Animator mecanimBoss;
 
@@ -19,7 +19,7 @@ public class ControladorBoss1 : MonoBehaviour
     {
 		target = Ref_posiçao_jogador.instance.player.transform;
 		agent = GetComponent<NavMeshAgent>();
-		combate = GetComponent<PersonagemCombate>();
+		combate = GetComponent<Boss1Combate>();
         mecanimBoss = GetComponentInChildren<Animator>();
 	}
 

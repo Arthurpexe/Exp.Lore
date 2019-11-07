@@ -18,7 +18,7 @@ public int PegarValor()
 		return valorBase;
 	}
 
-	public void AdicionarModificador(int modificador)
+    public void AdicionarModificador(int modificador)
 	{
 		if (modificador != 0)
 			modificadores.Add(modificador);

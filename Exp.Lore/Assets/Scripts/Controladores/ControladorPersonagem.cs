@@ -18,7 +18,9 @@ public class ControladorPersonagem : MonoBehaviour
 
     }
     #endregion
-            
+
+    static Animator anim;
+
     public float SpeedIncrease = 10f;
 	public float Speed = 5f;
 
@@ -33,8 +35,8 @@ public class ControladorPersonagem : MonoBehaviour
 
 	public Vector3 _inputs = Vector3.zero;
 
-	private bool _isGrounded = true;
-	private bool _isFastSpeed = false;
+    public bool _isFastSpeed = false;
+    private bool _isGrounded = true;
 	private bool Abaixar = false;
 	private Transform _groundChecker;
     private Camera cam;
@@ -43,6 +45,9 @@ public class ControladorPersonagem : MonoBehaviour
 
     public Interagivel focus;
     public GameObject barraVidaBoss;
+    public GameObject[] inimigos;
+    public float distancia;
+    public float distaciaMaxima = 5.0f;
 
     public int vidaAtual;
 
@@ -52,7 +57,7 @@ public class ControladorPersonagem : MonoBehaviour
         cam = Camera.main;
 		player = GetComponent<Rigidbody>();
 		_groundChecker = transform.GetChild(0);
-
+        anim = GetComponentInChildren<Animator>();
 
         personagem = new Player();
 
@@ -79,9 +84,9 @@ public class ControladorPersonagem : MonoBehaviour
 		_inputs.z = Input.GetAxis("Vertical");
         if (_inputs != Vector3.zero)
         {
-            transform.forward = -_inputs;
+            anim.SetFloat("mov", 1);
 
-            
+            transform.forward = -_inputs;
         }
 
         if (Input.GetButtonDown("Correr_p1")) 
@@ -99,6 +104,8 @@ public class ControladorPersonagem : MonoBehaviour
 
 		if (_isFastSpeed == true)
 		{
+            anim.SetFloat("mov", 2);
+            anim.SetBool("agachado", false);
 			_inputs = _inputs * SpeedIncrease;
 		}
 
@@ -107,19 +114,26 @@ public class ControladorPersonagem : MonoBehaviour
 			if(Abaixar == false)
 			{
 				Abaixar = true;
+                anim.SetBool("agachado", Abaixar);
 			}
 		} else
 		{
 			Abaixar = false;
-		}
+            anim.SetBool("agachado", Abaixar);
+        }
 
 
-		if (Input.GetButtonDown("Dash_p1"))
+		if (Abaixar == true && Input.GetButtonDown("Dash_p1"))
 		{
-			//Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * _body.drag + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * _body.drag + 1)) / -Time.deltaTime)));
+            anim.SetTrigger("rolar");
 			Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3(5,0,5));
 			player.AddForce(dashVelocity, ForceMode.VelocityChange);
 		}
+
+        if (Input.GetButtonDown("Atacar") && !_isFastSpeed)
+        {
+            anim.SetTrigger("atacar");
+        }
     }
 
 	void FixedUpdate()

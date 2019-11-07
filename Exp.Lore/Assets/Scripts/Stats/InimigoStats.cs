@@ -8,17 +8,21 @@ public class InimigoStats : PersonagemStats
 	public Transform interactionTransform;
 	
 	public GameObject player;
-	 PersonagemCombate cooldown;
+	PersonagemCombate cooldown;
 	public float CoolDown;
+    ControladorPersonagem estaCorrendo;
+    public bool EstaCorrendo;
 
 
-	private void Start()
+    private void Start()
 	{
 		player = GameObject.FindWithTag("Player");
 		cooldown = player.GetComponent<PersonagemCombate>();
 		float Cooldown = cooldown.CooldownAtaque;
 		CoolDown = Cooldown;
-	}
+        estaCorrendo = player.GetComponent<ControladorPersonagem>();
+        EstaCorrendo = estaCorrendo._isFastSpeed;
+    }
 
 
 
@@ -27,7 +31,7 @@ public class InimigoStats : PersonagemStats
 		float Cooldown = cooldown.CooldownAtaque;
 		float distance = Vector3.Distance(player.transform.position, interactionTransform.position);
 
-		if (Input.GetButtonDown("Interagir") && (distance <= radius) && (Cooldown <= 0))
+		if (Input.GetButtonDown("Atacar") && (distance <= radius) && (Cooldown <= 0) && EstaCorrendo == false)
 		{
 			TomarDano(danoInimigo);
 
