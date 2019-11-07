@@ -2,20 +2,26 @@
 
 public class InventarioHUD : MonoBehaviour
 {
-    public Transform itemsParent;
+    public Transform itensParent;
+    public Transform equipsParent;
 
     public GameObject painelInventario, marcadorNovoItem;
     public GameObject painelMissoes, marcadorNovaMissao;
 
     Inventario inventario;
+    //ControladorEquipamento controladorEquipamento;
 
-    InventarioSlot[] slots;
+    InventarioSlot[] slotsItens;
+    InventarioSlot[] slotsEquips;
     void Start()
     {
+        //controladorEquipamento = ControladorEquipamento.instance;
         inventario = Inventario.instance;
-        inventario.onItemChangedCallback += atualizarHUD;
+        inventario.onItemChangedCallback += atualizarInventarioHUD;
+        //controladorEquipamento.atualizarEquipamento += atualizarEquipsHUD;
 
-        slots = itemsParent.GetComponentsInChildren<InventarioSlot>();
+        slotsItens = itensParent.GetComponentsInChildren<InventarioSlot>();
+        slotsEquips = equipsParent.GetComponentsInChildren<InventarioSlot>();
     }
 
     private void Update()
@@ -36,31 +42,41 @@ public class InventarioHUD : MonoBehaviour
         }
     }
 
-    public void atualizarHUD()
+    public void atualizarInventarioHUD()
     {
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slotsItens.Length; i++)
         {
             if (i <= inventario.listaItens.contador)
             {
                 if (inventario.listaItens.localizarPorEndereco(i).meuItem != null)
-                    slots[i].AddItem(inventario.listaItens.localizarPorEndereco(i).meuItem);
+                    slotsItens[i].AddItem(inventario.listaItens.localizarPorEndereco(i).meuItem);
             }
             else
             {
-                slots[i].ClearSlot();
+                slotsItens[i].ClearSlot();
             }
         }
-
-        //for(int i = 0; i < 4; i++)????
-        //{
-            
-        //}
 
         if (!painelInventario.activeSelf)
             marcadorNovoItem.SetActive(true);
 
         Debug.Log("Mudei a HUD");
     }
+
+    //public void atualizarEquipsHUD()
+    //{
+    //    for (int i = 0; i < slotsEquips.Length; i++)
+    //    {
+    //        if (controladorEquipamento.equipamentoAtual[i] != null)
+    //        {
+    //            slotsEquips[i].AddItem(controladorEquipamento.equipamentoAtual[i]);
+    //        }
+    //        else
+    //        {
+    //            slotsEquips[i].ClearSlot();
+    //        }
+    //    }
+    //}
 
     public void abrirPainel(GameObject painel)
     {

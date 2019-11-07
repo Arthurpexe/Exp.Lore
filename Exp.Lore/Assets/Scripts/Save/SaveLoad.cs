@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.IO;
 using System.Xml.Serialization;
+using UnityEngine.SceneManagement;
 
 public class SaveLoad : MonoBehaviour
 {
@@ -31,6 +32,14 @@ public class SaveLoad : MonoBehaviour
         cripto = new Criptografia();
         controladorPersonagem = ControladorPersonagem.instancia;
     }
+
+    public void CarregarJogo()
+    {
+        Time.timeScale = 1;
+
+        carregarPlayer();
+    }
+
     public void salvarPlayer()
     {
         controladorPersonagem.personagem.posicao = controladorPersonagem.player.transform.position;

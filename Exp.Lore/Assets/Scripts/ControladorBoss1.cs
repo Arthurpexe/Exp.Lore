@@ -12,6 +12,7 @@ public class ControladorBoss1 : MonoBehaviour
 	NavMeshAgent agent;
 	PersonagemCombate combate;
 
+    Animator mecanimBoss;
 
 	// Start is called before the first frame update
 	void Start()
@@ -19,7 +20,7 @@ public class ControladorBoss1 : MonoBehaviour
 		target = Ref_posiçao_jogador.instance.player.transform;
 		agent = GetComponent<NavMeshAgent>();
 		combate = GetComponent<PersonagemCombate>();
-
+        mecanimBoss = GetComponentInChildren<Animator>();
 	}
 
     // Update is called once per frame
@@ -40,8 +41,13 @@ public class ControladorBoss1 : MonoBehaviour
 			
 
 				OlharParaAlvo();
-			
+
+            mecanimBoss.SetBool("dentroDoRangeVisao", true);
 		}
+        else
+        {
+            mecanimBoss.SetBool("dentroDoRangeVisao", false);
+        }
 	}
 
 	void OlharParaAlvo()

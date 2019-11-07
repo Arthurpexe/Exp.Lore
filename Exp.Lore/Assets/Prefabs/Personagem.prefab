@@ -500,11 +500,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   PlayerNumber: 1
-  menu: {fileID: 0}
+  painelMenu: {fileID: 0}
   painelInventario: {fileID: 0}
+  painelFimDeJogo: {fileID: 0}
   player: {fileID: 2589734189752677669}
+  _inputs: {x: 0, y: 0, z: 0}
+  personagemStats: {fileID: 0}
   focus: {fileID: 0}
   barraVidaBoss: {fileID: 0}
+  vidaAtual: 0
 --- !u!114 &3324796330113476562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaMaxima: 100
+  vidaAtual: 0
   danoInimigo: 10
   dano:
     valorBase: 10

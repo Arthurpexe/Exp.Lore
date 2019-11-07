@@ -16,5 +16,5 @@ MonoBehaviour:
   icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   isDefaultItem: 0
   equiparSlot: 0
-  armaduraModificador: 2
-  danoModificador: 1
+  armaduraModificador: 3
+  danoModificador: 0

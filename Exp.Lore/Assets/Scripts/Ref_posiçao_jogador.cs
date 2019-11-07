@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Ref_posiçao_jogador : MonoBehaviour
 {
@@ -17,9 +16,13 @@ public class Ref_posiçao_jogador : MonoBehaviour
 	#endregion
 
 	public GameObject player;
+    public GameObject painelMorte;
 
 	public void MatarPlayer ()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-	}
+        painelMorte.SetActive(true);
+        Time.timeScale = 0.1f;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
 }

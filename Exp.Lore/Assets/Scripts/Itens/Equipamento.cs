@@ -19,4 +19,4 @@ public class Equipamento : Item
 	}
 }
 
-public enum EquipamentoSlot { Capacete, Peitoral, Pernas, Arma, Escudo, Pés }
+public enum EquipamentoSlot { Capacete, Peitoral, Pernas, Pés}

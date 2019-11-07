@@ -27,11 +27,12 @@ public class ControladorPersonagem : MonoBehaviour
 	public LayerMask Ground;
 	public int PlayerNumber = 1;
 
-    public GameObject menu, painelInventario;
+    public GameObject painelMenu, painelInventario, painelFimDeJogo;
 
 	public Rigidbody player;
 
-	private Vector3 _inputs = Vector3.zero;
+	public Vector3 _inputs = Vector3.zero;
+
 	private bool _isGrounded = true;
 	private bool _isFastSpeed = false;
 	private bool Abaixar = false;
@@ -62,7 +63,7 @@ public class ControladorPersonagem : MonoBehaviour
 	{
         vidaAtual = personagemStats.vidaAtual;
 
-        if (menu.activeSelf || painelInventario.activeSelf)
+        if (painelMenu.activeSelf || painelInventario.activeSelf || painelFimDeJogo.activeSelf)
         {
             _inputs = Vector3.zero;
             return;
