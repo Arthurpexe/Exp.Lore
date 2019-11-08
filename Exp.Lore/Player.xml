@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <posicao>
-    <x>60</x>
+    <x>68.34306</x>
     <y>10.0481691</y>
-    <z>309.225281</z>
+    <z>308.56778</z>
   </posicao>
   <vida>100</vida>
 </Player>

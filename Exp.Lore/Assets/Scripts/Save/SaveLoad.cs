@@ -27,10 +27,14 @@ public class SaveLoad : MonoBehaviour
 
     ControladorPersonagem controladorPersonagem;
 
+	Animator anim;
+	GameObject raccon;
+
     private void Start()
     {
         cripto = new Criptografia();
         controladorPersonagem = ControladorPersonagem.instancia;
+		anim = personagem.GetComponentInChildren<Animator>();
     }
 
     public void CarregarJogo()
@@ -70,8 +74,8 @@ public class SaveLoad : MonoBehaviour
         controladorPersonagem.personagem.vida = aux.vida;
         controladorPersonagem.personagemStats.vidaAtual = controladorPersonagem.personagem.vida;
         controladorPersonagem.personagemStats.carregarVida();
-
-    }
+		anim.Rebind();
+	}
 
     public void sairJogo()
     {
