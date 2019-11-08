@@ -137,8 +137,7 @@ public class ControladorPersonagem : MonoBehaviour
             anim.SetTrigger("rolar");
 			Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3(5,0,5));
 			player.AddForce(dashVelocity, ForceMode.VelocityChange);
-			anim.SetFloat("mov", 0);
-			anim.SetBool("agachado", true);
+			
 		}
 
         if (Input.GetButtonDown("Atacar") && !_isFastSpeed)

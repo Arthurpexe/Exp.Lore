@@ -54,7 +54,7 @@ public class ControladorInimigo : MonoBehaviour
 			
 			agent.SetDestination(target.position);
 
-			if(distancia <= agent.stoppingDistance)
+			if(distancia <= 3)
 			{
 				JogadorStats alvoStats = target.GetComponent<JogadorStats>();
 				if(alvoStats != null)
