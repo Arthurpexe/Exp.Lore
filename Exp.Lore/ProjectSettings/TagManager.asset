@@ -7,6 +7,8 @@ TagManager:
   - ControladorGeral
   - Waypoints1
   - AreaBoss
+  - AreaTitulo
+  - AreaBaseCachoeira
   layers:
   - Default
   - TransparentFX

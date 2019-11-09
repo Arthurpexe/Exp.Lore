@@ -25,11 +25,11 @@ public class Inventario : MonoBehaviour
 
 	public int space = 20;
 
-	public Lista listaItens;
+	public ListaItem listaItens;
 
     public void Start()
     {
-        listaItens = new Lista();
+        listaItens = new ListaItem();
     }
     public bool Add (Item item)
 	{
@@ -63,7 +63,7 @@ public class Inventario : MonoBehaviour
         vItens = listaItens.imprimirLista();
         for(int i = 0; i < vItens.Length; i++)
         {
-            aux.Append(i+"° "+vItens[i].name+". ");
+            aux.Append(i+"° "+vItens[i].nome+". ");
         }
         return aux.ToString();
     }

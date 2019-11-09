@@ -22,27 +22,31 @@ public class ControladorPersonagem : MonoBehaviour
     static Animator anim;
 
     public float SpeedIncrease = 10f;
-	public float Speed = 5f;
+    public float Speed = 5f;
 
-	public float GroundDistance = 0.2f;
-	public float DashDistance = 2f;
-	public LayerMask Ground;
-	public int PlayerNumber = 1;
+    public float GroundDistance = 0.2f;
+    public float DashDistance = 2f;
+    public LayerMask Ground;
+    public int PlayerNumber = 1;
 
     public GameObject painelMenu, painelInventario, painelFimDeJogo;
 
-	public Rigidbody player;
+    public Rigidbody player;
 
-	public Vector3 _inputs = Vector3.zero;
+    public Vector3 _inputs = Vector3.zero;
 
     public bool _isFastSpeed = false;
     private bool _isGrounded = true;
-	private bool Abaixar = false;
-	private Transform _groundChecker;
+    private bool Abaixar = false;
+    private Transform _groundChecker;
     private Camera cam;
 
     public PersonagemStats personagemStats;
+    public Missao[] missoesAtivas;
+    public int contadorMissoesAtivas = 0;
+    public int ouro;
 
+    public GameObject titulo;
     public Interagivel focus;
     public GameObject barraVidaBoss;
     public GameObject[] inimigos;
@@ -54,6 +58,7 @@ public class ControladorPersonagem : MonoBehaviour
     public Player personagem;
     void Start()
 	{
+        missoesAtivas = new Missao[6];
         cam = Camera.main;
 		player = GetComponent<Rigidbody>();
 		_groundChecker = transform.GetChild(0);
@@ -73,6 +78,7 @@ public class ControladorPersonagem : MonoBehaviour
             _inputs = Vector3.zero;
             return;
         }
+
 
 
 		_isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
@@ -157,12 +163,32 @@ public class ControladorPersonagem : MonoBehaviour
         {
             barraVidaBoss.SetActive(true);
         }
+        if (other.tag == "AreaBaseCachoeira")//verifico se cheguei na cachoeira
+        {
+            for (int i = 0; i < missoesAtivas.Length; i++)
+            {
+                if (missoesAtivas[i].objetivo.tipoObjetivo == TipoObjetivo.irAte)
+                {
+                    missoesAtivas[i].objetivo.chegouNumLugar();
+                    if (missoesAtivas[i].objetivo.concluiu())
+                    {
+                        ouro += missoesAtivas[i].recompensaOuro;
+                        missoesAtivas[i].concluida();
+                    }
+                }
+
+            }
+        }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "AreaBoss")
         {
             barraVidaBoss.SetActive(false);
+        }
+        if(other.tag == "AreaTitulo")
+        {
+            titulo.SetActive(false);
         }
     }
 }

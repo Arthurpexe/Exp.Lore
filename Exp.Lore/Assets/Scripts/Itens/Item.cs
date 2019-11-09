@@ -1,11 +1,11 @@
 ﻿
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventário/Item")]
+[CreateAssetMenu(fileName = "Novo Item", menuName = "Inventário/Item")]
 public class Item : ScriptableObject
 {
    
-    new public string name = "New Item";
+    public string nome = "Novo Item";
     public Sprite icon = null;
     public bool isDefaultItem = false;
 

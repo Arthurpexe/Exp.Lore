@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class ControladorCamera : MonoBehaviour
 {
-	public GameObject Personagem;
-	
-	// Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public GameObject personagem;
 
-    // Update is called once per frame
     void Update()
     {
-		transform.position = Vector3.Lerp(transform.position, new Vector3(Personagem.transform.position.x, Personagem.transform.position.y + 9f, Personagem.transform.position.z + 10.5f), 6 * Time.deltaTime);
+		transform.position = Vector3.Lerp(transform.position, new Vector3(personagem.transform.position.x, personagem.transform.position.y + 9f, personagem.transform.position.z + 10.5f), 6 * Time.deltaTime);
+    }
 
-	}
 }

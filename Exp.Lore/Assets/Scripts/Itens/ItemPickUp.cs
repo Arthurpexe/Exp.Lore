@@ -8,13 +8,13 @@ public class ItemPickUp : Interagivel
 	public override void Interact()
 	{
 		base.Interact();
-        Debug.Log("Interagindo com " + item.name);
+        Debug.Log("Interagindo com " + item.nome);
 		PickUp();
 	}
 
 	public void PickUp()
 	{
-		Debug.Log("Pegando " + item.name);
+		Debug.Log("Pegando " + item.nome);
 		bool wasPickedUp = Inventario.instance.Add(item);
 
 		if(wasPickedUp)
