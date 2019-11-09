@@ -6,7 +6,7 @@ using UnityEngine;
 public class PersonagemCombate : MonoBehaviour
 {
 	public float velocidadeAtaque = 1f;
-	private float cooldownAtaque = 0f;
+	public float cooldownAtaque = 0f;
 	public float CooldownAtaque;
 	public float ataqueDelay = .6f;
 

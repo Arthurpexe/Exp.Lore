@@ -40,7 +40,7 @@ public class ControladorPersonagem : MonoBehaviour
     private bool Abaixar = false;
     private Transform _groundChecker;
     private Camera cam;
-
+	PersonagemCombate cooldown;
     public PersonagemStats personagemStats;
     public Missao[] missoesAtivas;
     public int contadorMissoesAtivas = 0;
@@ -63,7 +63,7 @@ public class ControladorPersonagem : MonoBehaviour
 		player = GetComponent<Rigidbody>();
 		_groundChecker = transform.GetChild(0);
         anim = GetComponentInChildren<Animator>();
-
+		cooldown = GetComponent<PersonagemCombate>();
         personagem = new Player();
 
         personagemStats = this.GetComponent<PersonagemStats>();
@@ -146,7 +146,7 @@ public class ControladorPersonagem : MonoBehaviour
 			
 		}
 
-        if (Input.GetButtonDown("Atacar") && !_isFastSpeed)
+        if (Input.GetButtonDown("Atacar") && !_isFastSpeed && cooldown.cooldownAtaque <= 0)
         {
             anim.SetTrigger("atacar");
         }
