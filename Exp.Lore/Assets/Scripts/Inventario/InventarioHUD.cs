@@ -9,16 +9,16 @@ public class InventarioHUD : MonoBehaviour
     public GameObject painelMissoes, marcadorNovaMissao;
 
     Inventario inventario;
-    //ControladorEquipamento controladorEquipamento;
+    ControladorEquipamento controladorEquipamento;
 
     InventarioSlot[] slotsItens;
     InventarioSlot[] slotsEquips;
     void Start()
     {
-        //controladorEquipamento = ControladorEquipamento.instance;
+        controladorEquipamento = ControladorEquipamento.instance;
         inventario = Inventario.instance;
         inventario.onItemChangedCallback += atualizarInventarioHUD;
-        //controladorEquipamento.atualizarEquipamento += atualizarEquipsHUD;
+        controladorEquipamento.atualizarEquipamento += atualizarEquipsHUD;
 
         slotsItens = itensParent.GetComponentsInChildren<InventarioSlot>();
         slotsEquips = equipsParent.GetComponentsInChildren<InventarioSlot>();
@@ -60,23 +60,24 @@ public class InventarioHUD : MonoBehaviour
         if (!painelInventario.activeSelf)
             marcadorNovoItem.SetActive(true);
 
-        Debug.Log("Mudei a HUD");
+        Debug.Log("Mudei a HUD dos Inventarios");
     }
 
-    //public void atualizarEquipsHUD()
-    //{
-    //    for (int i = 0; i < slotsEquips.Length; i++)
-    //    {
-    //        if (controladorEquipamento.equipamentoAtual[i] != null)
-    //        {
-    //            slotsEquips[i].AddItem(controladorEquipamento.equipamentoAtual[i]);
-    //        }
-    //        else
-    //        {
-    //            slotsEquips[i].ClearSlot();
-    //        }
-    //    }
-    //}
+    public void atualizarEquipsHUD()
+    {
+        for (int i = 0; i < slotsEquips.Length; i++)
+        {
+            if (controladorEquipamento.equipamentoAtual[i] != null)
+            {
+                slotsEquips[i].AddItem(controladorEquipamento.equipamentoAtual[i]);
+                inventario.Remove(controladorEquipamento.equipamentoAtual[i]); 
+            }
+            else
+            {
+                slotsEquips[i].ClearSlot();
+            }
+        }
+    }
 
     public void abrirPainel(GameObject painel)
     {

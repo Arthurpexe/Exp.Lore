@@ -32,6 +32,7 @@ public class InteragirNPCQuest : Interagivel
         missao.estaAtiva = true;
         controladorPersonagem.missoesAtivas[controladorPersonagem.contadorMissoesAtivas] = missao;
         controladorPersonagem.contadorMissoesAtivas++;
+        controladorPersonagem.mudouMissao();
     }
     public void resposta(bool aceitou)
     {

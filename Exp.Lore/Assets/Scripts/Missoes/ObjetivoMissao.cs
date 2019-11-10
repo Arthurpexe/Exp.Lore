@@ -6,6 +6,12 @@ public class ObjetivoMissao
     public int quantidadeNescessaria;
     public int quantidadeAtual;
 
+    public ObjetivoMissao()
+    {
+        tipoObjetivo = TipoObjetivo.coletar;
+        quantidadeAtual = 0;
+        quantidadeNescessaria = 0;
+    }
     public bool concluiu()
     {
         return (quantidadeAtual >= quantidadeAtual);

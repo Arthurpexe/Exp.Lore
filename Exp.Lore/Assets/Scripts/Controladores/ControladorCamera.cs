@@ -8,7 +8,7 @@ public class ControladorCamera : MonoBehaviour
 
     void Update()
     {
-		transform.position = Vector3.Lerp(transform.position, new Vector3(personagem.transform.position.x, personagem.transform.position.y + 9f, personagem.transform.position.z + 10.5f), 6 * Time.deltaTime);
+		transform.position = Vector3.Lerp(transform.position, new Vector3(personagem.transform.position.x, personagem.transform.position.y + 14f, personagem.transform.position.z + 7f), 6 * Time.deltaTime);
     }
 
 }

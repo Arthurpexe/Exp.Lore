@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class InventarioSlot : MonoBehaviour
@@ -7,7 +6,7 @@ public class InventarioSlot : MonoBehaviour
     public Image icone;
     public Image botaoExcluir;
 
-	Item item;
+	public Item item;
 
 	public void AddItem (Item newItem)
 	{

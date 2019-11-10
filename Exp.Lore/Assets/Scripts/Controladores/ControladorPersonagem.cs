@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Xml.Serialization;
-using System.IO;
 
 public class ControladorPersonagem : MonoBehaviour
 {
@@ -19,49 +17,49 @@ public class ControladorPersonagem : MonoBehaviour
     }
     #endregion
 
-    static Animator anim;
+    [Header("Paineis")]
+    public GameObject painelMenu;
+    public GameObject painelInventario;
+    public GameObject painelFimDeJogo;
 
+    [Header("Movimento")]
     public float SpeedIncrease = 10f;
     public float Speed = 5f;
-
-    public float GroundDistance = 0.2f;
     public float DashDistance = 2f;
-    public LayerMask Ground;
     public int PlayerNumber = 1;
-
-    public GameObject painelMenu, painelInventario, painelFimDeJogo;
-
     public Rigidbody player;
-
     public Vector3 _inputs = Vector3.zero;
-
     public bool _isFastSpeed = false;
-    private bool _isGrounded = true;
     private bool Abaixar = false;
-    private Transform _groundChecker;
-    private Camera cam;
+    static Animator anim;
+
+    [Header("Combate")]
 	PersonagemCombate cooldown;
     public PersonagemStats personagemStats;
-    public Missao[] missoesAtivas;
-    public int contadorMissoesAtivas = 0;
-    public int ouro;
-
-    public GameObject titulo;
-    public Interagivel focus;
+    public int vidaAtual;
     public GameObject barraVidaBoss;
     public GameObject[] inimigos;
     public float distancia;
     public float distaciaMaxima = 5.0f;
 
-    public int vidaAtual;
-
+    [Header("Save")]
     public Player personagem;
+
+    [Header("Missoes")]
+    public Missao[] missoesAtivas;
+    public int contadorMissoesAtivas = 0;
+    public int ouro;
+    public GameObject titulo;
+
+
+    public delegate void SeMissaoMudar();
+    public SeMissaoMudar seMissaoMudarCallback;
+
+
     void Start()
 	{
         missoesAtivas = new Missao[6];
-        cam = Camera.main;
 		player = GetComponent<Rigidbody>();
-		_groundChecker = transform.GetChild(0);
         anim = GetComponentInChildren<Animator>();
 		cooldown = GetComponent<PersonagemCombate>();
         personagem = new Player();
@@ -78,10 +76,6 @@ public class ControladorPersonagem : MonoBehaviour
             _inputs = Vector3.zero;
             return;
         }
-
-
-
-		_isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
 
 
 
@@ -157,6 +151,11 @@ public class ControladorPersonagem : MonoBehaviour
 		player.MovePosition(player.position - _inputs * Speed * Time.fixedDeltaTime);
 	}
 
+    public void mudouMissao()
+    {
+        seMissaoMudarCallback.Invoke();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "AreaBoss")
@@ -167,16 +166,18 @@ public class ControladorPersonagem : MonoBehaviour
         {
             for (int i = 0; i < missoesAtivas.Length; i++)
             {
-                if (missoesAtivas[i].objetivo.tipoObjetivo == TipoObjetivo.irAte)
+                if (missoesAtivas[i].titulo == "Onde estão meus pais")
                 {
-                    missoesAtivas[i].objetivo.chegouNumLugar();
-                    if (missoesAtivas[i].objetivo.concluiu())
+                    if (missoesAtivas[i].objetivo.tipoObjetivo == TipoObjetivo.irAte)
                     {
-                        ouro += missoesAtivas[i].recompensaOuro;
-                        missoesAtivas[i].concluida();
+                        missoesAtivas[i].objetivo.chegouNumLugar();
+                        if (missoesAtivas[i].objetivo.concluiu())
+                        {
+                            ouro += missoesAtivas[i].recompensaOuro;
+                            missoesAtivas[i].concluida();
+                        }
                     }
                 }
-
             }
         }
     }

@@ -18,10 +18,10 @@ public class ControladorEquipamento : MonoBehaviour
 
 	public Equipamento[] equipamentoAtual;
 
-    //public delegate void AtualizarEquipamento();
-    //public AtualizarEquipamento atualizarEquipamento;
+    public delegate void AtualizarEquipamento();
+    public AtualizarEquipamento atualizarEquipamento;
 
-	public delegate void TrocaDeEquipamento(Equipamento itemNovo, Equipamento itemAntigo);
+    public delegate void TrocaDeEquipamento(Equipamento itemNovo, Equipamento itemAntigo);
 	public TrocaDeEquipamento trocaDeEquipamento;
 	Inventario inventario;
 
@@ -51,7 +51,7 @@ public class ControladorEquipamento : MonoBehaviour
 		}
 
 		equipamentoAtual[slotIndex] = newItem;
-//         atualizarEquipamento.Invoke();
+        atualizarEquipamento.Invoke();
 	}
 
 	public void Desequipar(int slotIndex) // mudar slotIndex para varivael "Selecionado"
@@ -67,7 +67,7 @@ public class ControladorEquipamento : MonoBehaviour
 			{
 				trocaDeEquipamento.Invoke(null, itemAntigo);
 			}
-//            atualizarEquipamento.Invoke();
+            atualizarEquipamento.Invoke();
         }
 	}
 }
