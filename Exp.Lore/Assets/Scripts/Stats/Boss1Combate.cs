@@ -13,6 +13,8 @@ public class Boss1Combate : MonoBehaviour
 	RaycastHit alvo;
 	public float delayAnimaçaoDeAviso = 0f;
 	float delayAnimaçaoAtual = 0f;
+	Renderer rend;
+	GameObject jogador;
 
 
 
@@ -22,7 +24,9 @@ public class Boss1Combate : MonoBehaviour
 	{
 		player = GetComponent<Rigidbody>();
 		myStats = GetComponent<PersonagemStats>();
-		
+		jogador = GameObject.FindGameObjectWithTag("Player");
+		rend = jogador.GetComponentInChildren<Renderer>();
+
 	}
 
 
@@ -56,6 +60,8 @@ public class Boss1Combate : MonoBehaviour
 				{
 					DarDano(alvoStats);
 					cooldownAtaque = CooldownAtaque;
+				    rend.material.color = Color.red;
+
 				}
 				else
 				{
@@ -80,7 +86,7 @@ public class Boss1Combate : MonoBehaviour
 	{
 		
 		stats.TomarDano(myStats.dano.PegarValor());
-
+		rend.material.color = Color.red;
 	}
 
 			

@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class PersonagemStats : MonoBehaviour
 {
-
+	Renderer rend;
 	NavMeshAgent personagem;
 	public int vidaMaxima = 100;
     public int vidaAtual; //{ get; private set; }
@@ -16,6 +16,7 @@ public class PersonagemStats : MonoBehaviour
 
 	private void Awake()
 	{
+		rend = GetComponentInChildren<Renderer>();
 		vidaAtual = vidaMaxima;
 		personagem = GetComponent<NavMeshAgent>();
 	}
@@ -23,6 +24,8 @@ public class PersonagemStats : MonoBehaviour
 
 	void Update() 
 	{
+		rend.material.color = Color.white;
+
 		if (Input.GetButtonDown("Interagir"))
 		{
 			TomarDano(danoInimigo);
@@ -38,7 +41,8 @@ public class PersonagemStats : MonoBehaviour
 		dano = Mathf.Clamp(dano, 0, int.MaxValue);
 
 		vidaAtual -= dano;
-		
+		rend.material.color = Color.red;
+
 		Debug.Log(transform.name + " Tomou " + dano + " dano.");
 
         if (seVidaMudar != null)

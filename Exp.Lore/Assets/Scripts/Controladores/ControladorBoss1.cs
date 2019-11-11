@@ -7,7 +7,7 @@ public class ControladorBoss1 : MonoBehaviour
 {
 	public float raioDeVisao = 10f;
 
-
+	Renderer rend;
 	Transform target;
 	NavMeshAgent agent;
 	Boss1Combate combate;
@@ -21,6 +21,7 @@ public class ControladorBoss1 : MonoBehaviour
 		agent = GetComponent<NavMeshAgent>();
 		combate = GetComponent<Boss1Combate>();
         mecanimBoss = GetComponentInChildren<Animator>();
+		rend = GetComponentInChildren<Renderer>();
 	}
 
     // Update is called once per frame
@@ -28,6 +29,7 @@ public class ControladorBoss1 : MonoBehaviour
     {
 		float distancia = Vector3.Distance(target.position, transform.position);
 
+		rend.material.color = Color.white;
 
 		if (distancia <= raioDeVisao)
 		{

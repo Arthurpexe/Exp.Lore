@@ -15,9 +15,12 @@ public class ControladorPersonagem : MonoBehaviour
         instancia = this;
 
     }
-    #endregion
+	#endregion
 
-    [Header("Paineis")]
+	[Header("Graficos")]
+	Renderer rend;
+
+	[Header("Paineis")]
     public GameObject painelMenu;
     public GameObject painelInventario;
     public GameObject painelFimDeJogo;
@@ -58,7 +61,8 @@ public class ControladorPersonagem : MonoBehaviour
 
     void Start()
 	{
-        missoesAtivas = new Missao[6];
+		rend = GetComponentInChildren<Renderer>();
+		missoesAtivas = new Missao[6];
 		player = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
 		cooldown = GetComponent<PersonagemCombate>();
@@ -69,7 +73,8 @@ public class ControladorPersonagem : MonoBehaviour
 
 	void Update()
 	{
-        vidaAtual = personagemStats.vidaAtual;
+		rend.material.color = Color.white;
+		vidaAtual = personagemStats.vidaAtual;
 
         if (painelMenu.activeSelf || painelInventario.activeSelf || painelFimDeJogo.activeSelf)
         {
@@ -132,9 +137,11 @@ public class ControladorPersonagem : MonoBehaviour
         
 
 
-		if (Abaixar == true && Input.GetButtonDown("Dash_p1"))
+		if (Abaixar == true && Input.GetButtonDown("Correr_p1"))
 		{
-            anim.SetTrigger("rolar");
+			anim.SetTrigger("rolar");
+			_isFastSpeed = false;
+			anim.SetBool("agachado", true);
 			Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3(5,0,5));
 			player.AddForce(dashVelocity, ForceMode.VelocityChange);
 			
