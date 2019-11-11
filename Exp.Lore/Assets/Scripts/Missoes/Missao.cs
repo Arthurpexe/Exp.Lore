@@ -2,7 +2,7 @@
 public class Missao
 {
     public bool estaAtiva;
-    public bool completada;
+    public bool concluida;
 
     public string titulo;
     public string descricao;
@@ -13,14 +13,15 @@ public class Missao
     public Missao()
     {
         estaAtiva = false;
+        concluida = false;
         titulo = "novaMissao";
         descricao = "novaDescricao";
         recompensaOuro = 0;
         objetivo = new ObjetivoMissao();
     }
-    public void concluida()
+    public void missaoConcluida()
     {
-        completada = true;
+        concluida = true;
         estaAtiva = false;
     }
 }

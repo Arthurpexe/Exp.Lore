@@ -18,7 +18,7 @@ public class InteragirNPCQuest : Interagivel
     public override void Interact()
     {
         base.Interact();
-        if(this.missao.estaAtiva || this.missao.completada)
+        if(this.missao.estaAtiva || this.missao.concluida)
         {
             //conversação diferente
             return;

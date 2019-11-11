@@ -11,6 +11,8 @@ public class MissoesSlot : MonoBehaviour
 
     public Missao missao;
 
+    //public MissoesSlot slotMissaoConcluida;
+
     public void AdicionarMissao(Missao novaMissao)
     {
         missao = novaMissao;
@@ -36,5 +38,17 @@ public class MissoesSlot : MonoBehaviour
 
             painelDescricao.SetActive(!painelDescricao.activeSelf);
         }
+    }
+
+    public void concluirMissao()
+    {
+        //if (slotMissaoConcluida != null)
+        //{
+            //if (slotMissaoConcluida.missao == null)
+            //{
+            //    slotMissaoConcluida.AdicionarMissao(this.missao);
+            //}
+            ClearSlot();
+        //}
     }
 }

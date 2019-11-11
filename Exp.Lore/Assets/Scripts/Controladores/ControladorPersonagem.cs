@@ -182,7 +182,9 @@ public class ControladorPersonagem : MonoBehaviour
                         if (missoesAtivas[i].objetivo.concluiu())
                         {
                             ouro += missoesAtivas[i].recompensaOuro;
-                            missoesAtivas[i].concluida();
+                            missoesAtivas[i].missaoConcluida();
+                            //feedback de missao concluida
+                            seMissaoMudarCallback.Invoke();
                         }
                     }
                 }
