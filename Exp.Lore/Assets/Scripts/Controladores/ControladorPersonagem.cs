@@ -35,6 +35,8 @@ public class ControladorPersonagem : MonoBehaviour
     public bool _isFastSpeed = false;
     private bool Abaixar = false;
     static Animator anim;
+	public float CD = 3;
+	private float cd;
 
     [Header("Combate")]
 	PersonagemCombate cooldown;
@@ -69,10 +71,12 @@ public class ControladorPersonagem : MonoBehaviour
         personagem = new Player();
 
         personagemStats = this.GetComponent<PersonagemStats>();
+		cd = CD;
     }
 
 	void Update()
 	{
+		cd -= Time.deltaTime;
 		rend.material.color = Color.white;
 		vidaAtual = personagemStats.vidaAtual;
 
@@ -137,14 +141,14 @@ public class ControladorPersonagem : MonoBehaviour
         
 
 
-		if (Abaixar == true && Input.GetButtonDown("Correr_p1"))
+		if (Abaixar == true && Input.GetButtonDown("Correr_p1") && cd <= 0)
 		{
 			anim.SetTrigger("rolar");
 			_isFastSpeed = false;
 			anim.SetBool("agachado", true);
 			Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3(5,0,5));
 			player.AddForce(dashVelocity, ForceMode.VelocityChange);
-			
+			cd = CD;
 		}
 
         if (Input.GetButtonDown("Atacar") && !_isFastSpeed && cooldown.cooldownAtaque <= 0)

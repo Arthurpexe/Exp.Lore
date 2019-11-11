@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 // Cuida das interações com o inimigo
 [RequireComponent(typeof(PersonagemStats))]
 public class Inimigo : MonoBehaviour
@@ -6,7 +7,8 @@ public class Inimigo : MonoBehaviour
 	Ref_posiçao_jogador playerManager;
 	PersonagemStats myStats;
 	GameObject jogador;
-	
+
+	Transform inimigo;
 	
 
     public float radius = 3f;
@@ -19,6 +21,7 @@ public class Inimigo : MonoBehaviour
 		playerManager = Ref_posiçao_jogador.instance;
 		myStats = GetComponent<PersonagemStats>();
 		jogador = GameObject.FindGameObjectWithTag("Player");
+		inimigo = transform.GetChild(0);
 	}
 
     void Update()
@@ -28,7 +31,7 @@ public class Inimigo : MonoBehaviour
 
 		if(distance <= radius)
 		{
-			jogador.transform.LookAt(transform.position);
+			jogador.transform.LookAt(inimigo.transform.position);
 		}
 
 		if (distance <= radius && Input.GetButtonDown("Atacar"))
