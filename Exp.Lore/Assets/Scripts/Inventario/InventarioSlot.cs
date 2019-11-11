@@ -14,7 +14,8 @@ public class InventarioSlot : MonoBehaviour
 
 		icone.sprite = item.icon;
 		icone.enabled = true;
-        botaoExcluir.enabled = true;
+        if(botaoExcluir != null)
+            botaoExcluir.enabled = true;
         Debug.Log(Inventario.instance.imprimirNomeDosItens());
     }
 
@@ -24,7 +25,8 @@ public class InventarioSlot : MonoBehaviour
 
 		icone.sprite = null;
 		icone.enabled = false;
-        botaoExcluir.enabled = false;
+        if (botaoExcluir != null)
+            botaoExcluir.enabled = false;
 	}
 
     public void OnRemoveButton()
@@ -42,4 +44,12 @@ public class InventarioSlot : MonoBehaviour
 			item.Use();
 		}
 	}
+
+    public void desequipar()
+    {
+        if (item != null)
+        {
+            item.desequipar();
+        }
+    }
 }

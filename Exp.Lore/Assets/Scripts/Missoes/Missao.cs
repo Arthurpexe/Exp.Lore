@@ -2,6 +2,7 @@
 public class Missao
 {
     public bool estaAtiva;
+    public bool completada;
 
     public string titulo;
     public string descricao;
@@ -19,6 +20,7 @@ public class Missao
     }
     public void concluida()
     {
+        completada = true;
         estaAtiva = false;
     }
 }

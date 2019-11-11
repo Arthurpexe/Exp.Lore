@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 // Cuida das interações com o inimigo
 [RequireComponent(typeof(PersonagemStats))]
 public class Inimigo : MonoBehaviour

@@ -14,9 +14,16 @@ public class Item : ScriptableObject
 		//usar o item
 	}
 
-	public void RemoverDoInventario()
+    public virtual void desequipar()
+    {
+        //dessequipar o item
+    }
+
+
+    public void RemoverDoInventario()
 	{
 		Inventario.instance.Remove(this);
+        Debug.Log("removi " + this.nome);
 	}
 
 }

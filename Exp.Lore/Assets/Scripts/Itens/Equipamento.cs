@@ -15,8 +15,14 @@ public class Equipamento : Item
 		base.Use();
 		ControladorEquipamento.instance.Equipar(this);
         //colocar noa aba equipamentos no slot referente ao enum EquipamentoSlot
-		RemoverDoInventario();
+		this.RemoverDoInventario();
 	}
+
+    public override void desequipar()
+    {
+        base.desequipar();
+        ControladorEquipamento.instance.Desequipar((int)this.equiparSlot);
+    }
 }
 
 public enum EquipamentoSlot { Capacete, Peitoral, Pernas, Pés}

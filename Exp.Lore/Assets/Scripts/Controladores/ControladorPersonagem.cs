@@ -77,7 +77,7 @@ public class ControladorPersonagem : MonoBehaviour
             return;
         }
 
-
+        
 
 		_inputs = Vector3.zero;
 		_inputs.x = Input.GetAxis("Horizontal");
@@ -153,6 +153,7 @@ public class ControladorPersonagem : MonoBehaviour
 
     public void mudouMissao()
     {
+        Debug.Log("missao do player é " + missoesAtivas[contadorMissoesAtivas-1].titulo);
         seMissaoMudarCallback.Invoke();
     }
 
@@ -162,7 +163,7 @@ public class ControladorPersonagem : MonoBehaviour
         {
             barraVidaBoss.SetActive(true);
         }
-        if (other.tag == "AreaBaseCachoeira")//verifico se cheguei na cachoeira
+        if (other.tag == "AreaBaseCachoeira")//verifico se cheguei na cachoeira para completar a missao Onde estão meus pais
         {
             for (int i = 0; i < missoesAtivas.Length; i++)
             {

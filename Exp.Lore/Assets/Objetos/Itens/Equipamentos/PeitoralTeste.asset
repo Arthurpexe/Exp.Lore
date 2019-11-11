@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301258a310f6fbf4c92b2b755f80c34d, type: 3}
   m_Name: PeitoralTeste
   m_EditorClassIdentifier: 
-  name: Peitoral Test
+  nome: Peitoral Teste
   icon: {fileID: 21300000, guid: 8f3472474ea6b2c4fab5473f02436517, type: 3}
   isDefaultItem: 0
   equiparSlot: 1

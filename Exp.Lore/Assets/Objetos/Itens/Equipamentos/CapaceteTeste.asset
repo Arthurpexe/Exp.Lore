@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301258a310f6fbf4c92b2b755f80c34d, type: 3}
   m_Name: CapaceteTeste
   m_EditorClassIdentifier: 
-  name: Capacete Test
+  nome: Capacete Teste
   icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   isDefaultItem: 0
   equiparSlot: 0

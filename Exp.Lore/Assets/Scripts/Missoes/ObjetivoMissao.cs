@@ -40,5 +40,6 @@ public enum TipoObjetivo
 {
     matar,
     coletar,
-    irAte
+    irAte,
+    falarCom
 }
