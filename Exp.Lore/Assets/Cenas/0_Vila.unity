@@ -51398,7 +51398,7 @@ PrefabInstance:
     - target: {fileID: 1781884160402782082, guid: f9b114be22288134baa4e56edeee6b22,
         type: 3}
       propertyPath: CD
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4272248867529255921, guid: f9b114be22288134baa4e56edeee6b22,
         type: 3}
@@ -52039,6 +52039,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 5034884846238474149}
+    - target: {fileID: 3906895658676509918, guid: e86abfabb0a112a4c86b9612224f540c,
+        type: 3}
+      propertyPath: dano
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906895658676509918, guid: e86abfabb0a112a4c86b9612224f540c,
+        type: 3}
+      propertyPath: vidaMaxima
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 9149776346944506770, guid: e86abfabb0a112a4c86b9612224f540c,
         type: 3}
       propertyPath: barraVida
@@ -52058,6 +52068,11 @@ PrefabInstance:
         type: 3}
       propertyPath: "delayAnima\xE7aoDeAviso"
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735719412644994923, guid: e86abfabb0a112a4c86b9612224f540c,
+        type: 3}
+      propertyPath: CooldownAtaque
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6976445809260737980, guid: e86abfabb0a112a4c86b9612224f540c,
         type: 3}

@@ -36,7 +36,8 @@ public class Boss1Combate : MonoBehaviour
 	{
 		cooldownAtaque -= Time.deltaTime;
 		delayAnimaçaoAtual = delayAnimaçaoDeAviso;
-		
+		Physics.SphereCast(transform.position + Vector3.down * 2, 1, transform.forward * 10, out alvo);
+
 	}
 
 
@@ -55,7 +56,7 @@ public class Boss1Combate : MonoBehaviour
 			// chamar a animação de aviso que vai atacar do boss
 
 
-			Physics.Raycast(transform.position + Vector3.down * 2, transform.forward * 10, out alvo);
+			
 				//Executar animação de ataque.
 
 				if (alvo.transform.name == "Personagem")

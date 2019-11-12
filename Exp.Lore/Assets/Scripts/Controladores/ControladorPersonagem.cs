@@ -27,6 +27,7 @@ public class ControladorPersonagem : MonoBehaviour
 
     [Header("Movimento")]
     public float SpeedIncrease = 10f;
+	public float VelocidadeAbaixado = 0.5f;
     public float Speed = 5f;
     public float DashDistance = 2f;
     public int PlayerNumber = 1;
@@ -118,6 +119,11 @@ public class ControladorPersonagem : MonoBehaviour
             anim.SetBool("agachado", false);
 			_inputs = _inputs * SpeedIncrease;
 		}
+
+		 if (_inputs != Vector3.zero && Abaixar == true)
+		 {
+			_inputs = _inputs * VelocidadeAbaixado;
+		 }
 
 		if (Input.GetButtonDown("Abaixar"))
 		{
