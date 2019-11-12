@@ -98,7 +98,7 @@ public class ControladorPersonagem : MonoBehaviour
             transform.forward = -_inputs;
         }
 
-        if (Input.GetButtonDown("Correr_p1")) 
+        if (Input.GetButtonDown("Correr_p1") && Abaixar == false) 
 		{
 			if (_isFastSpeed == false)
 			{
