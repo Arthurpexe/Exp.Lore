@@ -15,6 +15,7 @@ public class Boss1Combate : MonoBehaviour
 	float delayAnimaçaoAtual = 0f;
 	Renderer rend;
 	GameObject jogador;
+	PersonagemStats playerStats;
 
 
 
@@ -23,6 +24,7 @@ public class Boss1Combate : MonoBehaviour
 	void Start()
 	{
 		player = GetComponent<Rigidbody>();
+		playerStats = player.GetComponent<PersonagemStats>();
 		myStats = GetComponent<PersonagemStats>();
 		jogador = GameObject.FindGameObjectWithTag("Player");
 		rend = jogador.GetComponentInChildren<Renderer>();
@@ -85,7 +87,7 @@ public class Boss1Combate : MonoBehaviour
 	public void DarDano(PersonagemStats stats) 
 	{
 		
-		stats.TomarDano(myStats.dano.PegarValor());
+		stats.TomarDano(myStats.dano - playerStats.armadura);
 		rend.material.color = Color.red;
 	}
 

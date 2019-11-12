@@ -9,8 +9,8 @@ public class PersonagemStats : MonoBehaviour
 	public int vidaMaxima = 100;
     public int vidaAtual; //{ get; private set; }
 	public int danoInimigo;
-	public Stats dano;
-	public Stats armadura;
+	public int dano;
+	public int armadura;
 
     public event System.Action<int, int> seVidaMudar;
 
@@ -37,7 +37,7 @@ public class PersonagemStats : MonoBehaviour
 
 	public void TomarDano(int dano)
 	{
-		dano -= armadura.PegarValor();
+		dano -= armadura;
 		dano = Mathf.Clamp(dano, 0, int.MaxValue);
 
 		vidaAtual -= dano;

@@ -17,17 +17,18 @@ public class JogadorStats : PersonagemStats
 	{
 		if(novoItem != null)
 		{
-		  armadura.AdicionarModificador(novoItem.armaduraModificador);
-		  dano.AdicionarModificador(novoItem.danoModificador);
+			armadura = armadura + novoItem.armaduraModificador;
+			dano = dano + novoItem.danoModificador;
 
 		}
 
 		if(velhoItem != null)
 		{
-			armadura.RemoverModificador(velhoItem.armaduraModificador);
-			dano.RemoverModificador(velhoItem.danoModificador);
+			armadura = armadura - velhoItem.armaduraModificador;
+			dano = dano - velhoItem.danoModificador;
 		}
 	}
+
 
 	public override void Die()
 	{

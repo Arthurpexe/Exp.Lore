@@ -90,6 +90,7 @@ MonoBehaviour:
   player: {fileID: 7295218478546259376}
   _inputs: {x: 0, y: 0, z: 0}
   _isFastSpeed: 0
+  CD: 3
   personagemStats: {fileID: 7559656661029642055}
   vidaAtual: 0
   barraVidaBoss: {fileID: 0}
@@ -114,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 100
   vidaAtual: 0
-  danoInimigo: 10
+  danoInimigo: 0
   dano:
     valorBase: 10
   armadura:

@@ -9,6 +9,9 @@ public class PersonagemCombate : MonoBehaviour
 	public float cooldownAtaque = 0f;
 	public float CooldownAtaque;
 	public float ataqueDelay = .6f;
+	PersonagemStats playerStats;
+	GameObject player;
+	
 
 
 
@@ -16,6 +19,9 @@ public class PersonagemCombate : MonoBehaviour
 
 	void Start()
 	{
+		player = GameObject.FindGameObjectWithTag("Player");
+		playerStats = player.GetComponent<PersonagemStats>();
+
 		myStats = GetComponent<PersonagemStats>();
 	}
 
@@ -41,7 +47,7 @@ public class PersonagemCombate : MonoBehaviour
 	{
 		yield return new WaitForSeconds(delay);
 
-		stats.TomarDano(myStats.dano.PegarValor());
+		stats.TomarDano(myStats.dano - playerStats.armadura);
 	}
 	
 }
