@@ -1,9 +1,23 @@
 <?xml version="1.0"?>
-<Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<PlayerSave xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <posicao>
-    <x>60</x>
-    <y>10.0481691</y>
-    <z>313.5</z>
+    <x>106.875381</x>
+    <y>10.0229645</y>
+    <z>279.372681</z>
   </posicao>
   <vida>100</vida>
-</Player>
+  <missoes>
+    <Missao xsi:nil="true" />
+    <Missao xsi:nil="true" />
+    <Missao xsi:nil="true" />
+    <Missao xsi:nil="true" />
+    <Missao xsi:nil="true" />
+    <Missao xsi:nil="true" />
+    <Missao xsi:nil="true" />
+    <Missao xsi:nil="true" />
+    <Missao xsi:nil="true" />
+    <Missao xsi:nil="true" />
+    <Missao xsi:nil="true" />
+    <Missao xsi:nil="true" />
+  </missoes>
+</PlayerSave>

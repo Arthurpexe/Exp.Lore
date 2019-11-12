@@ -8,7 +8,12 @@ public class InventarioSlot : MonoBehaviour
 
 	public Item item;
 
-	public void AddItem (Item newItem)
+    public GameObject personagem;
+    private void Start()
+    {
+
+    }
+    public void AddItem (Item newItem)
 	{
 		item = newItem;
 

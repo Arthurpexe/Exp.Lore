@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdb1169e38a81db4697c0dc5ebbdedac, type: 3}
-  m_Name: "Po\xE7\xE3o de vida"
+  m_Script: {fileID: 11500000, guid: 52b655281a909784e81c4328628d99a7, type: 3}
+  m_Name: "Po\xE7\xE3o de Vida."
   m_EditorClassIdentifier: 
-  tag: Consumivel
-  nome: "Po\xE7\xE3o de vida."
+  nome: "Po\xE7\xE3o de Vida."
+  icon: {fileID: 0}
+  isDefaultItem: 0
   vida: 20
   dano: 5
   armadura: 2
-  icon: {fileID: 0}
-  isDefaultItem: 0

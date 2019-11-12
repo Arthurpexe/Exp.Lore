@@ -60,7 +60,9 @@ public class PersonagemStats : MonoBehaviour
 
     public void carregarVida()
     {
+        Debug.Log("vida atual" + vidaAtual);
         seVidaMudar(vidaMaxima, vidaAtual);
+        Debug.Log("vida atual"+vidaAtual);
     }
 
 

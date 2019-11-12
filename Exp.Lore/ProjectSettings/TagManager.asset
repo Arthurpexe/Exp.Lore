@@ -9,6 +9,7 @@ TagManager:
   - AreaBoss
   - AreaTitulo
   - AreaBaseCachoeira
+  - "AreaMans\xE3oRicasso"
   layers:
   - Default
   - TransparentFX

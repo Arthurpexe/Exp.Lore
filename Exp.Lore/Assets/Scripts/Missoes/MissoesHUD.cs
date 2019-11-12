@@ -4,7 +4,7 @@ public class MissoesHUD : MonoBehaviour
 {
     ControladorPersonagem controladorPersonagem;
 
-    public MissoesSlot[] slotsMissoes = new MissoesSlot[6];
+    public MissoesSlot[] slotsMissoesAtivas = new MissoesSlot[6];
     public MissoesSlot[] slotsMissoesConcluidas = new MissoesSlot[6];
     void Start()
     {
@@ -14,25 +14,26 @@ public class MissoesHUD : MonoBehaviour
 
     public void atualizarMissoesHUD()
     {
-        for (int i = 0; i < slotsMissoes.Length; i++)
+        for (int i = 0; i < controladorPersonagem.missoes.Length; i++)
         {
             if (i <= controladorPersonagem.contadorMissoesAtivas)
             {
-                if (controladorPersonagem.missoesAtivas[i] != null)
+                if (controladorPersonagem.missoes[i] != null)
                 {
-                    if (controladorPersonagem.missoesAtivas[i].estaAtiva)
-                        slotsMissoes[i].AdicionarMissao(controladorPersonagem.missoesAtivas[i]);
-
-                    else if (controladorPersonagem.missoesAtivas[i].concluida)
+                    if (controladorPersonagem.missoes[i].estaAtiva)
                     {
-                        slotsMissoesConcluidas[i].AdicionarMissao(controladorPersonagem.missoesAtivas[i]);
-                        slotsMissoes[i].concluirMissao();
+                        slotsMissoesAtivas[i].AdicionarMissao(controladorPersonagem.missoes[i]);
+                    }
+                    else if (controladorPersonagem.missoes[i].concluida)
+                    {
+                        slotsMissoesConcluidas[i].AdicionarMissao(controladorPersonagem.missoes[i]);
+                        slotsMissoesAtivas[i].concluirMissao();
                     }
                 }
             }
             else
             {
-                slotsMissoes[i].ClearSlot();
+                slotsMissoesAtivas[i].ClearSlot();
             }
             
         }

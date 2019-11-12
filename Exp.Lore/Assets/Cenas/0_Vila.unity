@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf1856e0f5f30b44844bffecaf26a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotsMissoes:
+  slotsMissoesAtivas:
   - {fileID: 179316775}
   - {fileID: 375966449}
   - {fileID: 1422850871}
@@ -1786,6 +1786,7 @@ MonoBehaviour:
   icone: {fileID: 1565178467}
   botaoExcluir: {fileID: 0}
   item: {fileID: 0}
+  personagem: {fileID: 0}
 --- !u!1001 &63374935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14028,6 +14029,7 @@ MonoBehaviour:
   icone: {fileID: 167730747}
   botaoExcluir: {fileID: 0}
   item: {fileID: 0}
+  personagem: {fileID: 0}
 --- !u!1001 &506282374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15837,7 +15839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &580268100
 Transform:
   m_ObjectHideFlags: 0
@@ -17371,7 +17373,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Lista de Miss\xF5es Incompletas"
+  m_Text: "Lista de Miss\xF5es\nAtivas"
 --- !u!222 &658073436
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28690,6 +28692,7 @@ MonoBehaviour:
   icone: {fileID: 1111844896}
   botaoExcluir: {fileID: 0}
   item: {fileID: 0}
+  personagem: {fileID: 0}
 --- !u!1001 &1226796007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29577,7 +29580,7 @@ PrefabInstance:
         type: 3}
       propertyPath: item
       value: 
-      objectReference: {fileID: 11400000, guid: e9c5cc3a4a382cd428c72d844464d5bc,
+      objectReference: {fileID: 11400000, guid: ff7df1bf716117f45a1ca884abf8655c,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85c8f60bd2f454940a78a26d326e95f3, type: 3}
@@ -30590,6 +30593,7 @@ MonoBehaviour:
   textoOuro: {fileID: 1887531096}
   botaoAceitarQuest: {fileID: 1875510083}
   falarComQuem: {fileID: 3636788635412655153}
+  falarComQuemMinimapa: {fileID: 580268099}
 --- !u!4 &1296607613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8597826185811941086, guid: 68dbab9ffc07d704082ae2f206d6901a,
@@ -32325,7 +32329,7 @@ MonoBehaviour:
   spriteNormal: {fileID: 0}
   spriteAlterado: {fileID: 0}
   textoObjetivo: {fileID: 658073435}
-  fraseAAlterar: "Lista de Miss\xF5es Completas"
+  fraseAAlterar: "Lista de Miss\xF5es Concluidas"
 --- !u!114 &1348606548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33548,9 +33552,10 @@ GameObject:
   - component: {fileID: 1407086682}
   - component: {fileID: 1407086681}
   - component: {fileID: 1407086680}
+  - component: {fileID: 1407086683}
   m_Layer: 0
   m_Name: Jardim
-  m_TagString: Untagged
+  m_TagString: "AreaMans\xE3oRicasso"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -33629,6 +33634,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407086678}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1407086683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407086678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 16.58, z: 10}
+  m_Center: {x: 0, y: 7.1, z: 0}
 --- !u!4 &1409794176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8597826185811941086, guid: 68dbab9ffc07d704082ae2f206d6901a,
@@ -42388,6 +42406,7 @@ MonoBehaviour:
   icone: {fileID: 548995828}
   botaoExcluir: {fileID: 0}
   item: {fileID: 0}
+  personagem: {fileID: 0}
 --- !u!114 &1791497176 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1062721804297797806, guid: dd0c419894871d54fa8d976c6bfd5203,
@@ -50949,7 +50968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29d644620d1b1d4da7b5a7515c3f0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 4
+  radius: 4.5
   interactionTransform: {fileID: 5418903349457236171}
   player: {fileID: 5034884846238474149}
   controladorPersonagem: {fileID: 0}
@@ -50970,6 +50989,7 @@ MonoBehaviour:
   textoOuro: {fileID: 1887531096}
   botaoAceitarQuest: {fileID: 1875510083}
   falarComQuem: {fileID: 0}
+  falarComQuemMinimapa: {fileID: 0}
 --- !u!1001 &3870511021289008021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51086,6 +51106,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870511021499184221, guid: 934a47265c1a3594cabc461552becf7e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870511021499184221, guid: 934a47265c1a3594cabc461552becf7e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870511021499184221, guid: 934a47265c1a3594cabc461552becf7e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870511021499184221, guid: 934a47265c1a3594cabc461552becf7e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 5034884846238474153}
+    - target: {fileID: 3870511021499184221, guid: 934a47265c1a3594cabc461552becf7e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: carregarVida
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870511021499184221, guid: 934a47265c1a3594cabc461552becf7e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 934a47265c1a3594cabc461552becf7e, type: 3}
@@ -51348,7 +51398,7 @@ PrefabInstance:
     - target: {fileID: 1781884160402782082, guid: f9b114be22288134baa4e56edeee6b22,
         type: 3}
       propertyPath: CD
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4272248867529255921, guid: f9b114be22288134baa4e56edeee6b22,
         type: 3}
@@ -51415,6 +51465,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4272248868909464555}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5034884846238474153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1544205876883629428, guid: f9b114be22288134baa4e56edeee6b22,
+    type: 3}
+  m_PrefabInstance: {fileID: 4272248868909464555}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5034884846238474149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45368aa64f1fabe4ca7f5bbb40583ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5242926617304552858 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3906895658676509915, guid: e86abfabb0a112a4c86b9612224f540c,
@@ -51786,7 +51848,7 @@ MonoBehaviour:
     concluida: 0
     titulo: "Onde est\xE3o meus pais"
     descricao: "ir at\xE9 a base da cachoeira verificar se os boatos s\xE3o verdadeiros"
-    recompensaOuro: 1
+    recompensaOuro: 2
     objetivo:
       tipoObjetivo: 2
       quantidadeNescessaria: 1
@@ -51798,6 +51860,7 @@ MonoBehaviour:
   textoOuro: {fileID: 1887531096}
   botaoAceitarQuest: {fileID: 1875510083}
   falarComQuem: {fileID: 0}
+  falarComQuemMinimapa: {fileID: 0}
 --- !u!1 &8213912879877810200
 GameObject:
   m_ObjectHideFlags: 0

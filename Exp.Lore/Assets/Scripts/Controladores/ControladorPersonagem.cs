@@ -48,10 +48,10 @@ public class ControladorPersonagem : MonoBehaviour
     public float distaciaMaxima = 5.0f;
 
     [Header("Save")]
-    public Player personagem;
+    public PlayerSave personagem;
 
     [Header("Missoes")]
-    public Missao[] missoesAtivas;
+    public Missao[] missoes;
     public int contadorMissoesAtivas = 0;
     public int ouro;
     public GameObject titulo;
@@ -64,11 +64,11 @@ public class ControladorPersonagem : MonoBehaviour
     void Start()
 	{
 		rend = GetComponentInChildren<Renderer>();
-		missoesAtivas = new Missao[6];
+		missoes = new Missao[6];
 		player = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
 		cooldown = GetComponent<PersonagemCombate>();
-        personagem = new Player();
+        personagem = new PlayerSave();
 
         personagemStats = this.GetComponent<PersonagemStats>();
 		cd = CD;
@@ -164,7 +164,6 @@ public class ControladorPersonagem : MonoBehaviour
 
     public void mudouMissao()
     {
-        Debug.Log("missao do player é " + missoesAtivas[contadorMissoesAtivas-1].titulo);
         seMissaoMudarCallback.Invoke();
     }
 
@@ -176,19 +175,40 @@ public class ControladorPersonagem : MonoBehaviour
         }
         if (other.tag == "AreaBaseCachoeira")//verifico se cheguei na cachoeira para completar a missao Onde estão meus pais
         {
-            for (int i = 0; i < missoesAtivas.Length; i++)
+            for (int i = 0; i < missoes.Length; i++)
             {
-                if (missoesAtivas[i].titulo == "Onde estão meus pais")
+                if (missoes[i].titulo == "Onde estão meus pais")
                 {
-                    if (missoesAtivas[i].objetivo.tipoObjetivo == TipoObjetivo.irAte)
+                    if (missoes[i].estaAtiva)
                     {
-                        missoesAtivas[i].objetivo.chegouNumLugar();
-                        if (missoesAtivas[i].objetivo.concluiu())
+                        missoes[i].objetivo.chegouNumLugar();
+                        if (missoes[i].objetivo.concluiu())
                         {
-                            ouro += missoesAtivas[i].recompensaOuro;
-                            missoesAtivas[i].missaoConcluida();
+                            ouro += missoes[i].recompensaOuro;
+                            missoes[i].missaoConcluida();
                             //feedback de missao concluida
-                            seMissaoMudarCallback.Invoke();
+                            mudouMissao();
+                        }
+
+                    }
+                }
+            }
+        }
+        if (other.tag == "AreaMansãoRicasso")//verifico se cheguei na cachoeira para completar a missao Onde estão meus pais
+        {
+            for (int i = 0; i < missoes.Length; i++)
+            {
+                if (missoes[i].titulo == "A Invasão")
+                {
+                    if (missoes[i].estaAtiva)
+                    {
+                        missoes[i].objetivo.chegouNumLugar();
+                        if (missoes[i].objetivo.concluiu())
+                        {
+                            ouro += missoes[i].recompensaOuro;
+                            missoes[i].missaoConcluida();
+                            //feedback de missao concluida
+                            mudouMissao();
                         }
                     }
                 }

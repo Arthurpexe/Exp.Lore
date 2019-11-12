@@ -12,11 +12,11 @@ public class Equipamento : Item
 
 	public override void Use()
 	{
-		base.Use();
+		
 		ControladorEquipamento.instance.Equipar(this);
         //colocar noa aba equipamentos no slot referente ao enum EquipamentoSlot
-		this.RemoverDoInventario();
-	}
+        RemoverDoInventario();
+    }
 
     public override void desequipar()
     {

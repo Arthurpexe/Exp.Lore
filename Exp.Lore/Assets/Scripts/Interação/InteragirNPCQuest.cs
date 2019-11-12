@@ -14,6 +14,7 @@ public class InteragirNPCQuest : Interagivel
     public Text textoOuro;
     public GameObject botaoAceitarQuest;
     public GameObject falarComQuem;
+    public GameObject falarComQuemMinimapa;
 
     public override void Interact()
     {
@@ -38,7 +39,20 @@ public class InteragirNPCQuest : Interagivel
         {
             //dialogo de falarComQuem especial da missao
             falarComQuem.GetComponent<InteragirNPCQuest>().enabled = true;
+            falarComQuemMinimapa.SetActive(true);
             //mudar a cor do NPCQuestMinimapa
+        }
+        if(missao.titulo == "A Invasão")
+        {
+            for (int i = 0; i < controladorPersonagem.missoes.Length; i++)
+            {
+                if (controladorPersonagem.missoes[i].titulo == "Boatos (quase) Inacreditaveis")
+                {
+                    controladorPersonagem.ouro += controladorPersonagem.missoes[i].recompensaOuro;
+                    controladorPersonagem.missoes[i].missaoConcluida();
+                    controladorPersonagem.mudouMissao();
+                }
+            }
         }
     }
 
@@ -46,7 +60,7 @@ public class InteragirNPCQuest : Interagivel
     {
         Debug.Log("Adicionei a quest "+missao.titulo+"!");
         this.missao.estaAtiva = true;
-        controladorPersonagem.missoesAtivas[controladorPersonagem.contadorMissoesAtivas] = this.missao;
+        controladorPersonagem.missoes[controladorPersonagem.contadorMissoesAtivas] = this.missao;
         controladorPersonagem.contadorMissoesAtivas++;
         controladorPersonagem.mudouMissao();
     }
