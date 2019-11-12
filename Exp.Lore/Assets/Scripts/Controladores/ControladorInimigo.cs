@@ -51,8 +51,9 @@ public class ControladorInimigo : MonoBehaviour
 
 		if (distancia <= raioDeVisao)
 		{
-			
-			agent.SetDestination(target.position);
+            target.LookAt(new Vector3(transform.position.x, target.position.y, transform.position.z));
+
+            agent.SetDestination(target.position);
 
 			if(distancia <= 3)
 			{

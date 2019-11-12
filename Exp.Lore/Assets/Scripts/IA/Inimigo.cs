@@ -6,10 +6,6 @@ public class Inimigo : MonoBehaviour
 {
 	Ref_posiçao_jogador playerManager;
 	PersonagemStats myStats;
-	GameObject jogador;
-
-	Transform inimigo;
-	
 
     public float radius = 3f;
     public Transform interactionTransform;
@@ -20,19 +16,12 @@ public class Inimigo : MonoBehaviour
 	{
 		playerManager = Ref_posiçao_jogador.instance;
 		myStats = GetComponent<PersonagemStats>();
-		jogador = GameObject.FindGameObjectWithTag("Player");
-		inimigo = transform.GetChild(0);
 	}
 
     void Update()
     {
         PersonagemCombate playerCombat = playerManager.player.GetComponent<PersonagemCombate>();
         float distance = Vector3.Distance(player.position, interactionTransform.position);
-
-		if(distance <= radius)
-		{
-			jogador.transform.LookAt(inimigo.transform.position);
-		}
 
 		if (distance <= radius && Input.GetButtonDown("Atacar"))
         {
