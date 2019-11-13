@@ -64,6 +64,8 @@
   <ItemGroup>
     <Compile Include="Assets\FSM_Boss1_Ataque.cs" />
     <Compile Include="Assets\FSM_Boss1_Morrer.cs" />
+    <Compile Include="Assets\FSM_Inimigo01_Morrer.cs" />
+    <Compile Include="Assets\FSM_Inimigo02_Morrer.cs" />
     <Compile Include="Assets\FSM_Player_Morrer.cs" />
     <Compile Include="Assets\Scripts\Controladores\ControladorBoss1.cs" />
     <Compile Include="Assets\Scripts\Controladores\ControladorCamera.cs" />

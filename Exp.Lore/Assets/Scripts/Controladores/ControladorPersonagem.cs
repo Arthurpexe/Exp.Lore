@@ -231,7 +231,7 @@ public class ControladorPersonagem : MonoBehaviour
         }
         if(other.tag == "AreaTitulo")
         {
-            titulo.SetActive(true);
+            titulo.SetActive(false);
         }
     }
 }
