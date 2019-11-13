@@ -7,6 +7,7 @@ public class Item : ScriptableObject
     public string nome = "Novo Item";
     public Sprite icon = null;
     public bool isDefaultItem = false;
+    int endereco;
 	GameObject player;
 	JogadorStats stats;
 

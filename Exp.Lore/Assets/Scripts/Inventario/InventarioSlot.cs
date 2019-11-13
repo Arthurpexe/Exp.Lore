@@ -7,8 +7,6 @@ public class InventarioSlot : MonoBehaviour
     public Image botaoExcluir;
 
 	public Item item;
-
-    public GameObject personagem;
     private void Start()
     {
 

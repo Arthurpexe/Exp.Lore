@@ -3,25 +3,18 @@
 public class InventarioHUD : MonoBehaviour
 {
     public Transform itensParent;
-    public Transform equipsParent;
 
     public GameObject painelInventario, marcadorNovoItem;
     public GameObject painelMissoes, marcadorNovaMissao;
 
     Inventario inventario;
-    ControladorEquipamento controladorEquipamento;
 
     InventarioSlot[] slotsItens;
-    InventarioSlot[] slotsEquips;
     void Start()
     {
-        controladorEquipamento = ControladorEquipamento.instance;
         inventario = Inventario.instance;
         inventario.onItemChangedCallback += atualizarInventarioHUD;
-        controladorEquipamento.atualizarEquipamento += atualizarEquipsHUD;
-
         slotsItens = itensParent.GetComponentsInChildren<InventarioSlot>();
-        slotsEquips = equipsParent.GetComponentsInChildren<InventarioSlot>();
     }
 
     private void Update()
@@ -44,7 +37,7 @@ public class InventarioHUD : MonoBehaviour
 
     public void atualizarInventarioHUD()
     {
-        for (int i = 0; i < slotsItens.Length; i++)
+        for (int i = 1; i < slotsItens.Length; i++)
         {
             if (i <= inventario.listaItens.contador)
             {
@@ -59,24 +52,6 @@ public class InventarioHUD : MonoBehaviour
 
         if (!painelInventario.activeSelf)
             marcadorNovoItem.SetActive(true);
-
-        Debug.Log("Mudei a HUD dos Inventarios");
-    }
-
-    public void atualizarEquipsHUD()
-    {
-        for (int i = 0; i < slotsEquips.Length; i++)
-        {
-            if (controladorEquipamento.equipamentoAtual[i] != null)
-            {
-                slotsEquips[i].AddItem(controladorEquipamento.equipamentoAtual[i]);
-                inventario.Remove(controladorEquipamento.equipamentoAtual[i]); 
-            }
-            else
-            {
-                slotsEquips[i].ClearSlot();
-            }
-        }
     }
 
     public void abrirPainel(GameObject painel)

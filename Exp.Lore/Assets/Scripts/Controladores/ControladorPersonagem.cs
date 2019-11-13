@@ -183,6 +183,7 @@ public class ControladorPersonagem : MonoBehaviour
         {
             for (int i = 0; i < missoes.Length; i++)
             {
+                //Debug.Log("missão " + i + ": " + missoes[i].titulo);
                 if (missoes[i].titulo == "Onde estão meus pais")
                 {
                     if (missoes[i].estaAtiva)
@@ -204,9 +205,10 @@ public class ControladorPersonagem : MonoBehaviour
         {
             for (int i = 0; i < missoes.Length; i++)
             {
-                if (missoes[i].titulo == "A Invasão")
+                //Debug.Log("missão " + i + ": " + missoes[i].titulo);
+                if (missoes[i].estaAtiva)
                 {
-                    if (missoes[i].estaAtiva)
+                    if (missoes[i].titulo == "A Invasão")
                     {
                         missoes[i].objetivo.chegouNumLugar();
                         if (missoes[i].objetivo.concluiu())
