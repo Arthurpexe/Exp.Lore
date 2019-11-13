@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\Stats\Stats.cs" />
     <Compile Include="Assets\Scripts\Stats\VidaHUD.cs" />
     <Compile Include="Assets\Scripts\Utensilhos\InstanciarBotao.cs" />
+    <Compile Include="Assets\Scripts\Utensilhos\PassarOMouse.cs" />
     <Compile Include="Assets\Scripts\Utensilhos\Ref_posiçao_jogador.cs" />
     <Compile Include="Assets\Scripts\Utensilhos\TrocarSprite.cs" />
     <Reference Include="Unity.Timeline.Editor">
