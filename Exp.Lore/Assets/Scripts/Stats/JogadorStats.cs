@@ -30,11 +30,20 @@ public class JogadorStats : PersonagemStats
 	}
 
 
-	public override void Die()
+	public override void MorrerAnimaçao()
 	{
-        anim.SetTrigger("morto");
-		base.Die();
-		Ref_posiçao_jogador.instance.MatarPlayer();
+
+		anim.SetTrigger("morto");
+
+	}
+
+
+	public override void Morrer()
+	{
+		
+		anim.SetTrigger("morto");
+		
+		
 	}
 
 

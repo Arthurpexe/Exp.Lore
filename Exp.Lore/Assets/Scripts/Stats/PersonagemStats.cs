@@ -52,7 +52,7 @@ public class PersonagemStats : MonoBehaviour
 
 		if(vidaAtual <= 0)
 		{
-			Die();
+			MorrerAnimaçao();
 		}
 
 		
@@ -66,10 +66,15 @@ public class PersonagemStats : MonoBehaviour
     }
 
 
-	public virtual void Die()
+	public virtual void MorrerAnimaçao()
 	{
 
 
 		
+	}
+
+	public virtual void Morrer()
+	{
+
 	}
 }

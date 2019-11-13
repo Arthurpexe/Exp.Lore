@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class ControladorBoss1 : MonoBehaviour
 {
 	public float raioDeVisao = 10f;
+	public float cooldownAtaque = 0f;
+	public float CooldownAtaque = 5f;
 
 	Renderer rend;
 	Transform target;
@@ -27,6 +29,8 @@ public class ControladorBoss1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		cooldownAtaque -= Time.deltaTime;
+
 		float distancia = Vector3.Distance(target.position, transform.position);
 
 		rend.material.color = Color.white;
@@ -35,7 +39,7 @@ public class ControladorBoss1 : MonoBehaviour
 		{
 			 
 			PersonagemStats alvoStats = target.GetComponent<PersonagemStats>();
-			if (alvoStats != null)
+			if (alvoStats != null && cooldownAtaque <= 0)
 			{
 				combate.Ataque(alvoStats);
 				

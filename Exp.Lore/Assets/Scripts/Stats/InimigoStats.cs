@@ -10,6 +10,7 @@ public class InimigoStats : PersonagemStats
 	public GameObject player;
 	PersonagemCombate cooldown;
 	public float CoolDown;
+	Animator anim;
     
 
 
@@ -19,8 +20,9 @@ public class InimigoStats : PersonagemStats
 		cooldown = player.GetComponent<PersonagemCombate>();
 		float Cooldown = cooldown.CooldownAtaque;
 		CoolDown = Cooldown;
-     
-    }
+		anim = GetComponentInChildren<Animator>();
+
+	}
 
 
 
@@ -37,10 +39,16 @@ public class InimigoStats : PersonagemStats
 	}
 
 
-	public override void Die()
+	public override void MorrerAnimaçao()
 	{
-		base.Die();
+		
 
+		anim.SetTrigger("Morrer");
+		//Destroy(gameObject);
+	}
+
+	public override void Morrer()
+	{
 		Destroy(gameObject);
 	}
 

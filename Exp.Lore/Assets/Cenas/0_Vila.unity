@@ -52235,12 +52235,17 @@ PrefabInstance:
     - target: {fileID: 1735719412644994923, guid: e86abfabb0a112a4c86b9612224f540c,
         type: 3}
       propertyPath: "delayAnima\xE7aoDeAviso"
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1735719412644994923, guid: e86abfabb0a112a4c86b9612224f540c,
         type: 3}
       propertyPath: CooldownAtaque
-      value: 5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735719412644994923, guid: e86abfabb0a112a4c86b9612224f540c,
+        type: 3}
+      propertyPath: ataqueDelay
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6976445809260737980, guid: e86abfabb0a112a4c86b9612224f540c,
         type: 3}

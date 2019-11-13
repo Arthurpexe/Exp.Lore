@@ -7,7 +7,7 @@ public class Boss1Combate : MonoBehaviour
 {
 	public float velocidadeAtaque = 1f;
 	private float cooldownAtaque = 0f;
-	public float CooldownAtaque;
+	public float CooldownAtaque = 5f;
 	public float ataqueDelay = .6f;
 	private Rigidbody player;
 	RaycastHit alvo;
@@ -16,10 +16,12 @@ public class Boss1Combate : MonoBehaviour
 	Renderer rend;
 	GameObject jogador;
 	PersonagemStats playerStats;
+	Animator mecanimBoss;
 
 
 
-	PersonagemStats myStats;
+
+	public PersonagemStats myStats;
 
 	void Start()
 	{
@@ -28,6 +30,7 @@ public class Boss1Combate : MonoBehaviour
 		myStats = GetComponent<PersonagemStats>();
 		jogador = GameObject.FindGameObjectWithTag("Player");
 		rend = jogador.GetComponentInChildren<Renderer>();
+		mecanimBoss = GetComponentInChildren<Animator>();
 
 	}
 
@@ -36,64 +39,73 @@ public class Boss1Combate : MonoBehaviour
 	{
 		cooldownAtaque -= Time.deltaTime;
 		delayAnimaçaoAtual = delayAnimaçaoDeAviso;
-		Physics.SphereCast(transform.position + Vector3.down * 2, 1, transform.forward * 10, out alvo);
+		
 
 	}
-
-
-
-
-	
 
 
 
 	public void Ataque(PersonagemStats alvoStats)
 	{
-		
+
 		if (cooldownAtaque <= 0)
 		{
 			Debug.Log("Vou atacar!");
-			// chamar a animação de aviso que vai atacar do boss
 
-
-			
-				//Executar animação de ataque.
-
-				if (alvo.transform.name == "Personagem")
-				{
-					DarDano(alvoStats);
-					cooldownAtaque = CooldownAtaque;
-				    rend.material.color = Color.red;
-
-				}
-				else
-				{
-					cooldownAtaque = CooldownAtaque;
-				}
-			
-			
-			
+			mecanimBoss.SetTrigger("atacar");
+			cooldownAtaque = CooldownAtaque;
 
 		}
+
 	}
-			
-
-			
 
 
-		
-			
 
-
-	public void DarDano(PersonagemStats stats) 
+	public void Disparar(PersonagemStats alvoStats)
 	{
+		Physics.SphereCast(transform.position + Vector3.down * 2, 1, transform.forward * 10, out alvo);
+		if (alvo.transform.name == "Personagem")
+		{
+			DarDano(alvoStats);
+			cooldownAtaque = CooldownAtaque;
+			rend.material.color = Color.red;
+
+		}
+
 		
+		
+			
+		
+
+	}
+
+
+	public void DarDano(PersonagemStats stats)
+	{
+
 		stats.TomarDano(myStats.dano - playerStats.armadura);
 		rend.material.color = Color.red;
 	}
 
-			
-}
+
+
+}			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
