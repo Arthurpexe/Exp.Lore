@@ -3,6 +3,7 @@ public class Missao
 {
     public bool estaAtiva;
     public bool concluida;
+    public bool jaMostrouNaHUD;
 
     public string titulo;
     public string descricao;
@@ -14,6 +15,7 @@ public class Missao
     {
         estaAtiva = false;
         concluida = false;
+        jaMostrouNaHUD = false;
         titulo = "novaMissao";
         descricao = "novaDescricao";
         recompensaOuro = 0;

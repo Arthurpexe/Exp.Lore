@@ -11,11 +11,12 @@ public class PersonagemCombate : MonoBehaviour
 	public float ataqueDelay = .6f;
 	PersonagemStats playerStats;
 	GameObject player;
-	
+    Animator anim;
+
+    public bool atacando;
 
 
-
-	PersonagemStats myStats;
+    PersonagemStats myStats;
 
 	void Start()
 	{
@@ -38,8 +39,11 @@ public class PersonagemCombate : MonoBehaviour
 
 		if(cooldownAtaque <= 0)
 		{
-			StartCoroutine(DarDano(alvoStats, ataqueDelay));
+            atacando = true;
+            StartCoroutine(DarDano(alvoStats, ataqueDelay));
 			cooldownAtaque = CooldownAtaque;
+            
+
 		}
 	}
 

@@ -13,6 +13,7 @@ public class ControladorInimigo : MonoBehaviour
 	PersonagemCombate combate;
 	public GameObject[] Waypoints;
 	private int WaypointDestino = 0;
+    Animator anim;
 
 	// Start is called before the first frame update
 	void Start()
@@ -21,13 +22,16 @@ public class ControladorInimigo : MonoBehaviour
 		agent = GetComponent<NavMeshAgent>();
 		combate = GetComponent<PersonagemCombate>();
 		rend = GetComponentInChildren<Renderer>();
+        anim = this.gameObject.GetComponentInChildren<Animator>();
 
 	}
 
     // Update is called once per frame
     void Update()
     {
-		rend.material.color = Color.white;
+        
+        anim.SetBool("perseguindo", false);
+        rend.material.color = Color.white;
 		float distancia = Vector3.Distance(target.position, transform.position);
 
 		agent.SetDestination(Waypoints[WaypointDestino].transform.position);
@@ -51,6 +55,7 @@ public class ControladorInimigo : MonoBehaviour
 
 		if (distancia <= raioDeVisao)
 		{
+            anim.SetBool("perseguindo", true);
             target.LookAt(new Vector3(transform.position.x, target.position.y, transform.position.z));
 
             agent.SetDestination(target.position);
@@ -61,6 +66,11 @@ public class ControladorInimigo : MonoBehaviour
 				if(alvoStats != null)
 				{
 					combate.Ataque(alvoStats);
+                    if (combate.atacando)
+                    {
+                        anim.SetTrigger("atacar");
+                        combate.atacando = false;
+                    }
 				}
 				
 				OlharParaAlvo();

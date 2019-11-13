@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class MissoesHUD : MonoBehaviour
 {
     ControladorPersonagem controladorPersonagem;
 
+    public GameObject painelMissaoConcluida;
     public MissoesSlot[] slotsMissoesAtivas = new MissoesSlot[6];
     public MissoesSlot[] slotsMissoesConcluidas = new MissoesSlot[6];
     void Start()
@@ -28,6 +30,14 @@ public class MissoesHUD : MonoBehaviour
                     {
                         slotsMissoesConcluidas[i].AdicionarMissao(controladorPersonagem.missoes[i]);
                         slotsMissoesAtivas[i].concluirMissao();
+
+                        if (!controladorPersonagem.missoes[i].jaMostrouNaHUD)
+                        {
+                            painelMissaoConcluida.GetComponentInChildren<Text>().text = "Missão " + controladorPersonagem.missoes[i].titulo + " concluida!";
+                            painelMissaoConcluida.SetActive(true);
+                            Invoke("desativarPainelMissaoConcluida", 5f);
+                            controladorPersonagem.missoes[i].jaMostrouNaHUD = true;
+                        }
                     }
                 }
             }
@@ -39,5 +49,12 @@ public class MissoesHUD : MonoBehaviour
         }
 
         Debug.Log("Mudei a HUD das Missoes");
+    }
+
+    
+    public void desativarPainelMissaoConcluida()
+    {
+        painelMissaoConcluida.SetActive(false);
+
     }
 }

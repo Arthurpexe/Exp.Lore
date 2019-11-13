@@ -81,8 +81,8 @@ public class SaveLoad : MonoBehaviour
         //controladorPersonagem.missoes = controladorPersonagem.personagem.missoes;
         //controladorPersonagem.mudouMissao();
 
-		anim.Rebind();
-	}
+        anim.Rebind();
+    }
 
     public void sairJogo()
     {
