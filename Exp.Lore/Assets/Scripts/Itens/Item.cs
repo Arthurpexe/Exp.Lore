@@ -8,8 +8,7 @@ public class Item : ScriptableObject
     public Sprite icon = null;
     public bool isDefaultItem = false;
     int endereco;
-	GameObject player;
-	JogadorStats stats;
+	
 
 
 

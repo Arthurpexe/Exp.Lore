@@ -147,7 +147,7 @@ public class ControladorPersonagem : MonoBehaviour
         
 
 
-		if (Abaixar == true && Input.GetButtonDown("Correr_p1") && cd <= 0)
+		if (Abaixar == true && Input.GetButtonDown("Dash_p1") && cd <= 0)
 		{
 			anim.SetTrigger("rolar");
 			_isFastSpeed = false;
@@ -205,7 +205,7 @@ public class ControladorPersonagem : MonoBehaviour
         {
             for (int i = 0; i < missoes.Length; i++)
             {
-                //Debug.Log("missão " + i + ": " + missoes[i].titulo);
+                Debug.Log("missão " + i + ": " + missoes[i].titulo);
                 if (missoes[i].estaAtiva)
                 {
                     if (missoes[i].titulo == "A Invasão")

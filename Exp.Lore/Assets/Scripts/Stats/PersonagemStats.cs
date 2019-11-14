@@ -11,14 +11,22 @@ public class PersonagemStats : MonoBehaviour
 	public int danoInimigo;
 	public int dano;
 	public int armadura;
+	
+
+	public GameObject item;
+	GameObject player;
 
     public event System.Action<int, int> seVidaMudar;
 
 	private void Awake()
 	{
+
 		rend = GetComponentInChildren<Renderer>();
 		vidaAtual = vidaMaxima;
 		personagem = GetComponent<NavMeshAgent>();
+		player = GameObject.Find("Personagem");
+
+		
 	}
 
 
@@ -52,6 +60,8 @@ public class PersonagemStats : MonoBehaviour
 
 		if(vidaAtual <= 0)
 		{
+			Instantiate(item, this.transform.position, Quaternion.identity);
+			item.GetComponent<Interagivel>().player = player;
 			MorrerAnimaçao();
 		}
 

@@ -89,12 +89,11 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Morrer
-  m_Speed: 0.5
+  m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3071411351887917208}
   m_StateMachineBehaviours:
-  - {fileID: 1681236959938834408}
   - {fileID: -3406594082524725032}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -235,18 +234,6 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!114 &1681236959938834408
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de90aeafb59ee6f49bfee844d6583c1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1101 &2108905093561791139
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -280,7 +267,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Atacando
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3773016609991857095}
