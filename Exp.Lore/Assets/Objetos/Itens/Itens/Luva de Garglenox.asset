@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Luva de Garglenox
   m_EditorClassIdentifier: 
   nome: Luva de Garglenox
+  descricao: "uma luva que n\xE3o serve ninguem"
+  preco: 15
   icon: {fileID: 0}
   isDefaultItem: 0

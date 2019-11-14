@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b655281a909784e81c4328628d99a7, type: 3}
   m_Name: Armadura de espinhos
   m_EditorClassIdentifier: 
-  nome: Personagem3 - Armadura de espinhos.
+  nome: Armadura de espinhos
+  descricao: Cura 15 de vida e Adiciona muita Armadura
+  preco: 25
   icon: {fileID: 0}
   isDefaultItem: 0
-  vida: 90
+  vida: 15
   dano: 0
   armadura: 6

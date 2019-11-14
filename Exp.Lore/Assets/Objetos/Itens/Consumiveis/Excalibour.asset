@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b655281a909784e81c4328628d99a7, type: 3}
   m_Name: Excalibour
   m_EditorClassIdentifier: 
-  nome: Inimigo 4 - Excalibour.
+  nome: Excalibour
+  descricao: Cura 30 de vida e adiciona muito dano
+  preco: 60
   icon: {fileID: 0}
   isDefaultItem: 0
-  vida: 95
+  vida: 40
   dano: 10
   armadura: 0

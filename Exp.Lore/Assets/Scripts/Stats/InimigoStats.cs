@@ -7,16 +7,16 @@ public class InimigoStats : PersonagemStats
 	public float radius = 3f;
 	public Transform interactionTransform;
 	
-	public GameObject player;
 	PersonagemCombate cooldown;
 	public float CoolDown;
 	Animator anim;
+
+    public AudioSource audioListenerBoss;
     
 
 
     private void Start()
 	{
-		player = GameObject.FindWithTag("Player");
 		cooldown = player.GetComponent<PersonagemCombate>();
 		float Cooldown = cooldown.CooldownAtaque;
 		CoolDown = Cooldown;
@@ -41,7 +41,10 @@ public class InimigoStats : PersonagemStats
 
 	public override void MorrerAnimaçao()
 	{
-		
+		if(this.gameObject.tag == "Boss")
+        {
+            audioListenerBoss.enabled = false;
+        }
 
 		anim.SetTrigger("Morrer");
 		//Destroy(gameObject);

@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Anel enferrujado
   m_EditorClassIdentifier: 
   nome: Anel enferrujado
+  descricao: um anel velho
+  preco: 5
   icon: {fileID: 0}
   isDefaultItem: 0

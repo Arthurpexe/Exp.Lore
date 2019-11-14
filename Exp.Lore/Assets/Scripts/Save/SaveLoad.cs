@@ -28,7 +28,6 @@ public class SaveLoad : MonoBehaviour
     ControladorPersonagem controladorPersonagem;
 
 	Animator anim;
-	GameObject raccon;
 
     private void Start()
     {

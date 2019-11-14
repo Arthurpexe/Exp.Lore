@@ -1,18 +1,12 @@
 <?xml version="1.0"?>
 <PlayerSave xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <posicao>
-    <x>106.875381</x>
-    <y>10.0229645</y>
-    <z>279.372681</z>
+    <x>60</x>
+    <y>10.0103283</y>
+    <z>313.5</z>
   </posicao>
   <vida>100</vida>
   <missoes>
-    <Missao xsi:nil="true" />
-    <Missao xsi:nil="true" />
-    <Missao xsi:nil="true" />
-    <Missao xsi:nil="true" />
-    <Missao xsi:nil="true" />
-    <Missao xsi:nil="true" />
     <Missao xsi:nil="true" />
     <Missao xsi:nil="true" />
     <Missao xsi:nil="true" />

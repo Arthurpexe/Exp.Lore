@@ -11,7 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cenas/0_Vila.unity
     guid: ec48499687eb8684ea364c6e860ebf75
-  - enabled: 0
-    path: Assets/Cenas/1_TesteSave.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

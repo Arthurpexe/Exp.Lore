@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: CapaceteTeste2
   m_EditorClassIdentifier: 
   nome: Capacete Teste2
-  icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  descricao: "Descri\xE7\xE3o do Capacete Teste2"
+  preco: 0
+  icon: {fileID: 21300000, guid: 40684d4f273eec84f97bf862615c3204, type: 3}
   isDefaultItem: 0
   equiparSlot: 0
   armaduraModificador: 3

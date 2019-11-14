@@ -2,36 +2,46 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Boss1Combate
+    - Consumiveis
     - ControladorBoss1
     - ControladorCamera
+    - ControladorCameraMapa
     - ControladorEquipamento
     - ControladorInimigo
     - ControladorPersonagem
     - Equipamento
+    - EquipamentoHUD
+    - FSM_Boss1_Ataque
+    - FSM_Boss1_Morrer
+    - FSM_Inimigo01_Morrer
+    - FSM_Inimigo02_Morrer
+    - FSM_Inimigo03_Morrer
+    - FSM_Inimigo04_Morrer
+    - FSM_Player_Morrer
     - Inimigo
     - InimigoStats
     - InimigoVidaHUD
     - InstanciarBotao
-    - InteragirNPC
+    - InteragirNPCQuest
     - Inventario
     - InventarioHUD
     - InventarioSlot
+    - Item
     - ItemPickUp
     - JogadorStats
+    - MissoesHUD
+    - MissoesSlot
+    - PassarOMouse
     - PersonagemCombate
     - "Ref_posi\xE7ao_jogador"
     - SaveLoad
     - TrocarSprite
     - VidaHUD
-    - cameraMapa
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -74,6 +84,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
     - Class: 91
@@ -85,67 +99,93 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9650}
+      Script: {instanceID: 9658}
     - Class: 114
-      Script: {instanceID: 9690}
+      Script: {instanceID: 9666}
     - Class: 114
       Script: {instanceID: 9698}
     - Class: 114
-      Script: {instanceID: 9744}
+      Script: {instanceID: 9706}
     - Class: 114
-      Script: {instanceID: 9816}
+      Script: {instanceID: 9754}
     - Class: 114
-      Script: {instanceID: 9848}
+      Script: {instanceID: 9780}
     - Class: 114
-      Script: {instanceID: 9858}
+      Script: {instanceID: 9830}
     - Class: 114
-      Script: {instanceID: 9908}
+      Script: {instanceID: 9862}
     - Class: 114
-      Script: {instanceID: 10088}
+      Script: {instanceID: 9872}
     - Class: 114
-      Script: {instanceID: 10128}
+      Script: {instanceID: 9922}
     - Class: 114
-      Script: {instanceID: 10208}
+      Script: {instanceID: 10002}
     - Class: 114
-      Script: {instanceID: 10246}
+      Script: {instanceID: 10030}
     - Class: 114
-      Script: {instanceID: 10280}
+      Script: {instanceID: 10102}
     - Class: 114
-      Script: {instanceID: 10332}
+      Script: {instanceID: 10108}
     - Class: 114
-      Script: {instanceID: 10356}
+      Script: {instanceID: 10148}
     - Class: 114
-      Script: {instanceID: 10386}
+      Script: {instanceID: 10228}
     - Class: 114
-      Script: {instanceID: 10418}
+      Script: {instanceID: 10266}
     - Class: 114
-      Script: {instanceID: 10440}
+      Script: {instanceID: 10300}
     - Class: 114
-      Script: {instanceID: 10444}
+      Script: {instanceID: 10346}
     - Class: 114
-      Script: {instanceID: 10490}
+      Script: {instanceID: 10354}
     - Class: 114
-      Script: {instanceID: 10550}
+      Script: {instanceID: 10378}
     - Class: 114
-      Script: {instanceID: 10616}
+      Script: {instanceID: 10408}
     - Class: 114
-      Script: {instanceID: 10696}
+      Script: {instanceID: 10412}
     - Class: 114
-      Script: {instanceID: 10922}
+      Script: {instanceID: 10442}
     - Class: 114
-      Script: {instanceID: 10966}
+      Script: {instanceID: 10464}
     - Class: 114
-      Script: {instanceID: 11086}
+      Script: {instanceID: 10468}
     - Class: 114
-      Script: {instanceID: 11234}
+      Script: {instanceID: 10514}
     - Class: 114
-      Script: {instanceID: 11254}
+      Script: {instanceID: 10574}
     - Class: 114
-      Script: {instanceID: 11308}
+      Script: {instanceID: 10578}
     - Class: 114
-      Script: {instanceID: 11442}
+      Script: {instanceID: 10642}
     - Class: 114
-      Script: {instanceID: 11506}
+      Script: {instanceID: 10688}
+    - Class: 114
+      Script: {instanceID: 10728}
+    - Class: 114
+      Script: {instanceID: 10996}
+    - Class: 114
+      Script: {instanceID: 11012}
+    - Class: 114
+      Script: {instanceID: 11044}
+    - Class: 114
+      Script: {instanceID: 11166}
+    - Class: 114
+      Script: {instanceID: 11314}
+    - Class: 114
+      Script: {instanceID: 11334}
+    - Class: 114
+      Script: {instanceID: 11388}
+    - Class: 114
+      Script: {instanceID: 11424}
+    - Class: 114
+      Script: {instanceID: 11450}
+    - Class: 114
+      Script: {instanceID: 11526}
+    - Class: 114
+      Script: {instanceID: 11572}
+    - Class: 114
+      Script: {instanceID: 11592}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -189,10 +229,10 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: ef8624d5819e995158206bc097e8afdf
+      Hash: b4d23975f47a17f365544ee91cf82d1d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: ControladorItem
+    className: EquipamentoHUD
   - hash:
       serializedVersion: 2
       Hash: 984dcc0ba3707b7691fbdca8ff508d28
@@ -201,7 +241,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: a2034241f92f93112ae90e2401e9f528
+      Hash: f46790ec86441f4b35f697e141d32aa0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InimigoStats
@@ -213,7 +253,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: f71c058cd6c9dccb17a3a762bc514a4c
+      Hash: 68c609aeeff4eecd68ee3bd5158a8a73
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ItemPickUp
@@ -225,7 +265,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: b84c9c5d5c29d59560f1f74c39b4fc19
+      Hash: 81ef0508b96344b9de26174577f767a2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControladorPersonagem
@@ -235,6 +275,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ScrollbarEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 468447d629bd9f81134cd5f6a0a74e87
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FSM_Boss1_Ataque
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -273,7 +319,7 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: af334590436007d781a50ae07a502b60
+      Hash: 54ba3e5e47cab33fa9bc47beaff6f564
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControladorBoss1
@@ -327,6 +373,18 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FSM_Inimigo04_Morrer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FSM_Inimigo02_Morrer
+  - hash:
+      serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -351,7 +409,13 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: ca7c8d4a75af91de8341e79bc43fe87b
+      Hash: e9b986c8f31bcbe90be010d4cb18fb75
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MissoesSlot
+  - hash:
+      serializedVersion: 2
+      Hash: 7dc19e62828aaf4e65cea5bea882b039
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Equipamento
@@ -381,7 +445,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 5d8bb926e4b9e9469b700c28a8c6deec
+      Hash: 5eea5123a605d0031d9e45df3b1f96a4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PersonagemStats
@@ -411,7 +475,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: 2460b1be030b871cafee01aa8c6f17c7
+      Hash: 101c68ce8c961ed0d3da2e28aca8757b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControladorCamera
@@ -429,22 +493,34 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FSM_Inimigo03_Morrer
+  - hash:
+      serializedVersion: 2
       Hash: a9758bf8ddd16200b8dcd69877ad9ac3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Inventario
   - hash:
       serializedVersion: 2
-      Hash: f0fe59c205adcdf9512e010fe6ad5959
+      Hash: 4cd9f53a5166d5269af9140847fc87d7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InventarioHUD
   - hash:
       serializedVersion: 2
-      Hash: a61a93593e52541e0297f42bec116011
+      Hash: c8e401e0d020cd9c6c13ba0519b9bfbd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: InteragirNPC
+    className: InteragirNPCQuest
+  - hash:
+      serializedVersion: 2
+      Hash: 4befb743df0a596007257f2661b3beec
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FSM_Boss1_Morrer
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -453,13 +529,13 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: 9a78f43210d54b30057a03c174f0b2bd
+      Hash: 389482d946d3d25bb5dce1a9f9dfc332
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Interagivel
   - hash:
       serializedVersion: 2
-      Hash: 5d8bb926e4b9e9469b700c28a8c6deec
+      Hash: 5eea5123a605d0031d9e45df3b1f96a4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: JogadorStats
@@ -477,7 +553,7 @@ ScriptsOnlyBuild:
     className: "Ref_posi\xE7ao_jogador"
   - hash:
       serializedVersion: 2
-      Hash: 65520f3a8b012dd98d69713a109a39ca
+      Hash: 218a35a05267889a9264966b7c7359cc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Boss1Combate
@@ -492,7 +568,7 @@ ScriptsOnlyBuild:
       Hash: 2460b1be030b871cafee01aa8c6f17c7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: cameraMapa
+    className: ControladorCameraMapa
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -507,10 +583,16 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
-      Hash: 4efa181367d9d08f2a5a906990493122
+      Hash: ff7a6f7e6d31989e3b56f7c63c51632d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PersonagemCombate
+  - hash:
+      serializedVersion: 2
+      Hash: bb16c7157eee71bd091082876a83a4bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Consumiveis
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -529,6 +611,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 7f096d25d595299aca25a5f7d075131a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FSM_Player_Morrer
   - hash:
       serializedVersion: 2
       Hash: 590922b2e73a0e356dffcd005d102463
@@ -591,10 +679,16 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 897ccd82255cdb42cc231c37d6f1b295
+      Hash: f63c4e090ab48028a2a362e29d12b08f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InventarioSlot
+  - hash:
+      serializedVersion: 2
+      Hash: 632eb17a5401ccfcc7d0c492c53c485d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PassarOMouse
   - hash:
       serializedVersion: 2
       Hash: d4c7fd980db6f166405fc7c90c548ffe
@@ -657,6 +751,12 @@ ScriptsOnlyBuild:
     className: InimigoVidaHUD
   - hash:
       serializedVersion: 2
+      Hash: 2b67d6babe6c1139689fffc54820c0df
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MissoesHUD
+  - hash:
+      serializedVersion: 2
       Hash: 5372ed2ce39229b1ac910757999a8be2
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -669,7 +769,7 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: 86adcb85b0be81785665e999457c71c7
+      Hash: f1b4580273fa7ba5a0fced23faf85eff
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Item
@@ -741,6 +841,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FSM_Inimigo01_Morrer
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -760,4 +866,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Cenas/0_Vila.unity
-  playerPath: C:/Users/1066406/Documents/GitHub/Exp.Lore/Exp.Lore.AGORAVAI/Exp.Lore.exe
+  playerPath: C:/Users/arthu/GitHub Repos/Exp.Lore/Exp.Lore.EXE/Exp.Lore.exe

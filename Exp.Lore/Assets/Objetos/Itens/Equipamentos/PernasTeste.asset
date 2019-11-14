@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: PernasTeste
   m_EditorClassIdentifier: 
   nome: Pernas Teste
-  icon: {fileID: 21300000, guid: 97daf47fc9c69d8469d2296ddee81972, type: 3}
+  descricao: "Descri\xE7\xE3o das Pernas Teste"
+  preco: 0
+  icon: {fileID: 21300000, guid: 2a3b28d9c5070f242a3f7b3afcb113e8, type: 3}
   isDefaultItem: 0
   equiparSlot: 2
   armaduraModificador: 2

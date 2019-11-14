@@ -5,7 +5,6 @@ using UnityEngine.AI;
 public class PersonagemStats : MonoBehaviour
 {
 	Renderer rend;
-	NavMeshAgent personagem;
 	public int vidaMaxima = 100;
     public int vidaAtual; //{ get; private set; }
 	public int danoInimigo;
@@ -14,7 +13,7 @@ public class PersonagemStats : MonoBehaviour
 	
 
 	public GameObject item;
-	GameObject player;
+	public GameObject player;
 
     public event System.Action<int, int> seVidaMudar;
 
@@ -23,11 +22,10 @@ public class PersonagemStats : MonoBehaviour
 
 		rend = GetComponentInChildren<Renderer>();
 		vidaAtual = vidaMaxima;
-		personagem = GetComponent<NavMeshAgent>();
-		player = GameObject.Find("Personagem");
+        player = GameObject.FindWithTag("Player");
 
-		
-	}
+
+    }
 
 
 	void Update() 
@@ -60,8 +58,11 @@ public class PersonagemStats : MonoBehaviour
 
 		if(vidaAtual <= 0)
 		{
-			Instantiate(item, this.transform.position, Quaternion.identity);
-			item.GetComponent<Interagivel>().player = player;
+            if (item != null)
+            {
+                Instantiate(item, this.transform.position, Quaternion.identity);
+                item.GetComponent<Interagivel>().player = player;
+            }
 			MorrerAnimaçao();
 		}
 
@@ -70,7 +71,6 @@ public class PersonagemStats : MonoBehaviour
 
     public void carregarVida()
     {
-        Debug.Log("vida atual" + vidaAtual);
         seVidaMudar(vidaMaxima, vidaAtual);
         Debug.Log("vida atual"+vidaAtual);
     }

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b655281a909784e81c4328628d99a7, type: 3}
   m_Name: "Po\xE7\xE3o de Vida."
   m_EditorClassIdentifier: 
-  nome: "Po\xE7\xE3o de Vida. - inimigo 2"
+  nome: "Po\xE7\xE3o de Vida"
+  descricao: Cura 40 de Vida
+  preco: 0
   icon: {fileID: 0}
   isDefaultItem: 0
-  vida: 90
+  vida: 40
   dano: 0
   armadura: 0

@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Moeda Antiga
   m_EditorClassIdentifier: 
   nome: Moeda Antiga
+  descricao: "\xE9 de lat\xE3o..."
+  preco: 2
   icon: {fileID: 0}
   isDefaultItem: 0

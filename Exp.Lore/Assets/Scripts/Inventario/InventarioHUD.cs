@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class InventarioHUD : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class InventarioHUD : MonoBehaviour
 
     public GameObject painelInventario, marcadorNovoItem;
     public GameObject painelMissoes, marcadorNovaMissao;
+    public GameObject painelMenu;
+    public Text textoOuroJogador;
 
     Inventario inventario;
 
@@ -33,6 +36,10 @@ public class InventarioHUD : MonoBehaviour
             if (marcadorNovaMissao.activeSelf)
                 marcadorNovaMissao.SetActive(false);
         }
+        if (Input.GetButtonDown("Menu"))
+        {
+            abrirPainel(painelMenu);
+        }
     }
 
     public void atualizarInventarioHUD()
@@ -50,6 +57,7 @@ public class InventarioHUD : MonoBehaviour
             }
         }
 
+        textoOuroJogador.text = ControladorPersonagem.instancia.ouro.ToString();
         if (!painelInventario.activeSelf)
             marcadorNovoItem.SetActive(true);
     }

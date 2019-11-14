@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b655281a909784e81c4328628d99a7, type: 3}
   m_Name: Elixir da Sorte
   m_EditorClassIdentifier: 
-  nome: inimigo 1 - Elixir da sorte.
+  nome: Elixir da sorte
+  descricao: "Adiciona Armadura m\xE9dia"
+  preco: 15
   icon: {fileID: 0}
   isDefaultItem: 0
   vida: 0

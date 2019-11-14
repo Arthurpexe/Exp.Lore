@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Capa da invisibilidade
   m_EditorClassIdentifier: 
   nome: Capa da invisibilidade
+  descricao: uma capa magica direto do harry potter
+  preco: 30
   icon: {fileID: 0}
   isDefaultItem: 0

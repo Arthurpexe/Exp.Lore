@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Sapatos magicos
   m_EditorClassIdentifier: 
   nome: Sapatos magicos
+  descricao: "com eles seus passos n\xE3o fazem barulho"
+  preco: 20
   icon: {fileID: 0}
   isDefaultItem: 0
