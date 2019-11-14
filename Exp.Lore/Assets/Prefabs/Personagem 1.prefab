@@ -107,6 +107,7 @@ MonoBehaviour:
   dano: 10
   armadura: 0
   item: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &1604488581812827306
 MonoBehaviour:
   m_ObjectHideFlags: 0

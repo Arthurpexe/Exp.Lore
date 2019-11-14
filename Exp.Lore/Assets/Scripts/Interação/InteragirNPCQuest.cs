@@ -15,6 +15,17 @@ public class InteragirNPCQuest : Interagivel
     public GameObject botaoAceitarQuest;
     public GameObject falarComQuem;
     public GameObject falarComQuemMinimapa;
+    public GameObject equipsTeste;
+
+    private void Update()
+    {
+        float distance = Vector3.Distance(player.transform.position, interactionTransform.position);
+        if (distance <= radius)
+        {
+            if(Input.GetButtonDown("Interagir"))
+                Interact();
+        }
+    }
 
     public override void Interact()
     {
@@ -63,6 +74,11 @@ public class InteragirNPCQuest : Interagivel
         controladorPersonagem.missoes[controladorPersonagem.contadorMissoesAtivas] = this.missao;
         controladorPersonagem.contadorMissoesAtivas++;
         controladorPersonagem.mudouMissao();
+
+        if (missao.titulo == "Começando Bem")
+        {
+            equipsTeste.SetActive(true);
+        }
     }
     public void respostaSim()
     {

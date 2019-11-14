@@ -19,19 +19,6 @@ public class Interagivel : MonoBehaviour
     {
         controladorPersonagem = ControladorPersonagem.instancia;
     }
-
-    void Update ()
-	{
-		float distance = Vector3.Distance(player.transform.position, interactionTransform.position);
-
-        if (distance <= radius)
-        {
-            if (Input.GetButtonDown("Interagir"))
-            {
-                Interact();
-            }
-        }
-    }
 				
 
 		

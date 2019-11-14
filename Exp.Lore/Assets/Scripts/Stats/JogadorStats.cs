@@ -32,7 +32,6 @@ public class JogadorStats : PersonagemStats
 
 	public override void MorrerAnimaçao()
 	{
-
 		anim.SetTrigger("morto");
 
 	}

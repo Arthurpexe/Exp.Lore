@@ -5,7 +5,17 @@ public class ItemPickUp : Interagivel
 {
 	public Item item;
 
-	public override void Interact()
+    private void Update()
+    {
+        float distance = Vector3.Distance(player.transform.position, interactionTransform.position);
+        if (distance <= radius)
+        {
+
+            Interact();
+        }
+    }
+
+    public override void Interact()
 	{
 		base.Interact();
         Debug.Log("Interagindo com " + item.nome);
