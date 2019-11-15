@@ -155,10 +155,10 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.034
+  m_TransitionDuration: 0.22863752
   m_TransitionOffset: 0
   m_ExitTime: 0.7500002
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -456,7 +456,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Atacar
-  m_Speed: 1
+  m_Speed: 1.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4641269720090876444}
@@ -531,7 +531,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: "Bra\xE7os"
     m_StateMachine: {fileID: -5857005485848667586}
-    m_Mask: {fileID: 31900000, guid: 414518ce980910a4b871f6b8f7951d4f, type: 2}
+    m_Mask: {fileID: 31900000, guid: 387f227a4e9e0954da7e32e735860c37, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -869,9 +869,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.034
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75
+  m_TransitionDuration: 0.33249855
+  m_TransitionOffset: 0.31321335
+  m_ExitTime: 0.880109
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

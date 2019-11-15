@@ -16018,6 +16018,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: InimigoExportado
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 73d1c2da64e860a40b6aea4d576de4bd, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16087,16 +16097,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 73d1c2da64e860a40b6aea4d576de4bd, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c, type: 3}
@@ -24432,6 +24432,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: GFX
       objectReference: {fileID: 0}
+    - target: {fileID: -7970423596239938502, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07264b2cf201f964b9ec23a0264ddeb8, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c55803f2b52c28241b90e5cce9a3829d, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24502,21 +24517,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: c55803f2b52c28241b90e5cce9a3829d, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7970423596239938502, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 07264b2cf201f964b9ec23a0264ddeb8, type: 2}
     - target: {fileID: 453326199733312024, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -31027,7 +31027,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 22.24, y: 0}
+  m_AnchoredPosition: {x: 22.240234, y: 0}
   m_SizeDelta: {x: 364.62, y: 203.2}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1248563157
@@ -38755,7 +38755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -24.01, y: 0}
+  m_AnchoredPosition: {x: -24.009766, y: 0}
   m_SizeDelta: {x: 361.09, y: 203.2}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1549800202
@@ -51223,6 +51223,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: InimigoExportado
       objectReference: {fileID: 0}
+    - target: {fileID: -7970423596239938502, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07264b2cf201f964b9ec23a0264ddeb8, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2e009a1fc34fb7c488d72ffc57fe3311, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51293,21 +51308,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 2e009a1fc34fb7c488d72ffc57fe3311, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7970423596239938502, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 07264b2cf201f964b9ec23a0264ddeb8, type: 2}
     - target: {fileID: 453326199733312024, guid: 48a8cfcdb6d86054ead03d12eaaa4e2c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -54850,7 +54850,7 @@ MonoBehaviour:
   velocidadeAtaque: 1
   cooldownAtaque: 0
   CooldownAtaque: 3
-  ataqueDelay: 1
+  ataqueDelay: 0.5
   atacando: 0
 --- !u!114 &4698841909732294281
 MonoBehaviour:
@@ -54866,8 +54866,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 50
   vidaAtual: 0
-  danoInimigo: 10
-  dano: 10
+  danoInimigo: 3
+  dano: 3
   armadura: 0
   item: {fileID: 7613960604803803254, guid: d9f4b48353f057b458ff64ee8d46c4c1, type: 3}
   player: {fileID: 0}
@@ -55159,7 +55159,7 @@ MonoBehaviour:
   velocidadeAtaque: 0.5
   cooldownAtaque: 0
   CooldownAtaque: 2
-  ataqueDelay: 0.6
+  ataqueDelay: 0.5
   atacando: 0
 --- !u!4 &4946470327155242984
 Transform:
@@ -55192,8 +55192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 50
   vidaAtual: 0
-  danoInimigo: 10
-  dano: 35
+  danoInimigo: 5
+  dano: 5
   armadura: 0
   item: {fileID: 0}
   player: {fileID: 0}
@@ -55806,6 +55806,16 @@ PrefabInstance:
       propertyPath: barraVida
       value: 
       objectReference: {fileID: 1756747030}
+    - target: {fileID: 1604488581812827306, guid: 76759819411728c4ca2ad5355b0d055e,
+        type: 3}
+      propertyPath: cooldownAtaque
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1604488581812827306, guid: 76759819411728c4ca2ad5355b0d055e,
+        type: 3}
+      propertyPath: CooldownAtaque
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76759819411728c4ca2ad5355b0d055e, type: 3}
 --- !u!114 &6325231678141922940
@@ -56562,7 +56572,7 @@ MonoBehaviour:
   velocidadeAtaque: 1
   cooldownAtaque: 0
   CooldownAtaque: 3
-  ataqueDelay: 0.6
+  ataqueDelay: 0.5
   atacando: 0
 --- !u!114 &8701169936301442722
 MonoBehaviour:
@@ -56578,8 +56588,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 50
   vidaAtual: 0
-  danoInimigo: 15
-  dano: 15
+  danoInimigo: 3
+  dano: 3
   armadura: 0
   item: {fileID: 0}
   player: {fileID: 0}
@@ -57075,7 +57085,7 @@ MonoBehaviour:
   velocidadeAtaque: 1
   cooldownAtaque: 0
   CooldownAtaque: 2
-  ataqueDelay: 0.6
+  ataqueDelay: 0.5
   atacando: 0
 --- !u!114 &8797940595523842280
 MonoBehaviour:
@@ -57091,8 +57101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 50
   vidaAtual: 0
-  danoInimigo: 10
-  dano: 22
+  danoInimigo: 5
+  dano: 5
   armadura: 0
   item: {fileID: 0}
   player: {fileID: 0}
@@ -57877,7 +57887,7 @@ PrefabInstance:
     - target: {fileID: 3906895658676509918, guid: e86abfabb0a112a4c86b9612224f540c,
         type: 3}
       propertyPath: dano
-      value: 60
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3906895658676509918, guid: e86abfabb0a112a4c86b9612224f540c,
         type: 3}
@@ -57894,6 +57904,11 @@ PrefabInstance:
       propertyPath: audioListenerBoss
       value: 
       objectReference: {fileID: 1353127273}
+    - target: {fileID: 3906895658676509918, guid: e86abfabb0a112a4c86b9612224f540c,
+        type: 3}
+      propertyPath: danoInimigo
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 9149776346944506770, guid: e86abfabb0a112a4c86b9612224f540c,
         type: 3}
       propertyPath: barraVida

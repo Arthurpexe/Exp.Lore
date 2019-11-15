@@ -40,13 +40,15 @@ public class ControladorPersonagem : MonoBehaviour
 	private float cd;
 
     [Header("Combate")]
-	PersonagemCombate cooldown;
+	PersonagemCombate script;
     public PersonagemStats personagemStats;
     public int vidaAtual;
     public GameObject barraVidaBoss;
     public GameObject[] inimigos;
     public float distancia;
     public float distaciaMaxima = 5.0f;
+	float Cooldown;
+	private float cooldown;
 
     [Header("Save")]
     public PlayerSave personagem;
@@ -68,15 +70,18 @@ public class ControladorPersonagem : MonoBehaviour
 		missoes = new Missao[6];
 		player = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
-		cooldown = GetComponent<PersonagemCombate>();
+		script = GetComponent<PersonagemCombate>();
         personagem = new PlayerSave();
+		Cooldown = script.CooldownAtaque;
+		cooldown = Cooldown;
 
-        personagemStats = this.GetComponent<PersonagemStats>();
+		personagemStats = this.GetComponent<PersonagemStats>();
 		cd = CD;
     }
 
 	void Update()
 	{
+		cooldown -= Time.deltaTime;
 		cd -= Time.deltaTime;
 		rend.material.color = Color.white;
 		vidaAtual = personagemStats.vidaAtual;
@@ -157,9 +162,10 @@ public class ControladorPersonagem : MonoBehaviour
 			cd = CD;
 		}
 
-        if (Input.GetButtonDown("Atacar") && !_isFastSpeed && cooldown.cooldownAtaque <= 0)
+        if (Input.GetButtonDown("Atacar") && !_isFastSpeed && cooldown <= 0)
         {
             anim.SetTrigger("atacar");
+			cooldown = Cooldown;
         }
     }
 
