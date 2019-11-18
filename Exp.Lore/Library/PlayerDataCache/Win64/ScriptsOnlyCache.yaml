@@ -26,7 +26,6 @@ ScriptsOnlyBuild:
     - Inventario
     - InventarioHUD
     - InventarioSlot
-    - Item
     - ItemPickUp
     - JogadorStats
     - MissoesHUD
@@ -37,11 +36,7 @@ ScriptsOnlyBuild:
     - SaveLoad
     - TrocarSprite
     - VidaHUD
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - Volume
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -53,6 +48,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Cenas/0_Vila.unity:
@@ -99,93 +95,95 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9658}
+      Script: {instanceID: 9656}
     - Class: 114
-      Script: {instanceID: 9666}
+      Script: {instanceID: 9664}
     - Class: 114
-      Script: {instanceID: 9698}
+      Script: {instanceID: 9696}
     - Class: 114
-      Script: {instanceID: 9706}
+      Script: {instanceID: 9704}
     - Class: 114
-      Script: {instanceID: 9754}
+      Script: {instanceID: 9752}
     - Class: 114
-      Script: {instanceID: 9780}
+      Script: {instanceID: 9776}
     - Class: 114
-      Script: {instanceID: 9830}
+      Script: {instanceID: 9826}
     - Class: 114
-      Script: {instanceID: 9862}
+      Script: {instanceID: 9858}
     - Class: 114
-      Script: {instanceID: 9872}
+      Script: {instanceID: 9868}
     - Class: 114
-      Script: {instanceID: 9922}
+      Script: {instanceID: 9918}
     - Class: 114
-      Script: {instanceID: 10002}
+      Script: {instanceID: 9998}
     - Class: 114
-      Script: {instanceID: 10030}
+      Script: {instanceID: 10026}
     - Class: 114
-      Script: {instanceID: 10102}
+      Script: {instanceID: 10098}
     - Class: 114
-      Script: {instanceID: 10108}
+      Script: {instanceID: 10104}
     - Class: 114
-      Script: {instanceID: 10148}
+      Script: {instanceID: 10144}
     - Class: 114
-      Script: {instanceID: 10228}
+      Script: {instanceID: 10224}
     - Class: 114
-      Script: {instanceID: 10266}
+      Script: {instanceID: 10262}
     - Class: 114
-      Script: {instanceID: 10300}
+      Script: {instanceID: 10296}
     - Class: 114
-      Script: {instanceID: 10346}
+      Script: {instanceID: 10342}
     - Class: 114
-      Script: {instanceID: 10354}
+      Script: {instanceID: 10350}
     - Class: 114
-      Script: {instanceID: 10378}
+      Script: {instanceID: 10374}
+    - Class: 114
+      Script: {instanceID: 10404}
     - Class: 114
       Script: {instanceID: 10408}
     - Class: 114
-      Script: {instanceID: 10412}
+      Script: {instanceID: 10438}
     - Class: 114
-      Script: {instanceID: 10442}
+      Script: {instanceID: 10460}
     - Class: 114
       Script: {instanceID: 10464}
     - Class: 114
-      Script: {instanceID: 10468}
+      Script: {instanceID: 10510}
     - Class: 114
-      Script: {instanceID: 10514}
+      Script: {instanceID: 10570}
     - Class: 114
       Script: {instanceID: 10574}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10638}
     - Class: 114
-      Script: {instanceID: 10642}
+      Script: {instanceID: 10680}
     - Class: 114
-      Script: {instanceID: 10688}
+      Script: {instanceID: 10686}
     - Class: 114
-      Script: {instanceID: 10728}
+      Script: {instanceID: 10722}
+    - Class: 114
+      Script: {instanceID: 10948}
+    - Class: 114
+      Script: {instanceID: 10964}
     - Class: 114
       Script: {instanceID: 10996}
     - Class: 114
-      Script: {instanceID: 11012}
+      Script: {instanceID: 11118}
     - Class: 114
-      Script: {instanceID: 11044}
+      Script: {instanceID: 11266}
     - Class: 114
-      Script: {instanceID: 11166}
+      Script: {instanceID: 11286}
     - Class: 114
-      Script: {instanceID: 11314}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 11334}
+      Script: {instanceID: 11376}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 11476}
     - Class: 114
-      Script: {instanceID: 11424}
+      Script: {instanceID: 11510}
     - Class: 114
-      Script: {instanceID: 11450}
+      Script: {instanceID: 11522}
     - Class: 114
-      Script: {instanceID: 11526}
-    - Class: 114
-      Script: {instanceID: 11572}
-    - Class: 114
-      Script: {instanceID: 11592}
+      Script: {instanceID: 11542}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -217,6 +215,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 238
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     - Class: 1953259897
       Script: {instanceID: 0}
@@ -265,7 +269,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 81ef0508b96344b9de26174577f767a2
+      Hash: 9b8f549dcd15bd0901b7716d48344a57
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControladorPersonagem
@@ -475,7 +479,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: 101c68ce8c961ed0d3da2e28aca8757b
+      Hash: 7bb3b44fc21167549246281dbe85e3a0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControladorCamera
@@ -505,13 +509,13 @@ ScriptsOnlyBuild:
     className: Inventario
   - hash:
       serializedVersion: 2
-      Hash: 4cd9f53a5166d5269af9140847fc87d7
+      Hash: 74c54b993f9f849876f4f95352674ad5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InventarioHUD
   - hash:
       serializedVersion: 2
-      Hash: c8e401e0d020cd9c6c13ba0519b9bfbd
+      Hash: 1f25748e6a81467196e3784919a0e8a7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InteragirNPCQuest
@@ -611,6 +615,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 2122ad77b35f7f0129bab21633be2a24
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Volume
   - hash:
       serializedVersion: 2
       Hash: 7f096d25d595299aca25a5f7d075131a
@@ -866,4 +876,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Cenas/0_Vila.unity
-  playerPath: C:/Users/arthu/GitHub Repos/Exp.Lore/Exp.Lore.EXE/Exp.Lore.exe
+  playerPath: C:/Users/1066406/Documents/GitHub/Exp.Lore/Exp.Lore.exe/Exp.Lore.exe
