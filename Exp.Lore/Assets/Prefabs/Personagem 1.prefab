@@ -79,9 +79,12 @@ MonoBehaviour:
   _inputs: {x: 0, y: 0, z: 0}
   _isFastSpeed: 0
   CD: 3
+  cameraPrincipal: {fileID: 0}
+  posCamPersonagem: {fileID: 0}
   personagemStats: {fileID: 1604488581812827307}
   vidaAtual: 0
   barraVidaBoss: {fileID: 0}
+  posCamBoss: {fileID: 0}
   inimigos: []
   distancia: 0
   distaciaMaxima: 5

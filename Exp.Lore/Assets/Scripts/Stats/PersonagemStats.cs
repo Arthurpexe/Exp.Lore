@@ -1,10 +1,9 @@
-﻿
-using UnityEngine;
-using UnityEngine.AI;
+﻿using UnityEngine;
 
 public class PersonagemStats : MonoBehaviour
 {
 	Renderer rend;
+    Color corInicial;
 	public int vidaMaxima = 100;
     public int vidaAtual; //{ get; private set; }
 	public int danoInimigo;
@@ -19,26 +18,11 @@ public class PersonagemStats : MonoBehaviour
 
 	private void Awake()
 	{
-
 		rend = GetComponentInChildren<Renderer>();
+        corInicial = rend.material.color;
 		vidaAtual = vidaMaxima;
         player = GameObject.FindWithTag("Player");
-
-
     }
-
-
-	void Update() 
-	{
-		rend.material.color = Color.white;
-
-		if (Input.GetButtonDown("Interagir"))
-		{
-			TomarDano(danoInimigo);
-			
-		}
-		
-	}
 
 
 	public void TomarDano(int dano)
@@ -47,14 +31,11 @@ public class PersonagemStats : MonoBehaviour
 		dano = Mathf.Clamp(dano, 0, int.MaxValue);
 
 		vidaAtual -= dano;
-		rend.material.color = Color.red;
+        rend.material.color = Color.red;
+        Invoke("voltarCor", 0.075f);
+        Debug.Log(transform.name + " Tomou " + dano + " dano.");
 
-		Debug.Log(transform.name + " Tomou " + dano + " dano.");
-
-        if (seVidaMudar != null)
-        {
-            seVidaMudar(vidaMaxima, vidaAtual);
-        }
+        seVidaMudar(vidaMaxima, vidaAtual);
 
 		if(vidaAtual <= 0)
 		{
@@ -72,7 +53,7 @@ public class PersonagemStats : MonoBehaviour
     public void carregarVida()
     {
         seVidaMudar(vidaMaxima, vidaAtual);
-        Debug.Log("vida atual"+vidaAtual);
+        Debug.Log("vida atual "+vidaAtual);
     }
 
 
@@ -87,4 +68,8 @@ public class PersonagemStats : MonoBehaviour
 	{
 
 	}
+    public void voltarCor()
+    {
+        rend.material.color = corInicial;
+    }
 }

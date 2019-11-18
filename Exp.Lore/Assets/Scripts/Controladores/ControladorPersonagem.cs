@@ -17,9 +17,6 @@ public class ControladorPersonagem : MonoBehaviour
     }
 	#endregion
 
-	[Header("Graficos")]
-	Renderer rend;
-
 	[Header("Paineis")]
     public GameObject painelMenu;
     public GameObject painelInventario;
@@ -38,9 +35,9 @@ public class ControladorPersonagem : MonoBehaviour
     static Animator anim;
 	public float CD = 3;
 	private float cd;
+    public ControladorCamera cameraPrincipal;
 
     [Header("Combate")]
-	PersonagemCombate script;
     public PersonagemStats personagemStats;
     public int vidaAtual;
     public GameObject barraVidaBoss;
@@ -49,6 +46,7 @@ public class ControladorPersonagem : MonoBehaviour
     public float distaciaMaxima = 5.0f;
 	float Cooldown;
 	private float cooldown;
+    PersonagemCombate script;
 
     [Header("Save")]
     public PlayerSave personagem;
@@ -66,7 +64,6 @@ public class ControladorPersonagem : MonoBehaviour
 
     void Start()
 	{
-		rend = GetComponentInChildren<Renderer>();
 		missoes = new Missao[6];
 		player = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
@@ -83,7 +80,6 @@ public class ControladorPersonagem : MonoBehaviour
 	{
 		cooldown -= Time.deltaTime;
 		cd -= Time.deltaTime;
-		rend.material.color = Color.white;
 		vidaAtual = personagemStats.vidaAtual;
 
         if (painelMenu.activeSelf || painelInventario.activeSelf || painelFimDeJogo.activeSelf)
@@ -184,6 +180,7 @@ public class ControladorPersonagem : MonoBehaviour
         if(other.tag == "AreaBoss")
         {
             barraVidaBoss.SetActive(true);
+            cameraPrincipal.dentroAreaBoss = true;
         }
         if (other.tag == "AreaBaseCachoeira")//verifico se cheguei na cachoeira para completar a missao Onde estão meus pais
         {
@@ -234,6 +231,7 @@ public class ControladorPersonagem : MonoBehaviour
         if (other.tag == "AreaBoss")
         {
             barraVidaBoss.SetActive(false);
+            cameraPrincipal.dentroAreaBoss = false;
         }
         if(other.tag == "AreaTitulo")
         {

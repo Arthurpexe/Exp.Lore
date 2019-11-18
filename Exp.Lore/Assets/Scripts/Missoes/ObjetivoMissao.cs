@@ -14,7 +14,7 @@ public class ObjetivoMissao
     }
     public bool concluiu()
     {
-        return (quantidadeAtual >= quantidadeAtual);
+        return (quantidadeAtual >= quantidadeNescessaria);
     }
 
     public void inimigoMorto()

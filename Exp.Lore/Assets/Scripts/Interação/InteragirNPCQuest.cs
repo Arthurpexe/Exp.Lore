@@ -1,40 +1,84 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class InteragirNPCQuest : Interagivel
 {
     public Missao missao;
 
+    public string nomeNPC;
+    public Text textoNomeNPCDialogo;
     public bool aceita = false;
     public GameObject painelAceitarQuest;
     public Text textoTitulo;
     public Text textoDescricao;
     public Text textoOuro;
+    public Text textoNomeNPCMissao;
     public GameObject botaoAceitarQuest;
-    public GameObject falarComQuem;
     public GameObject falarComQuemMinimapa;
     public GameObject equipsTeste;
+
+    public GameObject painelDialogo;
+    public string dialogo;
+    public string dialogoMissaoAtiva;
+    Text textoDialogo;
+
+    private void Start()
+    {
+        controladorPersonagem = ControladorPersonagem.instancia;
+        textoDialogo = painelDialogo.GetComponentInChildren<Text>();
+    }
 
     private void Update()
     {
         float distance = Vector3.Distance(player.transform.position, interactionTransform.position);
         if (distance <= radius)
         {
-            if(Input.GetButtonDown("Interagir"))
+            if (Input.GetButtonDown("Interagir"))
                 Interact();
+        }
+
+
+        
+        if (equipsTeste != null)
+        {
+            if (!this.missao.concluida)
+            {
+                if (equipsTeste.transform.childCount == 0)
+                {
+                    for (int i = 0; i < controladorPersonagem.missoes.Length; i++)
+                    {
+                        if (controladorPersonagem.missoes[i].titulo == "Começando Bem")
+                        {
+                            controladorPersonagem.ouro += controladorPersonagem.missoes[i].recompensaOuro;
+                            controladorPersonagem.missoes[i].missaoConcluida();
+                            controladorPersonagem.mudouMissao();
+                        }
+                    }
+                }
+            }
         }
     }
 
     public override void Interact()
     {
         base.Interact();
-        if(this.missao.estaAtiva || this.missao.concluida)
+
+        textoNomeNPCDialogo.text = nomeNPC;
+
+        if (this.missao.concluida)
         {
             //conversação diferente
+            textoDialogo.text = dialogo;
+            painelDialogo.SetActive(!painelDialogo.activeSelf);
             return;
         }
+        else if (this.missao.estaAtiva)
+        {
+            textoDialogo.text = dialogoMissaoAtiva;
+            painelDialogo.SetActive(!painelDialogo.activeSelf);
+            return;
+        }
+        
 
         //conversação
 
@@ -43,25 +87,25 @@ public class InteragirNPCQuest : Interagivel
 
         painelAceitarQuest.SetActive(true);
 
-        this.textoTitulo.text = this.missao.titulo;
-        this.textoDescricao.text = this.missao.descricao;
-        this.textoOuro.text = this.missao.recompensaOuro.ToString();
-        if(missao.objetivo.tipoObjetivo == TipoObjetivo.falarCom)
+        textoNomeNPCMissao.text = nomeNPC;
+
+        if (!missao.concluida)
         {
-            //dialogo de falarComQuem especial da missao
-            falarComQuem.GetComponent<InteragirNPCQuest>().enabled = true;
-            falarComQuemMinimapa.SetActive(true);
-            //mudar a cor do NPCQuestMinimapa
-        }
-        if(missao.titulo == "A Invasão")
-        {
-            for (int i = 0; i < controladorPersonagem.missoes.Length; i++)
+            this.textoTitulo.text = this.missao.titulo;
+            this.textoDescricao.text = this.missao.descricao;
+            this.textoOuro.text = this.missao.recompensaOuro.ToString();
+
+            if (missao.titulo == "A Invasão")
             {
-                if (controladorPersonagem.missoes[i].titulo == "Boatos (quase) Inacreditaveis")
+                for (int i = 0; i < controladorPersonagem.missoes.Length; i++)
                 {
-                    controladorPersonagem.ouro += controladorPersonagem.missoes[i].recompensaOuro;
-                    controladorPersonagem.missoes[i].missaoConcluida();
-                    controladorPersonagem.mudouMissao();
+
+                    if (controladorPersonagem.missoes[i].titulo == "Boatos (quase) Inacreditaveis")
+                    {
+                        controladorPersonagem.ouro += controladorPersonagem.missoes[i].recompensaOuro;
+                        controladorPersonagem.missoes[i].missaoConcluida();
+                        controladorPersonagem.mudouMissao();
+                    }
                 }
             }
         }
@@ -71,6 +115,7 @@ public class InteragirNPCQuest : Interagivel
     {
         Debug.Log("Adicionei a quest "+missao.titulo+"!");
         this.missao.estaAtiva = true;
+        Debug.Log(controladorPersonagem.gameObject.name);
         controladorPersonagem.missoes[controladorPersonagem.contadorMissoesAtivas] = this.missao;
         controladorPersonagem.contadorMissoesAtivas++;
         controladorPersonagem.mudouMissao();
@@ -78,6 +123,11 @@ public class InteragirNPCQuest : Interagivel
         if (missao.titulo == "Começando Bem")
         {
             equipsTeste.SetActive(true);
+        }
+
+        if (missao.objetivo.tipoObjetivo == TipoObjetivo.falarCom)
+        {
+            //mudar a cor do NPCQuestMinimapa
         }
     }
     public void respostaSim()

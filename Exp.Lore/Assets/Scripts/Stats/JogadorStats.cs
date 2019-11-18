@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JogadorStats : PersonagemStats
@@ -44,11 +43,4 @@ public class JogadorStats : PersonagemStats
 		
 		
 	}
-
-
-	// Update is called once per frame
-	void Update()
-    {
-        
-    }
 }

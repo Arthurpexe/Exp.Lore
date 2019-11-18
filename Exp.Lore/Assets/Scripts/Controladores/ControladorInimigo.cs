@@ -1,13 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class ControladorInimigo : MonoBehaviour
 {
 	public float raioDeVisao = 10f;
 
-	Renderer rend;
 	Transform target;
 	NavMeshAgent agent;
 	PersonagemCombate combate;
@@ -21,7 +18,6 @@ public class ControladorInimigo : MonoBehaviour
 		target = Ref_posiçao_jogador.instance.player.transform;
 		agent = GetComponent<NavMeshAgent>();
 		combate = GetComponent<PersonagemCombate>();
-		rend = GetComponentInChildren<Renderer>();
         anim = this.gameObject.GetComponentInChildren<Animator>();
 
 	}
@@ -31,7 +27,6 @@ public class ControladorInimigo : MonoBehaviour
     {
         
         anim.SetBool("perseguindo", false);
-        rend.material.color = Color.white;
 		float distancia = Vector3.Distance(target.position, transform.position);
 
 		agent.SetDestination(Waypoints[WaypointDestino].transform.position);

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PersonagemStats))]
@@ -11,7 +10,6 @@ public class PersonagemCombate : MonoBehaviour
 	public float ataqueDelay = .6f;
 	PersonagemStats playerStats;
 	GameObject player;
-    Animator anim;
 
     public bool atacando;
 
@@ -53,5 +51,4 @@ public class PersonagemCombate : MonoBehaviour
 
 		stats.TomarDano(myStats.dano - playerStats.armadura);
 	}
-	
 }

@@ -12,8 +12,8 @@ public class InimigoStats : PersonagemStats
 	Animator anim;
 
     public AudioSource audioListenerBoss;
-    
 
+    ControladorPersonagem controladorPersonagem;
 
     private void Start()
 	{
@@ -21,6 +21,8 @@ public class InimigoStats : PersonagemStats
 		float Cooldown = cooldown.CooldownAtaque;
 		CoolDown = Cooldown;
 		anim = GetComponentInChildren<Animator>();
+
+        controladorPersonagem = ControladorPersonagem.instancia;
 
 	}
 
@@ -41,12 +43,25 @@ public class InimigoStats : PersonagemStats
 
 	public override void MorrerAnimaçao()
 	{
-		if(this.gameObject.tag == "Boss")
+        anim.SetTrigger("Morrer");
+
+        if (this.gameObject.tag == "Boss")
         {
             audioListenerBoss.enabled = false;
+
+            for (int i = 0; i < controladorPersonagem.missoes.Length; i++)
+            {
+                if (controladorPersonagem.missoes[i].titulo == "A Hora da Verdade")
+                {
+                    controladorPersonagem.ouro = controladorPersonagem.missoes[i].recompensaOuro;
+                    controladorPersonagem.missoes[i].missaoConcluida();
+                    controladorPersonagem.mudouMissao();
+                }
+                
+            }
         }
 
-		anim.SetTrigger("Morrer");
+		
 		//Destroy(gameObject);
 	}
 

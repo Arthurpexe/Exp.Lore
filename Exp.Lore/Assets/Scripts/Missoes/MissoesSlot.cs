@@ -30,7 +30,7 @@ public class MissoesSlot : MonoBehaviour
 
     public void MostrarDescricao()
     {
-        if(missao.estaAtiva == true)
+        if(missao.estaAtiva || missao.concluida)
         {
             descricao.text = missao.descricao;
             recompensaOuro.text = missao.recompensaOuro.ToString();

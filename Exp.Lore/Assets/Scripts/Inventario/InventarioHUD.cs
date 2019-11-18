@@ -7,6 +7,8 @@ public class InventarioHUD : MonoBehaviour
 
     public GameObject painelInventario, marcadorNovoItem;
     public GameObject painelMissoes, marcadorNovaMissao;
+    public GameObject painelAceitarQuest;
+    public GameObject painelDialogo;
     public GameObject painelMenu;
     public Text textoOuroJogador;
 
@@ -18,6 +20,8 @@ public class InventarioHUD : MonoBehaviour
         inventario = Inventario.instance;
         inventario.onItemChangedCallback += atualizarInventarioHUD;
         slotsItens = itensParent.GetComponentsInChildren<InventarioSlot>();
+
+        ControladorPersonagem.instancia.seMissaoMudarCallback += marcadorNovaMissaoHUD;
     }
 
     private void Update()
@@ -38,7 +42,16 @@ public class InventarioHUD : MonoBehaviour
         }
         if (Input.GetButtonDown("Menu"))
         {
-            abrirPainel(painelMenu);
+            if (painelInventario.activeSelf)
+                painelInventario.SetActive(false);
+            else if (painelMissoes.activeSelf)
+                painelMissoes.SetActive(false);
+            else if (painelAceitarQuest.activeSelf)
+                painelAceitarQuest.SetActive(false);
+            else if (painelDialogo.activeSelf)
+                painelDialogo.SetActive(false);
+            else
+                abrirPainel(painelMenu);
         }
     }
 
@@ -60,6 +73,12 @@ public class InventarioHUD : MonoBehaviour
         textoOuroJogador.text = ControladorPersonagem.instancia.ouro.ToString();
         if (!painelInventario.activeSelf)
             marcadorNovoItem.SetActive(true);
+    }
+
+    public void marcadorNovaMissaoHUD()
+    {
+        if (!painelMissoes.activeSelf)
+            marcadorNovaMissao.SetActive(true);
     }
 
     public void abrirPainel(GameObject painel)
