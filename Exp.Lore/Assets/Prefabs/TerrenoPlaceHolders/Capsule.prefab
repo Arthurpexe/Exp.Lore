@@ -121,26 +121,20 @@ MonoBehaviour:
       tipoObjetivo: 1
       quantidadeNescessaria: 0
       quantidadeAtual: 0
-  missao2:
-    estaAtiva: 0
-    concluida: 1
-    jaMostrouNaHUD: 0
-    titulo: novaMissao
-    descricao: novaDescricao
-    recompensaOuro: 0
-    objetivo:
-      tipoObjetivo: 1
-      quantidadeNescessaria: 0
-      quantidadeAtual: 0
+  nomeNPC: Jorge O Pescador
+  textoNomeNPCDialogo: {fileID: 0}
   aceita: 0
   painelAceitarQuest: {fileID: 0}
   textoTitulo: {fileID: 0}
   textoDescricao: {fileID: 0}
   textoOuro: {fileID: 0}
+  textoNomeNPCMissao: {fileID: 0}
   botaoAceitarQuest: {fileID: 0}
-  falarComQuem: {fileID: 0}
   falarComQuemMinimapa: {fileID: 0}
   equipsTeste: {fileID: 0}
   painelDialogo: {fileID: 0}
   dialogo: "Hoje os peixes est\xE3o calmos demais..."
   dialogoMissaoAtiva: 
+  botaoInteragir: {fileID: 7297091198383143364, guid: c62fdc65886aeca46955c26796850549,
+    type: 3}
+  paiBotaoInteragir: {fileID: 0}

@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 4046532792029866517}
   - component: {fileID: 5004390467390394403}
   - component: {fileID: 1607683872490532058}
+  - component: {fileID: 1636280732}
   m_Layer: 0
   m_Name: Estoque de Madeira
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4046532792029866517
 Transform:
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041305657191307270}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 88.16, y: 10.01, z: 300.32}
   m_LocalScale: {x: 0.4962, y: 0.4962, z: 0.4962}
   m_Children: []
@@ -57,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 0b3c026aa2d32534182ccc91ab4f74e1, type: 3}
+  - {fileID: 2100000, guid: 682ec1510e0435642b9e3d41fbe009b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1636280732
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041305657191307270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.4064407, y: 4.6592064, z: 5.337475}
+  m_Center: {x: -0.066788316, y: 2.1752424, z: 0.013272405}

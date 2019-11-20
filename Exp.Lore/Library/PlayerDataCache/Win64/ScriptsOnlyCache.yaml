@@ -21,7 +21,6 @@ ScriptsOnlyBuild:
     - Inimigo
     - InimigoStats
     - InimigoVidaHUD
-    - InstanciarBotao
     - InteragirNPCQuest
     - Inventario
     - InventarioHUD
@@ -170,8 +169,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11118}
     - Class: 114
       Script: {instanceID: 11266}
-    - Class: 114
-      Script: {instanceID: 11286}
     - Class: 114
       Script: {instanceID: 11340}
     - Class: 114
@@ -515,7 +512,7 @@ ScriptsOnlyBuild:
     className: InventarioHUD
   - hash:
       serializedVersion: 2
-      Hash: 1f25748e6a81467196e3784919a0e8a7
+      Hash: ba96778e7376b3495f7200ed9c105457
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InteragirNPCQuest
@@ -749,7 +746,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: b2391e4abf024e8cebf913ed3349f727
+      Hash: b5a3549b3b7ea4b2ab045a22dbc03259
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InstanciarBotao
@@ -876,4 +873,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Cenas/0_Vila.unity
-  playerPath: C:/Users/1066406/Documents/GitHub/Exp.Lore/Exp.Lore.exe/Exp.Lore.exe
+  playerPath: C:/Users/arthu/GitHub Repos/Exp.Lore/Exp.Lore.EXE/Exp.Lore.exe

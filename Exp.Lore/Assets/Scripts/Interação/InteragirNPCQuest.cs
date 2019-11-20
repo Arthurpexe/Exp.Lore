@@ -22,6 +22,9 @@ public class InteragirNPCQuest : Interagivel
     public string dialogoMissaoAtiva;
     Text textoDialogo;
 
+    public GameObject botaoInteragir;
+    public Transform paiBotaoInteragir;
+
     private void Start()
     {
         controladorPersonagem = ControladorPersonagem.instancia;
@@ -33,8 +36,22 @@ public class InteragirNPCQuest : Interagivel
         float distance = Vector3.Distance(player.transform.position, interactionTransform.position);
         if (distance <= radius)
         {
+            if (paiBotaoInteragir.childCount == 0)
+            {
+                Instantiate(botaoInteragir, paiBotaoInteragir);
+            }
             if (Input.GetButtonDown("Interagir"))
+            {
                 Interact();
+                Destroy(paiBotaoInteragir.GetChild(0).gameObject);
+            }
+        }
+        else
+        {
+            if (paiBotaoInteragir.childCount > 0)
+            {
+                Destroy(paiBotaoInteragir.GetChild(0).gameObject);
+            }
         }
 
 
